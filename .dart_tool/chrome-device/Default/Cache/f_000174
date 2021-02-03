@@ -1,0 +1,1321 @@
+define(['dart_sdk', 'packages/animated_bottom_navigation_bar/src/exceptions.dart', 'packages/flutter/src/painting/notched_shapes.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/colors.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/widgets/icon_data.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/animation/curves.dart', 'packages/animated_bottom_navigation_bar/src/circular_notch_and_corner_clipper.dart', 'packages/flutter/src/widgets/safe_area.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/animated_bottom_navigation_bar/src/gap_item.dart', 'packages/animated_bottom_navigation_bar/src/navigation_bar_item.dart', 'packages/flutter/src/foundation/change_notifier.dart'], (function load__packages__animated_bottom_navigation_bar__src__circular_notched_and_cornered_shape_dart(dart_sdk, packages__animated_bottom_navigation_bar__src__exceptions$46dart, packages__flutter__src__painting__notched_shapes$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__colors$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__widgets__icon_data$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__animation__curves$46dart, packages__animated_bottom_navigation_bar__src__circular_notch_and_corner_clipper$46dart, packages__flutter__src__widgets__safe_area$46dart, packages__flutter__src__rendering__flex$46dart, packages__animated_bottom_navigation_bar__src__gap_item$46dart, packages__animated_bottom_navigation_bar__src__navigation_bar_item$46dart, packages__flutter__src__foundation__change_notifier$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const math = dart_sdk.math;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const exceptions = packages__animated_bottom_navigation_bar__src__exceptions$46dart.src__exceptions;
+  const notched_shapes = packages__flutter__src__painting__notched_shapes$46dart.src__painting__notched_shapes;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const animations = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animations;
+  const tween = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
+  const floating_action_button_location = packages__flutter__src__material__icon_button$46dart.src__material__floating_action_button_location;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const material = packages__flutter__src__material__icon_button$46dart.src__material__material;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const colors$ = packages__flutter__src__painting__colors$46dart.src__painting__colors;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
+  const icon_data = packages__flutter__src__widgets__icon_data$46dart.src__widgets__icon_data;
+  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  const circular_notch_and_corner_clipper = packages__animated_bottom_navigation_bar__src__circular_notch_and_corner_clipper$46dart.src__circular_notch_and_corner_clipper;
+  const safe_area = packages__flutter__src__widgets__safe_area$46dart.src__widgets__safe_area;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const gap_item = packages__animated_bottom_navigation_bar__src__gap_item$46dart.src__gap_item;
+  const navigation_bar_item = packages__animated_bottom_navigation_bar__src__navigation_bar_item$46dart.src__navigation_bar_item;
+  const change_notifier = packages__flutter__src__foundation__change_notifier$46dart.src__foundation__change_notifier;
+  var circular_notched_and_cornered_shape = Object.create(dart.library);
+  var animated_bottom_navigation_bar = Object.create(dart.library);
+  var $length = dartx.length;
+  var $_set = dartx._set;
+  var $_get = dartx._get;
+  var $modulo = dartx['%'];
+  var $add = dartx.add;
+  var $elementAt = dartx.elementAt;
+  var $toString = dartx.toString;
+  dart._checkModuleNullSafetyMode(false);
+  var AnimatedBottomNavigationBarL = () => (AnimatedBottomNavigationBarL = dart.constFn(dart.legacy(animated_bottom_navigation_bar.AnimatedBottomNavigationBar)))();
+  var OffsetL = () => (OffsetL = dart.constFn(dart.legacy(ui.Offset)))();
+  var JSArrayOfOffsetL = () => (JSArrayOfOffsetL = dart.constFn(_interceptors.JSArray$(OffsetL())))();
+  var NotchSmoothnessL = () => (NotchSmoothnessL = dart.constFn(dart.legacy(animated_bottom_navigation_bar.NotchSmoothness)))();
+  var doubleL = () => (doubleL = dart.constFn(dart.legacy(core.double)))();
+  var intL = () => (intL = dart.constFn(dart.legacy(core.int)))();
+  var ColorL = () => (ColorL = dart.constFn(dart.legacy(ui.Color)))();
+  var VoidToNull = () => (VoidToNull = dart.constFn(dart.fnType(core.Null, [])))();
+  var VoidTovoid = () => (VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))();
+  var TweenOfdoubleL = () => (TweenOfdoubleL = dart.constFn(tween.Tween$(doubleL())))();
+  var _LocationL = () => (_LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))();
+  var WidgetL = () => (WidgetL = dart.constFn(dart.legacy(framework.Widget)))();
+  var JSArrayOfWidgetL = () => (JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(WidgetL())))();
+  var VoidTodynamic = () => (VoidTodynamic = dart.constFn(dart.fnType(dart.dynamic, [])))();
+  var ListOfWidgetL = () => (ListOfWidgetL = dart.constFn(core.List$(WidgetL())))();
+  var ListLOfWidgetL = () => (ListLOfWidgetL = dart.constFn(dart.legacy(ListOfWidgetL())))();
+  var GapLocationL = () => (GapLocationL = dart.constFn(dart.legacy(animated_bottom_navigation_bar.GapLocation)))();
+  const CT = Object.create(null);
+  var L0 = "package:animated_bottom_navigation_bar/src/circular_notched_and_cornered_shape.dart";
+  var L1 = "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_bottom_navigation_bar-0.2.1/lib/animated_bottom_navigation_bar.dart";
+  var L2 = "package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart";
+  dart.defineLazy(CT, {
+    get C1() {
+      return C1 = dart.const({
+        __proto__: animated_bottom_navigation_bar.NotchSmoothness.prototype,
+        [_name$]: "NotchSmoothness.sharpEdge",
+        index: 0
+      });
+    },
+    get C2() {
+      return C2 = dart.const({
+        __proto__: animated_bottom_navigation_bar.NotchSmoothness.prototype,
+        [_name$]: "NotchSmoothness.defaultEdge",
+        index: 1
+      });
+    },
+    get C3() {
+      return C3 = dart.const({
+        __proto__: animated_bottom_navigation_bar.NotchSmoothness.prototype,
+        [_name$]: "NotchSmoothness.softEdge",
+        index: 2
+      });
+    },
+    get C4() {
+      return C4 = dart.const({
+        __proto__: animated_bottom_navigation_bar.NotchSmoothness.prototype,
+        [_name$]: "NotchSmoothness.smoothEdge",
+        index: 3
+      });
+    },
+    get C5() {
+      return C5 = dart.const({
+        __proto__: animated_bottom_navigation_bar.NotchSmoothness.prototype,
+        [_name$]: "NotchSmoothness.verySmoothEdge",
+        index: 4
+      });
+    },
+    get C0() {
+      return C0 = dart.constMap(NotchSmoothnessL(), doubleL(), [C1 || CT.C1, 0, C2 || CT.C2, 15, C3 || CT.C3, 20, C4 || CT.C4, 30, C5 || CT.C5, 40]);
+    },
+    get C6() {
+      return C6 = dart.constMap(NotchSmoothnessL(), doubleL(), [C1 || CT.C1, 0.1, C2 || CT.C2, 1, C3 || CT.C3, 5, C4 || CT.C4, 15, C5 || CT.C5, 25]);
+    },
+    get C7() {
+      return C7 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294967295.0
+      });
+    },
+    get C10() {
+      return C10 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294174197.0
+      });
+    },
+    get C11() {
+      return C11 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4292984551.0
+      });
+    },
+    get C12() {
+      return C12 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4291728344.0
+      });
+    },
+    get C13() {
+      return C13 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4290406600.0
+      });
+    },
+    get C14() {
+      return C14 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4289415100.0
+      });
+    },
+    get C15() {
+      return C15 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4288423856.0
+      });
+    },
+    get C16() {
+      return C16 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4287505578.0
+      });
+    },
+    get C17() {
+      return C17 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4286259106.0
+      });
+    },
+    get C18() {
+      return C18 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4285143962.0
+      });
+    },
+    get C19() {
+      return C19 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4283045004.0
+      });
+    },
+    get C9() {
+      return C9 = dart.constMap(intL(), ColorL(), [50, C10 || CT.C10, 100, C11 || CT.C11, 200, C12 || CT.C12, 300, C13 || CT.C13, 400, C14 || CT.C14, 500, C15 || CT.C15, 600, C16 || CT.C16, 700, C17 || CT.C17, 800, C18 || CT.C18, 900, C19 || CT.C19]);
+    },
+    get C8() {
+      return C8 = dart.const({
+        __proto__: colors.MaterialColor.prototype,
+        [Color_value]: 4288423856.0,
+        [ColorSwatch__swatch]: C9 || CT.C9
+      });
+    },
+    get C22() {
+      return C22 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4289956095.0
+      });
+    },
+    get C23() {
+      return C23 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4286336511.0
+      });
+    },
+    get C24() {
+      return C24 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4284817407.0
+      });
+    },
+    get C25() {
+      return C25 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4284612842.0
+      });
+    },
+    get C21() {
+      return C21 = dart.constMap(intL(), ColorL(), [100, C22 || CT.C22, 200, C23 || CT.C23, 400, C24 || CT.C24, 700, C25 || CT.C25]);
+    },
+    get C20() {
+      return C20 = dart.const({
+        __proto__: colors.MaterialAccentColor.prototype,
+        [Color_value]: 4286336511.0,
+        [ColorSwatch__swatch]: C21 || CT.C21
+      });
+    },
+    get C26() {
+      return C26 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278190080.0
+      });
+    },
+    get C27() {
+      return C27 = dart.const({
+        __proto__: animated_bottom_navigation_bar.GapLocation.prototype,
+        [_name$]: "GapLocation.end",
+        index: 2
+      });
+    },
+    get C30() {
+      return C30 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 15,
+        [_Location_line]: 294,
+        [_Location_file]: null
+      });
+    },
+    get C31() {
+      return C31 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisSize",
+        [_Location_column]: 15,
+        [_Location_line]: 295,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C32 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 15,
+        [_Location_line]: 296,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C29 = dart.constList([C30 || CT.C30, C31 || CT.C31, C32 || CT.C32], _LocationL());
+    },
+    get C28() {
+      return C28 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C29 || CT.C29,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 293,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_bottom_navigation_bar-0.2.1/lib/animated_bottom_navigation_bar.dart"
+      });
+    },
+    get C35() {
+      return C35 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 13,
+        [_Location_line]: 292,
+        [_Location_file]: null
+      });
+    },
+    get C36() {
+      return C36 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 293,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C34 = dart.constList([C35 || CT.C35, C36 || CT.C36], _LocationL());
+    },
+    get C33() {
+      return C33 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C34 || CT.C34,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 291,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_bottom_navigation_bar-0.2.1/lib/animated_bottom_navigation_bar.dart"
+      });
+    },
+    get C39() {
+      return C39 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 291,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C38 = dart.constList([C39 || CT.C39], _LocationL());
+    },
+    get C37() {
+      return C37 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C38 || CT.C38,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 290,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_bottom_navigation_bar-0.2.1/lib/animated_bottom_navigation_bar.dart"
+      });
+    },
+    get C42() {
+      return C42 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 9,
+        [_Location_line]: 289,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C43 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 290,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C41 = dart.constList([C42 || CT.C42, C43 || CT.C43], _LocationL());
+    },
+    get C40() {
+      return C40 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C41 || CT.C41,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 288,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_bottom_navigation_bar-0.2.1/lib/animated_bottom_navigation_bar.dart"
+      });
+    },
+    get C46() {
+      return C46 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "elevation",
+        [_Location_column]: 7,
+        [_Location_line]: 274,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C47 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 7,
+        [_Location_line]: 275,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C48 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "clipper",
+        [_Location_column]: 7,
+        [_Location_line]: 276,
+        [_Location_file]: null
+      });
+    },
+    get C49() {
+      return C49 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "clipBehavior",
+        [_Location_column]: 7,
+        [_Location_line]: 287,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C50 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 288,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C45 = dart.constList([C46 || CT.C46, C47 || CT.C47, C48 || CT.C48, C49 || CT.C49, C50 || CT.C50], _LocationL());
+    },
+    get C44() {
+      return C44 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C45 || CT.C45,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 273,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_bottom_navigation_bar-0.2.1/lib/animated_bottom_navigation_bar.dart"
+      });
+    },
+    get C53() {
+      return C53 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 13,
+        [_Location_line]: 317,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C52 = dart.constList([C53 || CT.C53], _LocationL());
+    },
+    get C51() {
+      return C51 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C52 || CT.C52,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 316,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_bottom_navigation_bar-0.2.1/lib/animated_bottom_navigation_bar.dart"
+      });
+    },
+    get C56() {
+      return C56 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "isActive",
+        [_Location_column]: 11,
+        [_Location_line]: 324,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C57 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bubbleRadius",
+        [_Location_column]: 11,
+        [_Location_line]: 325,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C58 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "maxBubbleRadius",
+        [_Location_column]: 11,
+        [_Location_line]: 326,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C59 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bubbleColor",
+        [_Location_column]: 11,
+        [_Location_line]: 327,
+        [_Location_file]: null
+      });
+    },
+    get C60() {
+      return C60 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "activeColor",
+        [_Location_column]: 11,
+        [_Location_line]: 328,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C61 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "inactiveColor",
+        [_Location_column]: 11,
+        [_Location_line]: 329,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C62 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 330,
+        [_Location_file]: null
+      });
+    },
+    get C63() {
+      return C63 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "iconData",
+        [_Location_column]: 11,
+        [_Location_line]: 331,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C64 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "iconScale",
+        [_Location_column]: 11,
+        [_Location_line]: 332,
+        [_Location_file]: null
+      });
+    },
+    get C65() {
+      return C65 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "iconSize",
+        [_Location_column]: 11,
+        [_Location_line]: 333,
+        [_Location_file]: null
+      });
+    },
+    get C66() {
+      return C66 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 11,
+        [_Location_line]: 334,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C55 = dart.constList([C56 || CT.C56, C57 || CT.C57, C58 || CT.C58, C59 || CT.C59, C60 || CT.C60, C61 || CT.C61, C62 || CT.C62, C63 || CT.C63, C64 || CT.C64, C65 || CT.C65, C66 || CT.C66], _LocationL());
+    },
+    get C54() {
+      return C54 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C55 || CT.C55,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 323,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_bottom_navigation_bar-0.2.1/lib/animated_bottom_navigation_bar.dart"
+      });
+    },
+    get C69() {
+      return C69 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 13,
+        [_Location_line]: 341,
+        [_Location_file]: null
+      });
+    },
+    get C68() {
+      return C68 = dart.constList([C69 || CT.C69], _LocationL());
+    },
+    get C67() {
+      return C67 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C68 || CT.C68,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 340,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_bottom_navigation_bar-0.2.1/lib/animated_bottom_navigation_bar.dart"
+      });
+    },
+    get C70() {
+      return C70 = dart.constList([C1 || CT.C1, C2 || CT.C2, C3 || CT.C3, C4 || CT.C4, C5 || CT.C5], NotchSmoothnessL());
+    },
+    get C71() {
+      return C71 = dart.const({
+        __proto__: animated_bottom_navigation_bar.GapLocation.prototype,
+        [_name$]: "GapLocation.none",
+        index: 0
+      });
+    },
+    get C72() {
+      return C72 = dart.const({
+        __proto__: animated_bottom_navigation_bar.GapLocation.prototype,
+        [_name$]: "GapLocation.center",
+        index: 1
+      });
+    },
+    get C73() {
+      return C73 = dart.constList([C71 || CT.C71, C72 || CT.C72, C27 || CT.C27], GapLocationL());
+    }
+  }, false);
+  var animation$ = dart.privateName(circular_notched_and_cornered_shape, "CircularNotchedAndCorneredRectangle.animation");
+  var notchSmoothness$ = dart.privateName(circular_notched_and_cornered_shape, "CircularNotchedAndCorneredRectangle.notchSmoothness");
+  var gapLocation$ = dart.privateName(circular_notched_and_cornered_shape, "CircularNotchedAndCorneredRectangle.gapLocation");
+  var leftCornerRadius$ = dart.privateName(circular_notched_and_cornered_shape, "CircularNotchedAndCorneredRectangle.leftCornerRadius");
+  var rightCornerRadius$ = dart.privateName(circular_notched_and_cornered_shape, "CircularNotchedAndCorneredRectangle.rightCornerRadius");
+  circular_notched_and_cornered_shape.CircularNotchedAndCorneredRectangle = class CircularNotchedAndCorneredRectangle extends notched_shapes.NotchedShape {
+    get animation() {
+      return this[animation$];
+    }
+    set animation(value) {
+      super.animation = value;
+    }
+    get notchSmoothness() {
+      return this[notchSmoothness$];
+    }
+    set notchSmoothness(value) {
+      super.notchSmoothness = value;
+    }
+    get gapLocation() {
+      return this[gapLocation$];
+    }
+    set gapLocation(value) {
+      super.gapLocation = value;
+    }
+    get leftCornerRadius() {
+      return this[leftCornerRadius$];
+    }
+    set leftCornerRadius(value) {
+      super.leftCornerRadius = value;
+    }
+    get rightCornerRadius() {
+      return this[rightCornerRadius$];
+    }
+    set rightCornerRadius(value) {
+      super.rightCornerRadius = value;
+    }
+    getOuterPath(host, guest) {
+      let t0, t0$, t0$0, t0$1, t0$2, t0$3, t0$4, t0$5, t0$6, t0$7, t0$8, t0$9, t0$10, t1, t0$11, t0$12;
+      if (guest == null || !dart.test(host.overlaps(guest))) {
+        if (dart.notNull(this.rightCornerRadius) > 0 || dart.notNull(this.leftCornerRadius) > 0) {
+          let leftCornerRadius = dart.notNull(this.leftCornerRadius) * dart.notNull((t0$ = (t0 = this.animation, t0 == null ? null : t0.value), t0$ == null ? 1 : t0$));
+          let rightCornerRadius = dart.notNull(this.rightCornerRadius) * dart.notNull((t0$1 = (t0$0 = this.animation, t0$0 == null ? null : t0$0.value), t0$1 == null ? 1 : t0$1));
+          t0$2 = ui.Path.new();
+          return (() => {
+            t0$2.moveTo(host.left, host.top);
+            t0$2.arcTo(new ui.Rect.fromLTWH(host.left, host.top, leftCornerRadius * 2, leftCornerRadius * 2), circular_notched_and_cornered_shape._degreeToRadians(180.0), circular_notched_and_cornered_shape._degreeToRadians(90.0), false);
+            t0$2.lineTo(dart.notNull(host.right) - dart.notNull(host.height), host.top);
+            t0$2.arcTo(new ui.Rect.fromLTWH(dart.notNull(host.right) - rightCornerRadius * 2, host.top, rightCornerRadius * 2, rightCornerRadius * 2), circular_notched_and_cornered_shape._degreeToRadians(270.0), circular_notched_and_cornered_shape._degreeToRadians(90.0), false);
+            t0$2.lineTo(host.right, host.bottom);
+            t0$2.lineTo(host.left, host.bottom);
+            t0$2.close();
+            return t0$2;
+          })();
+        }
+        t0$3 = ui.Path.new();
+        return (() => {
+          t0$3.addRect(host);
+          return t0$3;
+        })();
+      }
+      if (guest.center.dx === dart.notNull(host.width) / 2) {
+        if (this.gapLocation != animated_bottom_navigation_bar.GapLocation.center) dart.throw(new exceptions.GapLocationException.new("Wrong gap location in " + dart.str(dart.wrapType(AnimatedBottomNavigationBarL())) + " towards FloatingActionButtonLocation => " + "consider use " + dart.str(animated_bottom_navigation_bar.GapLocation.center) + " instead of " + dart.str(this.gapLocation) + " or change FloatingActionButtonLocation"));
+      }
+      if (guest.center.dx !== dart.notNull(host.width) / 2) {
+        if (this.gapLocation != animated_bottom_navigation_bar.GapLocation.end) dart.throw(new exceptions.GapLocationException.new("Wrong gap location in " + dart.str(dart.wrapType(AnimatedBottomNavigationBarL())) + " towards FloatingActionButtonLocation => " + "consider use " + dart.str(animated_bottom_navigation_bar.GapLocation.end) + " instead of " + dart.str(this.gapLocation) + " or change FloatingActionButtonLocation"));
+      }
+      let notchRadius = dart.notNull(guest.width) / 2 * dart.notNull((t0$5 = (t0$4 = this.animation, t0$4 == null ? null : t0$4.value), t0$5 == null ? 1 : t0$5));
+      let leftCornerRadius = dart.notNull(this.leftCornerRadius) * dart.notNull((t0$7 = (t0$6 = this.animation, t0$6 == null ? null : t0$6.value), t0$7 == null ? 1 : t0$7));
+      let rightCornerRadius = dart.notNull(this.rightCornerRadius) * dart.notNull((t0$9 = (t0$8 = this.animation, t0$8 == null ? null : t0$8.value), t0$9 == null ? 1 : t0$9));
+      let s1 = circular_notched_and_cornered_shape['_extension#0|get#s1'](this.notchSmoothness);
+      let s2 = circular_notched_and_cornered_shape['_extension#0|get#s2'](this.notchSmoothness);
+      let r = notchRadius;
+      let a = -1.0 * r - dart.notNull(s2);
+      let b = dart.notNull(host.top) - dart.notNull(guest.center.dy);
+      let n2 = math.sqrt(b * b * r * r * (a * a + b * b - r * r));
+      let p2xA = (a * r * r - n2) / (a * a + b * b);
+      let p2xB = (a * r * r + n2) / (a * a + b * b);
+      let p2yA = math.sqrt(r * r - p2xA * p2xA);
+      let p2yB = math.sqrt(r * r - p2xB * p2xB);
+      let p = (t0$10 = JSArrayOfOffsetL().of([]), (() => {
+        t0$10[$length] = 6;
+        return t0$10;
+      })());
+      p[$_set](0, new ui.Offset.new(a - dart.notNull(s1), b));
+      p[$_set](1, new ui.Offset.new(a, b));
+      let cmp = b < 0 ? -1.0 : 1.0;
+      p[$_set](2, cmp * p2yA > cmp * p2yB ? new ui.Offset.new(p2xA, p2yA) : new ui.Offset.new(p2xB, p2yB));
+      p[$_set](3, new ui.Offset.new(-1.0 * dart.notNull(p[$_get](2).dx), p[$_get](2).dy));
+      p[$_set](4, new ui.Offset.new(-1.0 * dart.notNull(p[$_get](1).dx), p[$_get](1).dy));
+      p[$_set](5, new ui.Offset.new(-1.0 * dart.notNull(p[$_get](0).dx), p[$_get](0).dy));
+      for (let i = 0; i < dart.notNull(p[$length]); i = i + 1) {
+        t0$11 = p;
+        t1 = i;
+        t0$11[$_set](t1, t0$11[$_get](t1)['+'](guest.center));
+      }
+      t0$12 = ui.Path.new();
+      return (() => {
+        t0$12.moveTo(host.left, host.top);
+        t0$12.arcTo(new ui.Rect.fromLTWH(host.left, host.top, leftCornerRadius * 2, leftCornerRadius * 2), circular_notched_and_cornered_shape._degreeToRadians(180.0), circular_notched_and_cornered_shape._degreeToRadians(90.0), false);
+        t0$12.lineTo(p[$_get](0).dx, p[$_get](0).dy);
+        t0$12.quadraticBezierTo(p[$_get](1).dx, p[$_get](1).dy, p[$_get](2).dx, p[$_get](2).dy);
+        t0$12.arcToPoint(p[$_get](3), {radius: new ui.Radius.circular(notchRadius), clockwise: false});
+        t0$12.quadraticBezierTo(p[$_get](4).dx, p[$_get](4).dy, p[$_get](5).dx, p[$_get](5).dy);
+        t0$12.lineTo(dart.notNull(host.right) - dart.notNull(host.height), host.top);
+        t0$12.arcTo(new ui.Rect.fromLTWH(dart.notNull(host.right) - rightCornerRadius * 2, host.top, rightCornerRadius * 2, rightCornerRadius * 2), circular_notched_and_cornered_shape._degreeToRadians(270.0), circular_notched_and_cornered_shape._degreeToRadians(90.0), false);
+        t0$12.lineTo(host.right, host.bottom);
+        t0$12.lineTo(host.left, host.bottom);
+        t0$12.close();
+        return t0$12;
+      })();
+    }
+  };
+  (circular_notched_and_cornered_shape.CircularNotchedAndCorneredRectangle.new = function(opts) {
+    let animation = opts && 'animation' in opts ? opts.animation : null;
+    let notchSmoothness = opts && 'notchSmoothness' in opts ? opts.notchSmoothness : null;
+    let gapLocation = opts && 'gapLocation' in opts ? opts.gapLocation : null;
+    let leftCornerRadius = opts && 'leftCornerRadius' in opts ? opts.leftCornerRadius : null;
+    let rightCornerRadius = opts && 'rightCornerRadius' in opts ? opts.rightCornerRadius : null;
+    this[animation$] = animation;
+    this[notchSmoothness$] = notchSmoothness;
+    this[gapLocation$] = gapLocation;
+    this[leftCornerRadius$] = leftCornerRadius;
+    this[rightCornerRadius$] = rightCornerRadius;
+    circular_notched_and_cornered_shape.CircularNotchedAndCorneredRectangle.__proto__.new.call(this);
+    ;
+  }).prototype = circular_notched_and_cornered_shape.CircularNotchedAndCorneredRectangle.prototype;
+  dart.addTypeTests(circular_notched_and_cornered_shape.CircularNotchedAndCorneredRectangle);
+  dart.addTypeCaches(circular_notched_and_cornered_shape.CircularNotchedAndCorneredRectangle);
+  dart.setMethodSignature(circular_notched_and_cornered_shape.CircularNotchedAndCorneredRectangle, () => ({
+    __proto__: dart.getMethods(circular_notched_and_cornered_shape.CircularNotchedAndCorneredRectangle.__proto__),
+    getOuterPath: dart.fnType(dart.legacy(ui.Path), [dart.legacy(ui.Rect), dart.legacy(ui.Rect)])
+  }));
+  dart.setLibraryUri(circular_notched_and_cornered_shape.CircularNotchedAndCorneredRectangle, L0);
+  dart.setFieldSignature(circular_notched_and_cornered_shape.CircularNotchedAndCorneredRectangle, () => ({
+    __proto__: dart.getFields(circular_notched_and_cornered_shape.CircularNotchedAndCorneredRectangle.__proto__),
+    animation: dart.finalFieldType(dart.legacy(animation.Animation$(dart.legacy(core.double)))),
+    notchSmoothness: dart.finalFieldType(dart.legacy(animated_bottom_navigation_bar.NotchSmoothness)),
+    gapLocation: dart.finalFieldType(dart.legacy(animated_bottom_navigation_bar.GapLocation)),
+    leftCornerRadius: dart.finalFieldType(dart.legacy(core.double)),
+    rightCornerRadius: dart.finalFieldType(dart.legacy(core.double))
+  }));
+  circular_notched_and_cornered_shape._degreeToRadians = function _degreeToRadians(degree) {
+    let radian = 3.141592653589793 / 180 * dart.notNull(degree);
+    return radian;
+  };
+  circular_notched_and_cornered_shape['_extension#0|get#s1'] = function _extension$350$124get$35s1($this) {
+    return circular_notched_and_cornered_shape['_extension#0|curveS1'][$_get]($this);
+  };
+  circular_notched_and_cornered_shape['_extension#0|get#s2'] = function _extension$350$124get$35s2($this) {
+    return circular_notched_and_cornered_shape['_extension#0|curveS2'][$_get]($this);
+  };
+  var _name$ = dart.privateName(animated_bottom_navigation_bar, "_name");
+  var C1;
+  var C2;
+  var C3;
+  var C4;
+  var C5;
+  var C0;
+  var C6;
+  dart.defineLazy(circular_notched_and_cornered_shape, {
+    /*circular_notched_and_cornered_shape['_extension#0|curveS1']*/get ['_extension#0|curveS1']() {
+      return C0 || CT.C0;
+    },
+    /*circular_notched_and_cornered_shape['_extension#0|curveS2']*/get ['_extension#0|curveS2']() {
+      return C6 || CT.C6;
+    }
+  }, true);
+  var Color_value = dart.privateName(ui, "Color.value");
+  var C7;
+  var C10;
+  var C11;
+  var C12;
+  var C13;
+  var C14;
+  var C15;
+  var C16;
+  var C17;
+  var C18;
+  var C19;
+  var C9;
+  var ColorSwatch__swatch = dart.privateName(colors$, "ColorSwatch._swatch");
+  var C8;
+  var C22;
+  var C23;
+  var C24;
+  var C25;
+  var C21;
+  var C20;
+  var C26;
+  var C27;
+  var tabBuilder$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.tabBuilder");
+  var itemCount$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.itemCount");
+  var icons$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.icons");
+  var onTap$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.onTap");
+  var activeIndex$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.activeIndex");
+  var iconSize$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.iconSize");
+  var height$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.height");
+  var elevation$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.elevation");
+  var notchMargin$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.notchMargin");
+  var splashRadius$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.splashRadius");
+  var splashSpeedInMilliseconds$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.splashSpeedInMilliseconds");
+  var leftCornerRadius$0 = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.leftCornerRadius");
+  var rightCornerRadius$0 = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.rightCornerRadius");
+  var backgroundColor$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.backgroundColor");
+  var splashColor$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.splashColor");
+  var activeColor$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.activeColor");
+  var inactiveColor$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.inactiveColor");
+  var notchAndCornersAnimation$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.notchAndCornersAnimation");
+  var notchSmoothness$0 = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.notchSmoothness");
+  var gapLocation$0 = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.gapLocation");
+  var gapWidth$ = dart.privateName(animated_bottom_navigation_bar, "AnimatedBottomNavigationBar.gapWidth");
+  animated_bottom_navigation_bar.AnimatedBottomNavigationBar = class AnimatedBottomNavigationBar extends framework.StatefulWidget {
+    get tabBuilder() {
+      return this[tabBuilder$];
+    }
+    set tabBuilder(value) {
+      super.tabBuilder = value;
+    }
+    get itemCount() {
+      return this[itemCount$];
+    }
+    set itemCount(value) {
+      super.itemCount = value;
+    }
+    get icons() {
+      return this[icons$];
+    }
+    set icons(value) {
+      super.icons = value;
+    }
+    get onTap() {
+      return this[onTap$];
+    }
+    set onTap(value) {
+      super.onTap = value;
+    }
+    get activeIndex() {
+      return this[activeIndex$];
+    }
+    set activeIndex(value) {
+      super.activeIndex = value;
+    }
+    get iconSize() {
+      return this[iconSize$];
+    }
+    set iconSize(value) {
+      super.iconSize = value;
+    }
+    get height() {
+      return this[height$];
+    }
+    set height(value) {
+      super.height = value;
+    }
+    get elevation() {
+      return this[elevation$];
+    }
+    set elevation(value) {
+      super.elevation = value;
+    }
+    get notchMargin() {
+      return this[notchMargin$];
+    }
+    set notchMargin(value) {
+      super.notchMargin = value;
+    }
+    get splashRadius() {
+      return this[splashRadius$];
+    }
+    set splashRadius(value) {
+      super.splashRadius = value;
+    }
+    get splashSpeedInMilliseconds() {
+      return this[splashSpeedInMilliseconds$];
+    }
+    set splashSpeedInMilliseconds(value) {
+      super.splashSpeedInMilliseconds = value;
+    }
+    get leftCornerRadius() {
+      return this[leftCornerRadius$0];
+    }
+    set leftCornerRadius(value) {
+      super.leftCornerRadius = value;
+    }
+    get rightCornerRadius() {
+      return this[rightCornerRadius$0];
+    }
+    set rightCornerRadius(value) {
+      super.rightCornerRadius = value;
+    }
+    get backgroundColor() {
+      return this[backgroundColor$];
+    }
+    set backgroundColor(value) {
+      super.backgroundColor = value;
+    }
+    get splashColor() {
+      return this[splashColor$];
+    }
+    set splashColor(value) {
+      super.splashColor = value;
+    }
+    get activeColor() {
+      return this[activeColor$];
+    }
+    set activeColor(value) {
+      super.activeColor = value;
+    }
+    get inactiveColor() {
+      return this[inactiveColor$];
+    }
+    set inactiveColor(value) {
+      super.inactiveColor = value;
+    }
+    get notchAndCornersAnimation() {
+      return this[notchAndCornersAnimation$];
+    }
+    set notchAndCornersAnimation(value) {
+      super.notchAndCornersAnimation = value;
+    }
+    get notchSmoothness() {
+      return this[notchSmoothness$0];
+    }
+    set notchSmoothness(value) {
+      super.notchSmoothness = value;
+    }
+    get gapLocation() {
+      return this[gapLocation$0];
+    }
+    set gapLocation(value) {
+      super.gapLocation = value;
+    }
+    get gapWidth() {
+      return this[gapWidth$];
+    }
+    set gapWidth(value) {
+      super.gapWidth = value;
+    }
+    createState() {
+      return new animated_bottom_navigation_bar._AnimatedBottomNavigationBarState.new();
+    }
+  };
+  (animated_bottom_navigation_bar.AnimatedBottomNavigationBar._internal = function(opts) {
+    let t2, t2$, t2$0;
+    let key = opts && 'key' in opts ? opts.key : null;
+    let activeIndex = opts && 'activeIndex' in opts ? opts.activeIndex : null;
+    let onTap = opts && 'onTap' in opts ? opts.onTap : null;
+    let tabBuilder = opts && 'tabBuilder' in opts ? opts.tabBuilder : null;
+    let itemCount = opts && 'itemCount' in opts ? opts.itemCount : null;
+    let icons = opts && 'icons' in opts ? opts.icons : null;
+    let height = opts && 'height' in opts ? opts.height : null;
+    let elevation = opts && 'elevation' in opts ? opts.elevation : null;
+    let splashRadius = opts && 'splashRadius' in opts ? opts.splashRadius : null;
+    let splashSpeedInMilliseconds = opts && 'splashSpeedInMilliseconds' in opts ? opts.splashSpeedInMilliseconds : null;
+    let notchMargin = opts && 'notchMargin' in opts ? opts.notchMargin : null;
+    let backgroundColor = opts && 'backgroundColor' in opts ? opts.backgroundColor : null;
+    let splashColor = opts && 'splashColor' in opts ? opts.splashColor : null;
+    let activeColor = opts && 'activeColor' in opts ? opts.activeColor : null;
+    let inactiveColor = opts && 'inactiveColor' in opts ? opts.inactiveColor : null;
+    let notchAndCornersAnimation = opts && 'notchAndCornersAnimation' in opts ? opts.notchAndCornersAnimation : null;
+    let leftCornerRadius = opts && 'leftCornerRadius' in opts ? opts.leftCornerRadius : null;
+    let rightCornerRadius = opts && 'rightCornerRadius' in opts ? opts.rightCornerRadius : null;
+    let iconSize = opts && 'iconSize' in opts ? opts.iconSize : null;
+    let notchSmoothness = opts && 'notchSmoothness' in opts ? opts.notchSmoothness : null;
+    let gapLocation = opts && 'gapLocation' in opts ? opts.gapLocation : null;
+    let gapWidth = opts && 'gapWidth' in opts ? opts.gapWidth : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[activeIndex$] = activeIndex;
+    this[onTap$] = onTap;
+    this[tabBuilder$] = tabBuilder;
+    this[itemCount$] = itemCount;
+    this[icons$] = icons;
+    this[height$] = height;
+    this[elevation$] = elevation;
+    this[splashRadius$] = splashRadius;
+    this[splashSpeedInMilliseconds$] = splashSpeedInMilliseconds;
+    this[notchMargin$] = notchMargin;
+    this[backgroundColor$] = backgroundColor;
+    this[splashColor$] = splashColor;
+    this[activeColor$] = activeColor;
+    this[inactiveColor$] = inactiveColor;
+    this[notchAndCornersAnimation$] = notchAndCornersAnimation;
+    this[leftCornerRadius$0] = leftCornerRadius;
+    this[rightCornerRadius$0] = rightCornerRadius;
+    this[iconSize$] = iconSize;
+    this[notchSmoothness$0] = notchSmoothness;
+    this[gapLocation$0] = gapLocation;
+    this[gapWidth$] = gapWidth;
+    if (!(icons != null || itemCount != null)) dart.assertFailed(null, L1, 104, 16, "icons != null || itemCount != null");
+    if (!(dart.notNull((t2 = itemCount, t2 == null ? icons[$length] : t2)) >= 2 && dart.notNull((t2$ = itemCount, t2$ == null ? icons[$length] : t2$)) <= 5)) dart.assertFailed(null, L1, 105, 16, "((itemCount ?? icons.length) >= 2) &&\n            ((itemCount ?? icons.length) <= 5)");
+    if (!(activeIndex != null)) dart.assertFailed(null, L1, 107, 16, "activeIndex != null");
+    if (!(onTap != null)) dart.assertFailed(null, L1, 108, 16, "onTap != null");
+    animated_bottom_navigation_bar.AnimatedBottomNavigationBar.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    if (this.gapLocation == animated_bottom_navigation_bar.GapLocation.end) {
+      if (this.rightCornerRadius !== 0) dart.throw(new exceptions.NonAppropriatePathException.new("RightCornerRadius along with " + dart.str(animated_bottom_navigation_bar.GapLocation.end) + " or/and " + dart.str(floating_action_button_location.FloatingActionButtonLocation.endDocked) + " causes render issue => " + "consider set rightCornerRadius to 0."));
+    }
+    if (this.gapLocation == animated_bottom_navigation_bar.GapLocation.center) {
+      if ((t2$0 = this.itemCount, t2$0 == null ? this.icons[$length] : t2$0)[$modulo](2) !== 0) dart.throw(new exceptions.NonAppropriatePathException.new("Odd count of icons along with " + dart.str(this.gapLocation) + " causes render issue => " + "consider set gapLocation to " + dart.str(animated_bottom_navigation_bar.GapLocation.end)));
+    }
+  }).prototype = animated_bottom_navigation_bar.AnimatedBottomNavigationBar.prototype;
+  (animated_bottom_navigation_bar.AnimatedBottomNavigationBar.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let icons = opts && 'icons' in opts ? opts.icons : null;
+    let activeIndex = opts && 'activeIndex' in opts ? opts.activeIndex : null;
+    let onTap = opts && 'onTap' in opts ? opts.onTap : null;
+    let height = opts && 'height' in opts ? opts.height : 56;
+    let elevation = opts && 'elevation' in opts ? opts.elevation : 8;
+    let splashRadius = opts && 'splashRadius' in opts ? opts.splashRadius : 24;
+    let splashSpeedInMilliseconds = opts && 'splashSpeedInMilliseconds' in opts ? opts.splashSpeedInMilliseconds : 300;
+    let notchMargin = opts && 'notchMargin' in opts ? opts.notchMargin : 8;
+    let backgroundColor = opts && 'backgroundColor' in opts ? opts.backgroundColor : C7 || CT.C7;
+    let splashColor = opts && 'splashColor' in opts ? opts.splashColor : C8 || CT.C8;
+    let activeColor = opts && 'activeColor' in opts ? opts.activeColor : C20 || CT.C20;
+    let inactiveColor = opts && 'inactiveColor' in opts ? opts.inactiveColor : C26 || CT.C26;
+    let notchAndCornersAnimation = opts && 'notchAndCornersAnimation' in opts ? opts.notchAndCornersAnimation : null;
+    let leftCornerRadius = opts && 'leftCornerRadius' in opts ? opts.leftCornerRadius : 0;
+    let rightCornerRadius = opts && 'rightCornerRadius' in opts ? opts.rightCornerRadius : 0;
+    let iconSize = opts && 'iconSize' in opts ? opts.iconSize : 24;
+    let notchSmoothness = opts && 'notchSmoothness' in opts ? opts.notchSmoothness : C2 || CT.C2;
+    let gapLocation = opts && 'gapLocation' in opts ? opts.gapLocation : C27 || CT.C27;
+    let gapWidth = opts && 'gapWidth' in opts ? opts.gapWidth : 72;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    animated_bottom_navigation_bar.AnimatedBottomNavigationBar._internal.call(this, {key: key, icons: icons, activeIndex: activeIndex, onTap: onTap, height: height, elevation: elevation, splashRadius: splashRadius, splashSpeedInMilliseconds: splashSpeedInMilliseconds, notchMargin: notchMargin, backgroundColor: backgroundColor, splashColor: splashColor, activeColor: activeColor, inactiveColor: inactiveColor, notchAndCornersAnimation: notchAndCornersAnimation, leftCornerRadius: leftCornerRadius, rightCornerRadius: rightCornerRadius, iconSize: iconSize, notchSmoothness: notchSmoothness, gapLocation: gapLocation, gapWidth: gapWidth, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+  }).prototype = animated_bottom_navigation_bar.AnimatedBottomNavigationBar.prototype;
+  (animated_bottom_navigation_bar.AnimatedBottomNavigationBar.builder = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let itemCount = opts && 'itemCount' in opts ? opts.itemCount : null;
+    let tabBuilder = opts && 'tabBuilder' in opts ? opts.tabBuilder : null;
+    let activeIndex = opts && 'activeIndex' in opts ? opts.activeIndex : null;
+    let onTap = opts && 'onTap' in opts ? opts.onTap : null;
+    let height = opts && 'height' in opts ? opts.height : 56;
+    let elevation = opts && 'elevation' in opts ? opts.elevation : 8;
+    let splashRadius = opts && 'splashRadius' in opts ? opts.splashRadius : 24;
+    let splashSpeedInMilliseconds = opts && 'splashSpeedInMilliseconds' in opts ? opts.splashSpeedInMilliseconds : 300;
+    let notchMargin = opts && 'notchMargin' in opts ? opts.notchMargin : 8;
+    let backgroundColor = opts && 'backgroundColor' in opts ? opts.backgroundColor : C7 || CT.C7;
+    let splashColor = opts && 'splashColor' in opts ? opts.splashColor : C8 || CT.C8;
+    let notchAndCornersAnimation = opts && 'notchAndCornersAnimation' in opts ? opts.notchAndCornersAnimation : null;
+    let leftCornerRadius = opts && 'leftCornerRadius' in opts ? opts.leftCornerRadius : 0;
+    let rightCornerRadius = opts && 'rightCornerRadius' in opts ? opts.rightCornerRadius : 0;
+    let notchSmoothness = opts && 'notchSmoothness' in opts ? opts.notchSmoothness : C2 || CT.C2;
+    let gapLocation = opts && 'gapLocation' in opts ? opts.gapLocation : C27 || CT.C27;
+    let gapWidth = opts && 'gapWidth' in opts ? opts.gapWidth : 72;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    animated_bottom_navigation_bar.AnimatedBottomNavigationBar._internal.call(this, {key: key, tabBuilder: tabBuilder, itemCount: itemCount, activeIndex: activeIndex, onTap: onTap, height: height, elevation: elevation, splashRadius: splashRadius, splashSpeedInMilliseconds: splashSpeedInMilliseconds, notchMargin: notchMargin, backgroundColor: backgroundColor, splashColor: splashColor, notchAndCornersAnimation: notchAndCornersAnimation, leftCornerRadius: leftCornerRadius, rightCornerRadius: rightCornerRadius, notchSmoothness: notchSmoothness, gapLocation: gapLocation, gapWidth: gapWidth, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+  }).prototype = animated_bottom_navigation_bar.AnimatedBottomNavigationBar.prototype;
+  dart.addTypeTests(animated_bottom_navigation_bar.AnimatedBottomNavigationBar);
+  dart.addTypeCaches(animated_bottom_navigation_bar.AnimatedBottomNavigationBar);
+  dart.setMethodSignature(animated_bottom_navigation_bar.AnimatedBottomNavigationBar, () => ({
+    __proto__: dart.getMethods(animated_bottom_navigation_bar.AnimatedBottomNavigationBar.__proto__),
+    createState: dart.fnType(dart.legacy(animated_bottom_navigation_bar._AnimatedBottomNavigationBarState), [])
+  }));
+  dart.setLibraryUri(animated_bottom_navigation_bar.AnimatedBottomNavigationBar, L2);
+  dart.setFieldSignature(animated_bottom_navigation_bar.AnimatedBottomNavigationBar, () => ({
+    __proto__: dart.getFields(animated_bottom_navigation_bar.AnimatedBottomNavigationBar.__proto__),
+    tabBuilder: dart.finalFieldType(dart.legacy(dart.fnType(dart.legacy(framework.Widget), [dart.legacy(core.int), dart.legacy(core.bool)]))),
+    itemCount: dart.finalFieldType(dart.legacy(core.int)),
+    icons: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(icon_data.IconData)))),
+    onTap: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.int)]))),
+    activeIndex: dart.finalFieldType(dart.legacy(core.int)),
+    iconSize: dart.finalFieldType(dart.legacy(core.double)),
+    height: dart.finalFieldType(dart.legacy(core.double)),
+    elevation: dart.finalFieldType(dart.legacy(core.double)),
+    notchMargin: dart.finalFieldType(dart.legacy(core.double)),
+    splashRadius: dart.finalFieldType(dart.legacy(core.double)),
+    splashSpeedInMilliseconds: dart.finalFieldType(dart.legacy(core.int)),
+    leftCornerRadius: dart.finalFieldType(dart.legacy(core.double)),
+    rightCornerRadius: dart.finalFieldType(dart.legacy(core.double)),
+    backgroundColor: dart.finalFieldType(dart.legacy(ui.Color)),
+    splashColor: dart.finalFieldType(dart.legacy(ui.Color)),
+    activeColor: dart.finalFieldType(dart.legacy(ui.Color)),
+    inactiveColor: dart.finalFieldType(dart.legacy(ui.Color)),
+    notchAndCornersAnimation: dart.finalFieldType(dart.legacy(animation.Animation$(dart.legacy(core.double)))),
+    notchSmoothness: dart.finalFieldType(dart.legacy(animated_bottom_navigation_bar.NotchSmoothness)),
+    gapLocation: dart.finalFieldType(dart.legacy(animated_bottom_navigation_bar.GapLocation)),
+    gapWidth: dart.finalFieldType(dart.legacy(core.double))
+  }));
+  var _bubbleController = dart.privateName(animated_bottom_navigation_bar, "_bubbleController");
+  var _bubbleRadius = dart.privateName(animated_bottom_navigation_bar, "_bubbleRadius");
+  var _iconScale = dart.privateName(animated_bottom_navigation_bar, "_iconScale");
+  var _startBubbleAnimation = dart.privateName(animated_bottom_navigation_bar, "_startBubbleAnimation");
+  var _buildItems = dart.privateName(animated_bottom_navigation_bar, "_buildItems");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var C30;
+  var C31;
+  var C32;
+  var C29;
+  var C28;
+  var C35;
+  var C36;
+  var C34;
+  var C33;
+  var C39;
+  var C38;
+  var C37;
+  var C42;
+  var C43;
+  var C41;
+  var C40;
+  var C46;
+  var C47;
+  var C48;
+  var C49;
+  var C50;
+  var C45;
+  var C44;
+  var C53;
+  var C52;
+  var C51;
+  var C56;
+  var C57;
+  var C58;
+  var C59;
+  var C60;
+  var C61;
+  var C62;
+  var C63;
+  var C64;
+  var C65;
+  var C66;
+  var C55;
+  var C54;
+  var C69;
+  var C68;
+  var C67;
+  const State_TickerProviderStateMixin$36 = class State_TickerProviderStateMixin extends framework.State$(dart.legacy(animated_bottom_navigation_bar.AnimatedBottomNavigationBar)) {};
+  (State_TickerProviderStateMixin$36.new = function() {
+    ticker_provider.TickerProviderStateMixin$(dart.legacy(animated_bottom_navigation_bar.AnimatedBottomNavigationBar))[dart.mixinNew].call(this);
+    State_TickerProviderStateMixin$36.__proto__.new.call(this);
+  }).prototype = State_TickerProviderStateMixin$36.prototype;
+  dart.applyMixin(State_TickerProviderStateMixin$36, ticker_provider.TickerProviderStateMixin$(dart.legacy(animated_bottom_navigation_bar.AnimatedBottomNavigationBar)));
+  animated_bottom_navigation_bar._AnimatedBottomNavigationBarState = class _AnimatedBottomNavigationBarState extends State_TickerProviderStateMixin$36 {
+    didChangeDependencies() {
+      let t2;
+      super.didChangeDependencies();
+      this.geometryListenable = scaffold.Scaffold.geometryOf(this.context);
+      if (this.widget.notchAndCornersAnimation != null) {
+        t2 = this.widget.notchAndCornersAnimation;
+        (() => {
+          t2.addListener(dart.fn(() => this.setState(dart.fn(() => {
+          }, VoidToNull())), VoidTovoid()));
+          return t2;
+        })();
+      }
+    }
+    didUpdateWidget(oldWidget) {
+      AnimatedBottomNavigationBarL().as(oldWidget);
+      super.didUpdateWidget(oldWidget);
+      if (oldWidget.activeIndex != this.widget.activeIndex) {
+        this[_startBubbleAnimation]();
+      }
+    }
+    [_startBubbleAnimation]() {
+      let t2;
+      this[_bubbleController] = new animation_controller.AnimationController.new({duration: new core.Duration.new({milliseconds: this.widget.splashSpeedInMilliseconds}), vsync: this});
+      let bubbleCurve = new animations.CurvedAnimation.new({parent: this[_bubbleController], curve: curves.Curves.linear});
+      t2 = new (TweenOfdoubleL()).new({begin: 0.0, end: 1.0}).animate(bubbleCurve);
+      (() => {
+        t2.addListener(dart.fn(() => {
+          this.setState(dart.fn(() => {
+            this[_bubbleRadius] = dart.notNull(this.widget.splashRadius) * dart.notNull(bubbleCurve.value);
+            if (this[_bubbleRadius] == this.widget.splashRadius) {
+              this[_bubbleRadius] = 0.0;
+            }
+            if (dart.notNull(bubbleCurve.value) < 0.5) {
+              this[_iconScale] = 1 + dart.notNull(bubbleCurve.value);
+            } else {
+              this[_iconScale] = 2 - dart.notNull(bubbleCurve.value);
+            }
+          }, VoidToNull()));
+        }, VoidToNull()));
+        return t2;
+      })();
+      if (dart.test(this[_bubbleController].isAnimating)) {
+        this[_bubbleController].reset();
+      }
+      this[_bubbleController].forward();
+    }
+    build(context) {
+      return new basic.PhysicalShape.new({elevation: this.widget.elevation, color: colors.Colors.transparent, clipper: new circular_notch_and_corner_clipper.CircularNotchedAndCorneredRectangleClipper.new({shape: new circular_notched_and_cornered_shape.CircularNotchedAndCorneredRectangle.new({animation: this.widget.notchAndCornersAnimation, notchSmoothness: this.widget.notchSmoothness, gapLocation: this.widget.gapLocation, leftCornerRadius: this.widget.leftCornerRadius, rightCornerRadius: this.widget.rightCornerRadius}), geometry: this.geometryListenable, notchMargin: this.widget.notchMargin}), clipBehavior: ui.Clip.antiAlias, child: new material.Material.new({color: this.widget.backgroundColor, child: new safe_area.SafeArea.new({child: new container.Container.new({height: this.widget.height, child: new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.start, mainAxisSize: flex.MainAxisSize.max, children: this[_buildItems](), $creationLocationd_0dea112b090073317d4: C28 || CT.C28}), $creationLocationd_0dea112b090073317d4: C33 || CT.C33}), $creationLocationd_0dea112b090073317d4: C37 || CT.C37}), $creationLocationd_0dea112b090073317d4: C40 || CT.C40}), $creationLocationd_0dea112b090073317d4: C44 || CT.C44});
+    }
+    [_buildItems]() {
+      let t2, t2$, t2$0;
+      let gapItemWidth = this.widget.notchAndCornersAnimation != null ? dart.notNull(this.widget.gapWidth) * dart.notNull(this.widget.notchAndCornersAnimation.value) : this.widget.gapWidth;
+      let itemCount = (t2 = this.widget.itemCount, t2 == null ? this.widget.icons[$length] : t2);
+      let items = JSArrayOfWidgetL().of([]);
+      for (let i = 0; i < dart.notNull(itemCount); i = i + 1) {
+        let isActive = i === this.widget.activeIndex;
+        if (this.widget.gapLocation == animated_bottom_navigation_bar.GapLocation.center && i === dart.notNull(itemCount) / 2) {
+          items[$add](new gap_item.GapItem.new({width: gapItemWidth, $creationLocationd_0dea112b090073317d4: C51 || CT.C51}));
+        }
+        items[$add](new navigation_bar_item.NavigationBarItem.new({isActive: isActive, bubbleRadius: this[_bubbleRadius], maxBubbleRadius: this.widget.splashRadius, bubbleColor: this.widget.splashColor, activeColor: this.widget.activeColor, inactiveColor: this.widget.inactiveColor, child: (t2$ = this.widget.tabBuilder, t2$ == null ? null : t2$(i, isActive)), iconData: (t2$0 = this.widget.icons, t2$0 == null ? null : t2$0[$elementAt](i)), iconScale: this[_iconScale], iconSize: this.widget.iconSize, onTap: dart.fn(() => {
+            let t3, t2;
+            t2 = this.widget;
+            t3 = i;
+            return t2.onTap(t3);
+          }, VoidTodynamic()), $creationLocationd_0dea112b090073317d4: C54 || CT.C54}));
+        if (this.widget.gapLocation == animated_bottom_navigation_bar.GapLocation.end && i === dart.notNull(itemCount) - 1) {
+          items[$add](new gap_item.GapItem.new({width: gapItemWidth, $creationLocationd_0dea112b090073317d4: C67 || CT.C67}));
+        }
+      }
+      return ListLOfWidgetL().as(items);
+    }
+  };
+  (animated_bottom_navigation_bar._AnimatedBottomNavigationBarState.new = function() {
+    this.geometryListenable = null;
+    this[_bubbleController] = null;
+    this[_bubbleRadius] = 0.0;
+    this[_iconScale] = 1.0;
+    animated_bottom_navigation_bar._AnimatedBottomNavigationBarState.__proto__.new.call(this);
+    ;
+  }).prototype = animated_bottom_navigation_bar._AnimatedBottomNavigationBarState.prototype;
+  dart.addTypeTests(animated_bottom_navigation_bar._AnimatedBottomNavigationBarState);
+  dart.addTypeCaches(animated_bottom_navigation_bar._AnimatedBottomNavigationBarState);
+  dart.setMethodSignature(animated_bottom_navigation_bar._AnimatedBottomNavigationBarState, () => ({
+    __proto__: dart.getMethods(animated_bottom_navigation_bar._AnimatedBottomNavigationBarState.__proto__),
+    didUpdateWidget: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+    [_startBubbleAnimation]: dart.fnType(dart.dynamic, []),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]),
+    [_buildItems]: dart.fnType(dart.legacy(core.List$(dart.legacy(framework.Widget))), [])
+  }));
+  dart.setLibraryUri(animated_bottom_navigation_bar._AnimatedBottomNavigationBarState, L2);
+  dart.setFieldSignature(animated_bottom_navigation_bar._AnimatedBottomNavigationBarState, () => ({
+    __proto__: dart.getFields(animated_bottom_navigation_bar._AnimatedBottomNavigationBarState.__proto__),
+    geometryListenable: dart.fieldType(dart.legacy(change_notifier.ValueListenable$(dart.legacy(scaffold.ScaffoldGeometry)))),
+    [_bubbleController]: dart.fieldType(dart.legacy(animation_controller.AnimationController)),
+    [_bubbleRadius]: dart.fieldType(dart.legacy(core.double)),
+    [_iconScale]: dart.fieldType(dart.legacy(core.double))
+  }));
+  var C70;
+  animated_bottom_navigation_bar.NotchSmoothness = class NotchSmoothness extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (animated_bottom_navigation_bar.NotchSmoothness.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = animated_bottom_navigation_bar.NotchSmoothness.prototype;
+  dart.addTypeTests(animated_bottom_navigation_bar.NotchSmoothness);
+  dart.addTypeCaches(animated_bottom_navigation_bar.NotchSmoothness);
+  dart.setMethodSignature(animated_bottom_navigation_bar.NotchSmoothness, () => ({
+    __proto__: dart.getMethods(animated_bottom_navigation_bar.NotchSmoothness.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(animated_bottom_navigation_bar.NotchSmoothness, L2);
+  dart.setFieldSignature(animated_bottom_navigation_bar.NotchSmoothness, () => ({
+    __proto__: dart.getFields(animated_bottom_navigation_bar.NotchSmoothness.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(animated_bottom_navigation_bar.NotchSmoothness, ['toString']);
+  animated_bottom_navigation_bar.NotchSmoothness.sharpEdge = C1 || CT.C1;
+  animated_bottom_navigation_bar.NotchSmoothness.defaultEdge = C2 || CT.C2;
+  animated_bottom_navigation_bar.NotchSmoothness.softEdge = C3 || CT.C3;
+  animated_bottom_navigation_bar.NotchSmoothness.smoothEdge = C4 || CT.C4;
+  animated_bottom_navigation_bar.NotchSmoothness.verySmoothEdge = C5 || CT.C5;
+  animated_bottom_navigation_bar.NotchSmoothness.values = C70 || CT.C70;
+  var C71;
+  var C72;
+  var C73;
+  animated_bottom_navigation_bar.GapLocation = class GapLocation extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (animated_bottom_navigation_bar.GapLocation.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = animated_bottom_navigation_bar.GapLocation.prototype;
+  dart.addTypeTests(animated_bottom_navigation_bar.GapLocation);
+  dart.addTypeCaches(animated_bottom_navigation_bar.GapLocation);
+  dart.setMethodSignature(animated_bottom_navigation_bar.GapLocation, () => ({
+    __proto__: dart.getMethods(animated_bottom_navigation_bar.GapLocation.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(animated_bottom_navigation_bar.GapLocation, L2);
+  dart.setFieldSignature(animated_bottom_navigation_bar.GapLocation, () => ({
+    __proto__: dart.getFields(animated_bottom_navigation_bar.GapLocation.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(animated_bottom_navigation_bar.GapLocation, ['toString']);
+  animated_bottom_navigation_bar.GapLocation.none = C71 || CT.C71;
+  animated_bottom_navigation_bar.GapLocation.center = C72 || CT.C72;
+  animated_bottom_navigation_bar.GapLocation.end = C27 || CT.C27;
+  animated_bottom_navigation_bar.GapLocation.values = C73 || CT.C73;
+  dart.trackLibraries("packages/animated_bottom_navigation_bar/src/circular_notched_and_cornered_shape.dart", {
+    "package:animated_bottom_navigation_bar/src/circular_notched_and_cornered_shape.dart": circular_notched_and_cornered_shape,
+    "package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart": animated_bottom_navigation_bar
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["circular_notched_and_cornered_shape.dart","../animated_bottom_navigation_bar.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAY0B;;;;;;IACF;;;;;;IACJ;;;;;;IACL;;;;;;IACA;;;;;;iBAsBU,MAAW;;AAChC,UAAI,AAAM,KAAD,IAAI,mBAAS,AAAK,IAAD,UAAU,KAAK;AACvC,YAA2B,aAAlB,0BAAoB,KAA2B,aAAjB,yBAAmB;AACjD,iCACmB,aAAjB,uCAAqC,yCAAjB,OAAW,kBAAX,OAAoB;AAC1C,kCACoB,aAAlB,wCAAsC,8CAAjB,OAAW,qBAAX,OAAoB;AAClD,iBAAO;;AACH,wBAAO,AAAK,IAAD,OAAO,AAAK,IAAD;AACtB,uBACK,qBAAS,AAAK,IAAD,OAAO,AAAK,IAAD,MAAM,AAAiB,gBAAD,GAAG,GAClD,AAAiB,gBAAD,GAAG,IACvB,qDAAiB,QACjB,qDAAiB,OACjB;AAEA,wBAAkB,aAAX,AAAK,IAAD,uBAAS,AAAK,IAAD,UAAS,AAAK,IAAD;AACrC,uBACK,qBAAoB,aAAX,AAAK,IAAD,UAAS,AAAkB,iBAAD,GAAG,GAAG,AAAK,IAAD,MAClD,AAAkB,iBAAD,GAAG,GAAG,AAAkB,iBAAD,GAAG,IAC/C,qDAAiB,QACjB,qDAAiB,OACjB;AAEA,wBAAO,AAAK,IAAD,QAAQ,AAAK,IAAD;AACvB,wBAAO,AAAK,IAAD,OAAO,AAAK,IAAD;AACtB;;;;AAEN,eAAO;;AAAQ,uBAAQ,IAAI;;;;AAG7B,UAAI,AAAM,AAAO,AAAG,KAAX,eAAyB,aAAX,AAAK,IAAD,UAAS;AAClC,YAAI,oBAA2B,mDAC7B,AAEwG,WAFlG,wCAAoB,AACtB,oCAAwB,iDAA2B,8CACnD,2BAA4B,qDAAO,0BAAa,oBAAW;;AAGnE,UAAI,AAAM,AAAO,KAAR,eAAyB,aAAX,AAAK,IAAD,UAAS;AAClC,YAAI,oBAA2B,gDAC7B,AAEqG,WAF/F,wCAAoB,AACtB,oCAAwB,iDAA2B,8CACnD,2BAA4B,kDAAI,0BAAa,oBAAW;;AAKzD,wBAA0B,AAAI,aAAhB,AAAM,KAAD,UAAS,kBAAsB,8CAAjB,OAAW,qBAAX,OAAoB;AACrD,6BAAyC,aAAjB,uCAAqC,8CAAjB,OAAW,qBAAX,OAAoB;AAChE,8BAA2C,aAAlB,wCAAsC,8CAAjB,OAAW,qBAAX,OAAoB;AAU5D,eAAqB,2DAAhB;AACL,eAAqB,2DAAhB;AAEX,cAAI,WAAW;AACf,cAAI,AAAK,AAAI,CAAR,MAAM,CAAC,gBAAG,EAAE;AACjB,cAAa,aAAT,AAAK,IAAD,qBAAO,AAAM,AAAO,KAAR;AAEpB,eAAK,UAAU,AAAE,AAAI,AAAI,AAAI,CAAb,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,IAAI,AAAE,AAAI,AAAQ,CAAb,GAAG,CAAC,GAAG,AAAE,CAAD,GAAG,CAAC,GAAG,AAAE,CAAD,GAAG,CAAC;AACrD,iBAA0B,CAAjB,AAAE,AAAI,AAAK,CAAV,GAAG,CAAC,GAAG,CAAC,GAAI,EAAE,KAAK,AAAE,AAAI,CAAL,GAAG,CAAC,GAAG,AAAE,CAAD,GAAG,CAAC;AAC1C,iBAA0B,CAAjB,AAAE,AAAI,AAAK,CAAV,GAAG,CAAC,GAAG,CAAC,GAAI,EAAE,KAAK,AAAE,AAAI,CAAL,GAAG,CAAC,GAAG,AAAE,CAAD,GAAG,CAAC;AAC1C,iBAAO,UAAU,AAAE,AAAI,CAAL,GAAG,CAAC,GAAG,AAAK,IAAD,GAAG,IAAI;AACpC,iBAAO,UAAU,AAAE,AAAI,CAAL,GAAG,CAAC,GAAG,AAAK,IAAD,GAAG,IAAI;AAE9B,kDAAI;AAAI,yBAAS;;;AAGN,MAAxB,AAAC,CAAA,QAAC,GAAK,kBAAO,AAAE,CAAD,gBAAG,EAAE,GAAE,CAAC;AACJ,MAAnB,AAAC,CAAA,QAAC,GAAK,kBAAO,CAAC,EAAE,CAAC;AACX,gBAAM,AAAE,CAAD,GAAG,IAAI,CAAC,MAAM;AAC4C,MAAxE,AAAC,CAAA,QAAC,GAAK,AAAI,AAAO,GAAR,GAAG,IAAI,GAAG,AAAI,GAAD,GAAG,IAAI,GAAG,kBAAO,IAAI,EAAE,IAAI,IAAI,kBAAO,IAAI,EAAE,IAAI;AAIjC,MAAtC,AAAC,CAAA,QAAC,GAAK,kBAAO,AAAK,CAAJ,mBAAM,AAAC,AAAI,CAAJ,QAAC,QAAO,AAAC,AAAI,CAAJ,QAAC;AACM,MAAtC,AAAC,CAAA,QAAC,GAAK,kBAAO,AAAK,CAAJ,mBAAM,AAAC,AAAI,CAAJ,QAAC,QAAO,AAAC,AAAI,CAAJ,QAAC;AACM,MAAtC,AAAC,CAAA,QAAC,GAAK,kBAAO,AAAK,CAAJ,mBAAM,AAAC,AAAI,CAAJ,QAAC,QAAO,AAAC,AAAI,CAAJ,QAAC;AAGhC,eAAS,IAAI,GAAG,AAAE,CAAD,gBAAG,AAAE,CAAD,YAAS,IAAA,AAAE,CAAD,GAAI,GAAuB;gBAApB,CAAC;aAAC,CAAC;QAAF,iBAAA,AAAI,sBAAG,AAAM,KAAD;;AAEnD,cAAO;;AACH,qBAAO,AAAK,IAAD,OAAO,AAAK,IAAD;AACtB,oBACK,qBACD,AAAK,IAAD,OAAO,AAAK,IAAD,MAAM,AAAiB,gBAAD,GAAG,GAAG,AAAiB,gBAAD,GAAG,IAClE,qDAAiB,QACjB,qDAAiB,OACjB;AAEA,qBAAO,AAAC,AAAI,CAAJ,QAAC,OAAO,AAAC,AAAI,CAAJ,QAAC;AAClB,gCAAkB,AAAC,AAAI,CAAJ,QAAC,OAAO,AAAC,AAAI,CAAJ,QAAC,OAAO,AAAC,AAAI,CAAJ,QAAC,OAAO,AAAC,AAAI,CAAJ,QAAC;AAC/C,yBACA,AAAC,CAAA,QAAC,aACa,uBAAS,WAAW,cACxB;AAEX,gCAAkB,AAAC,AAAI,CAAJ,QAAC,OAAO,AAAC,AAAI,CAAJ,QAAC,OAAO,AAAC,AAAI,CAAJ,QAAC,OAAO,AAAC,AAAI,CAAJ,QAAC;AAC/C,qBAAkB,aAAX,AAAK,IAAD,uBAAS,AAAK,IAAD,UAAS,AAAK,IAAD;AACrC,oBACK,qBAAoB,aAAX,AAAK,IAAD,UAAS,AAAkB,iBAAD,GAAG,GAAG,AAAK,IAAD,MAClD,AAAkB,iBAAD,GAAG,GAAG,AAAkB,iBAAD,GAAG,IAC/C,qDAAiB,QACjB,qDAAiB,OACjB;AAEA,qBAAO,AAAK,IAAD,QAAQ,AAAK,IAAD;AACvB,qBAAO,AAAK,IAAD,OAAO,AAAK,IAAD;AACtB;;;IACN;;;QAxIO;QACA;QACA;QACA;QACA;IAJA;IACA;IACA;IACA;IACA;AALP;;EAME;;;;;;;;;;;;;;;;mFAsI2B;AAChB,iBAAkB,AAAO,oBAAL,mBAAO,MAAM;AAC9C,UAAO,OAAM;EACf;;AAmBmB,UAAA,AAAO;EAAM;;AAEb,UAAA,AAAO;EAAM;;;;;;;;;;MAlBjB,2DACP;;;MAOO,2DACP;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IC5JqB;;;;;;IAGjB;;;;;;IAGW;;;;;;IAGD;;;;;;IAGV;;;;;;IAGG;;;;;;IAGA;;;;;;IAGA;;;;;;IAGA;;;;;;IAGA;;;;;;IAGH;;;;;;IAGG;;;;;;IAGA;;;;;;IAGD;;;;;;IAGA;;;;;;IAGA;;;;;;IAGA;;;;;;IAGY;;;;;;IAGF;;;;;;IAIJ;;;;;;IAGL;;;;;;;AAmIT;IAAmC;;;;QAhIjC;QACW;QACA;QACV;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;;IApBU;IACA;IACV;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;UACM,AAAc,KAAT,IAAI,QAAQ,SAAS,IAAI;UACD,AAAM,cAAvB,KAAV,SAAS,QAAT,OAAa,AAAM,KAAD,oBAAY,KACN,cAAjB,MAAV,SAAS,SAAT,OAAa,AAAM,KAAD,qBAAY;UAC7B,AAAY,WAAD,IAAI;UACf,AAAM,KAAD,IAAI;AAChB,8FAAW,GAAG;AAClB,QAAI,AAAY,oBAAe;AAC7B,UAAI,2BAAqB,GACvB,AAE2C,WAFrC,+CAA2B,AAC7B,2CAA4C,kDAAI,sBAAuC,0EAAU,6BACjG;;AAER,QAAI,AAAY,oBAAe;AAC7B,UAAgC,CAAjB,+BAAV,OAAa,AAAM,qCAAU,OAAK,GACrC,AAEqD,WAF/C,+CAA2B,AAC7B,4CAAgC,oBAAW,6BAC3C,0CAA2C;;EAErD;;QAGM;QACqB;QACX;QACU;QACjB;QACA;QACA;QACH;QACG;QACD;QACA;QACA;QACA;QACY;QACX;QACA;QACA;QACS;QACJ;QACL;;0FAEI,GAAG,SACD,KAAK,eACC,WAAW,SACjB,KAAK,UACJ,MAAM,aACH,SAAS,gBACN,YAAY,6BACC,yBAAyB,eACvC,WAAW,mBACP,eAAe,eACnB,WAAW,eACX,WAAW,iBACT,aAAa,4BACF,wBAAwB,oBAChC,gBAAgB,qBACf,iBAAiB,YAC1B,QAAQ,mBACD,eAAe,eACnB,WAAW,YACd,QAAQ;EACnB;;QAGD;QACU;QACiB;QACjB;QACU;QACjB;QACA;QACA;QACH;QACG;QACD;QACA;QACY;QACX;QACA;QACS;QACJ;QACL;;0FAEI,GAAG,cACI,UAAU,aACX,SAAS,eACP,WAAW,SACjB,KAAK,UACJ,MAAM,aACH,SAAS,gBACN,YAAY,6BACC,yBAAyB,eACvC,WAAW,mBACP,eAAe,eACnB,WAAW,4BACE,wBAAwB,oBAChC,gBAAgB,qBACf,iBAAiB,mBACnB,eAAe,eACnB,WAAW,YACd,QAAQ;EACnB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAgBwB,MAAvB;AAC2C,MAAjD,0BAA8B,6BAAW;AAEzC,UAAI,AAAO,wCAA4B;AAC8B,aAAnE,AAAO;QAAA;AAA0B,yBAAY,cAAM,cAAS;;;;;IAEhE;;wCAGiD;AACf,MAA1B,sBAAgB,SAAS;AAC/B,UAAI,AAAU,SAAD,gBAAgB,AAAO;AACX,QAAvB;;IAEJ;;;AAMG,MAHD,0BAAoB,4DACR,qCAAuB,AAAO,gDACjC;AAGH,wBAAc,4CACV,gCACM;AAiBZ,WAdJ,AAAgC,mCAAX,UAAQ,cAAW,WAAW;MAAnB;AAC5B,uBAAY;AAYV,UAXF,cAAS;AACgD,YAAvD,sBAAoC,aAApB,AAAO,yCAAe,AAAY,WAAD;AACjD,gBAAI,AAAc,uBAAG,AAAO;AACT,cAAjB,sBAAgB;;AAGlB,gBAAsB,aAAlB,AAAY,WAAD,UAAS;AACY,cAAlC,mBAAa,AAAE,iBAAE,AAAY,WAAD;;AAEM,cAAlC,mBAAa,AAAE,iBAAE,AAAY,WAAD;;;;;;AAKpC,oBAAI,AAAkB;AACK,QAAzB,AAAkB;;AAEO,MAA3B,AAAkB;IACpB;UAG0B;AACxB,YAAO,yCACM,AAAO,8BACJ,oCACL,6FACA,4FACM,AAAO,uDACD,AAAO,0CACX,AAAO,2CACF,AAAO,iDACN,AAAO,2CAElB,sCACG,AAAO,yCAEH,0BACZ,kCACE,AAAO,oCACP,mCACE,qCACG,AAAO,2BACR,sCACgC,4CACV,iCACjB;IAMtB;;;AAGQ,yBAAe,AAAO,AAAyB,wCAAG,OAClC,aAAhB,AAAO,qCAAW,AAAO,AAAyB,8CAClD,AAAO;AACP,uBAA6B,KAAjB,AAAO,6BAAA,OAAa,AAAO,AAAM;AAE9C,kBAAgB;AACrB,eAAS,IAAI,GAAG,AAAE,CAAD,gBAAG,SAAS,GAAE,IAAA,AAAC,CAAA;AACxB,uBAAW,AAAE,CAAD,KAAI,AAAO;AAE7B,YAAI,AAAO,AAAY,2BAAe,qDAAU,AAAE,CAAD,KAAc,aAAV,SAAS,IAAG;AAK9D,UAJD,AAAM,KAAD,OACH,iCACS,YAAY;;AAmBxB,QAdD,AAAM,KAAD,OACH,yDACY,QAAQ,gBACJ,sCACG,AAAO,uCACX,AAAO,sCACP,AAAO,wCACL,AAAO,yCACf,AAAO,sCAAA,OAAY,IAAK,CAAC,EAAE,QAAQ,sBAChC,AAAO,kCAAA,OAAO,iBAAU,CAAC,eACxB,4BACD,AAAO,6BACV;;AAAM;iBAAa,CAAC;kBAAF;;AAI7B,YAAI,AAAO,AAAY,2BAAe,kDAAO,AAAE,CAAD,KAAc,aAAV,SAAS,IAAG;AAK3D,UAJD,AAAM,KAAD,OACH,iCACS,YAAY;;;AAK3B,iCAAO,KAAK;IACd;;;IApIkC;IACd;IACb,sBAAgB;IAChB,mBAAa;;;EAkItB;;;;;;;;;;;;;;;;;;;;;;IAQA;;wEANK;;;;EAML;;;;;;;;;;;;;;;;;;;;;;;;;;;IAEqC;;oEAAhC;;;;EAAgC","file":"../../../../../../../../packages/animated_bottom_navigation_bar/src/circular_notched_and_cornered_shape.dart.lib.js"}');
+  // Exports:
+  return {
+    src__circular_notched_and_cornered_shape: circular_notched_and_cornered_shape,
+    animated_bottom_navigation_bar: animated_bottom_navigation_bar
+  };
+}));
+
+//# sourceMappingURL=circular_notched_and_cornered_shape.dart.lib.js.map

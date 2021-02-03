@@ -1,0 +1,8 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/zachnology/techreviews/BuildConfig.java
+ com.zachnology.techreviews.BuildConfig
+com/zachnology/techreviews/Application.java
+ com.zachnology.techreviews.Application
+io/flutter/plugins/MainActivity.java
+ io.flutter.plugins.MainActivity

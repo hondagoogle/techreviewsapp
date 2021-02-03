@@ -1,0 +1,6 @@
+io/flutter/plugins/quickactions/QuickActionsPlugin.java
+ io.flutter.plugins.quickactions.QuickActionsPlugin
+io/flutter/plugins/quickactions/BuildConfig.java
+ io.flutter.plugins.quickactions.BuildConfig
+io/flutter/plugins/quickactions/MethodCallHandlerImpl.java
+ io.flutter.plugins.quickactions.MethodCallHandlerImpl

@@ -1,0 +1,85 @@
+name: zachnology_tech_reviews
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  material_design_icons_flutter: 3.4.4595
+  webview_flutter: ^0.3.14+1
+  eva_icons_flutter: ^1.0.4
+  url_launcher: ^5.7.10
+  firebase_messaging: ^7.0.0
+  app_settings: 3.0.1
+  flutter_unicons: 0.0.1
+  http: ^0.12.2
+  firebase_core: any
+  firebase_auth: any
+  vibration: ^1.7.3
+  google_sign_in: ^4.4.4
+  quick_actions: ^0.4.0+10
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_launcher_icons: "^0.8.0"
+  flutter_native_splash: ^0.2.7
+  change_app_package_name: ^0.1.2
+  build_runner: ^1.0.0
+  animated_bottom_navigation_bar: ^0.2.1
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/apk-icon.png"
+  adaptive_icon_background: "#24527A"
+
+flutter_native_splash:
+  color: "#42a5f5"
+flutter:
+  assets:
+    - assets/logo-transparent5.png
+    - assets/fulllogocircle.png
+    - assets/173012.png
+    - assets/logo-transparent-inverted.png
+    - assets/google_logo.png
+    - assets/apk-icon.png
+    - assets/white-google-logo.png
+  fonts:
+   - family: ZachnologyEuclid
+     fonts:
+       - asset: fonts/ZachnologyEuclid.ttf
+   - family: Bungee
+     fonts:
+       - asset: fonts/Bungee-Regular.ttf
+   - family: ProductSans
+     fonts:
+       - asset: fonts/ProductSans-Regular.ttf
+    
+
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages

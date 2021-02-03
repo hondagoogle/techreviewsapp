@@ -1,0 +1,4005 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/url_launcher/url_launcher.dart', 'packages/zachnology_tech_reviews/sign_in.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/single_child_scroll_view.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/box_shadow.dart', 'packages/flutter/src/painting/border_radius.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/vector_math/vector_math_64.dart', 'packages/flutter/src/painting/box_border.dart', 'packages/flutter/src/widgets/async.dart', 'packages/flutter/src/painting/rounded_rectangle_border.dart', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/painting/image_resolution.dart', 'packages/webview_flutter/src/webview_cupertino.dart', 'packages/app_settings/app_settings.dart', 'packages/http/http.dart', 'packages/firebase_auth/firebase_auth.dart', 'packages/google_sign_in/google_sign_in.dart'], (function load__packages__zachnology_tech_reviews__placeholder_widget_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__url_launcher__url_launcher$46dart, packages__zachnology_tech_reviews__sign_in$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__single_child_scroll_view$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__box_shadow$46dart, packages__flutter__src__painting__border_radius$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__vector_math__vector_math_64$46dart, packages__flutter__src__painting__box_border$46dart, packages__flutter__src__widgets__async$46dart, packages__flutter__src__painting__rounded_rectangle_border$46dart, packages__flutter__src__painting__borders$46dart, packages__flutter__src__painting__image_resolution$46dart, packages__webview_flutter__src__webview_cupertino$46dart, packages__app_settings__app_settings$46dart, packages__http__http$46dart, packages__firebase_auth__firebase_auth$46dart, packages__google_sign_in__google_sign_in$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
+  const convert = dart_sdk.convert;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const image = packages__flutter__src__widgets__widget_span$46dart.src__widgets__image;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const url_launcher = packages__url_launcher__url_launcher$46dart.url_launcher;
+  const sign_in = packages__zachnology_tech_reviews__sign_in$46dart.sign_in;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const ink_well = packages__flutter__src__material__icon_button$46dart.src__material__ink_well;
+  const outline_button = packages__flutter__src__material__icon_button$46dart.src__material__outline_button;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const raised_button = packages__flutter__src__material__icon_button$46dart.src__material__raised_button;
+  const single_child_scroll_view = packages__flutter__src__widgets__single_child_scroll_view$46dart.src__widgets__single_child_scroll_view;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const box_shadow = packages__flutter__src__painting__box_shadow$46dart.src__painting__box_shadow;
+  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const vector_math_64 = packages__vector_math__vector_math_64$46dart.vector_math_64;
+  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
+  const async$ = packages__flutter__src__widgets__async$46dart.src__widgets__async;
+  const rounded_rectangle_border = packages__flutter__src__painting__rounded_rectangle_border$46dart.src__painting__rounded_rectangle_border;
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  const image_resolution = packages__flutter__src__painting__image_resolution$46dart.src__painting__image_resolution;
+  const webview_flutter = packages__webview_flutter__src__webview_cupertino$46dart.webview_flutter;
+  const app_settings = packages__app_settings__app_settings$46dart.app_settings;
+  const http = packages__http__http$46dart.http;
+  const firebase_auth = packages__firebase_auth__firebase_auth$46dart.firebase_auth;
+  const google_sign_in = packages__google_sign_in__google_sign_in$46dart.google_sign_in;
+  var placeholder_widget = Object.create(dart.library);
+  var $_get = dartx._get;
+  var $indexOf = dartx.indexOf;
+  var $substring = dartx.substring;
+  var $trim = dartx.trim;
+  var $addAll = dartx.addAll;
+  dart._checkModuleNullSafetyMode(false);
+  var intL = () => (intL = dart.constFn(dart.legacy(core.int)))();
+  var StringL = () => (StringL = dart.constFn(dart.legacy(core.String)))();
+  var VoidToNull = () => (VoidToNull = dart.constFn(dart.fnType(core.Null, [])))();
+  var BoxShadowL = () => (BoxShadowL = dart.constFn(dart.legacy(box_shadow.BoxShadow)))();
+  var JSArrayOfBoxShadowL = () => (JSArrayOfBoxShadowL = dart.constFn(_interceptors.JSArray$(BoxShadowL())))();
+  var _LocationL = () => (_LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))();
+  var WidgetL = () => (WidgetL = dart.constFn(dart.legacy(framework.Widget)))();
+  var JSArrayOfWidgetL = () => (JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(WidgetL())))();
+  var PostL = () => (PostL = dart.constFn(dart.legacy(placeholder_widget.Post)))();
+  var FutureBuilderOfPostL = () => (FutureBuilderOfPostL = dart.constFn(async$.FutureBuilder$(PostL())))();
+  var TextL = () => (TextL = dart.constFn(dart.legacy(text.Text)))();
+  var BuildContextL = () => (BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))();
+  var AsyncSnapshotOfPostL = () => (AsyncSnapshotOfPostL = dart.constFn(async$.AsyncSnapshot$(PostL())))();
+  var AsyncSnapshotLOfPostL = () => (AsyncSnapshotLOfPostL = dart.constFn(dart.legacy(AsyncSnapshotOfPostL())))();
+  var BuildContextLAndAsyncSnapshotLOfPostLToTextL = () => (BuildContextLAndAsyncSnapshotLOfPostLToTextL = dart.constFn(dart.fnType(TextL(), [BuildContextL(), AsyncSnapshotLOfPostL()])))();
+  var StringLToNull = () => (StringLToNull = dart.constFn(dart.fnType(core.Null, [StringL()])))();
+  var FutureOfvoid = () => (FutureOfvoid = dart.constFn(async.Future$(dart.void)))();
+  var FutureLOfvoid = () => (FutureLOfvoid = dart.constFn(dart.legacy(FutureOfvoid())))();
+  var VoidToFutureLOfvoid = () => (VoidToFutureLOfvoid = dart.constFn(dart.fnType(FutureLOfvoid(), [])))();
+  var MapOfStringL$dynamic = () => (MapOfStringL$dynamic = dart.constFn(core.Map$(StringL(), dart.dynamic)))();
+  var MapLOfStringL$dynamic = () => (MapLOfStringL$dynamic = dart.constFn(dart.legacy(MapOfStringL$dynamic())))();
+  const CT = Object.create(null);
+  var L0 = "package:zachnology_tech_reviews/placeholder_widget.dart";
+  dart.defineLazy(CT, {
+    get C0() {
+      return C0 = dart.const({
+        __proto__: ui.Radius.prototype,
+        [Radius_y]: 30,
+        [Radius_x]: 30
+      });
+    },
+    get C3() {
+      return C3 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 28,
+        [_Location_line]: 116,
+        [_Location_file]: null
+      });
+    },
+    get C2() {
+      return C2 = dart.constList([C3 || CT.C3], _LocationL());
+    },
+    get C1() {
+      return C1 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C2 || CT.C2,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 116,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C6() {
+      return C6 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "name",
+        [_Location_column]: 25,
+        [_Location_line]: 122,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C7 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 25,
+        [_Location_line]: 123,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C5 = dart.constList([C6 || CT.C6, C7 || CT.C7], _LocationL());
+    },
+    get C4() {
+      return C4 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C5 || CT.C5,
+        [_Location_name]: null,
+        [_Location_column]: 40,
+        [_Location_line]: 121,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C10() {
+      return C10 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 27,
+        [_Location_line]: 121,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C9 = dart.constList([C10 || CT.C10], _LocationL());
+    },
+    get C8() {
+      return C8 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C9 || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 120,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C13() {
+      return C13 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 32,
+        [_Location_line]: 125,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C12 = dart.constList([C13 || CT.C13], _LocationL());
+    },
+    get C11() {
+      return C11 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C12 || CT.C12,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 125,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C16() {
+      return C16 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 45,
+        [_Location_line]: 130,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C17 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 31,
+        [_Location_line]: 131,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C15 = dart.constList([C16 || CT.C16, C17 || CT.C17], _LocationL());
+    },
+    get C14() {
+      return C14 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C15 || CT.C15,
+        [_Location_name]: null,
+        [_Location_column]: 36,
+        [_Location_line]: 129,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C20() {
+      return C20 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 29,
+        [_Location_line]: 129,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C19 = dart.constList([C20 || CT.C20], _LocationL());
+    },
+    get C18() {
+      return C18 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C19 || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 128,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C23() {
+      return C23 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 36,
+        [_Location_line]: 139,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C22 = dart.constList([C23 || CT.C23], _LocationL());
+    },
+    get C21() {
+      return C21 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C22 || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 139,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C26() {
+      return C26 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 31,
+        [_Location_line]: 142,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C27 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 31,
+        [_Location_line]: 143,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C25 = dart.constList([C26 || CT.C26, C27 || CT.C27], _LocationL());
+    },
+    get C24() {
+      return C24 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C25 || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 36,
+        [_Location_line]: 141,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C30() {
+      return C30 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 29,
+        [_Location_line]: 141,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C29 = dart.constList([C30 || CT.C30], _LocationL());
+    },
+    get C28() {
+      return C28 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C29 || CT.C29,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 140,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C33() {
+      return C33 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 25,
+        [_Location_line]: 127,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C32 = dart.constList([C33 || CT.C33], _LocationL());
+    },
+    get C31() {
+      return C31 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C32 || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 126,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C36() {
+      return C36 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 21,
+        [_Location_line]: 118,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C37 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 21,
+        [_Location_line]: 119,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C35 = dart.constList([C36 || CT.C36, C37 || CT.C37], _LocationL());
+    },
+    get C34() {
+      return C34 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C35 || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 117,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C40() {
+      return C40 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 28,
+        [_Location_line]: 154,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C39 = dart.constList([C40 || CT.C40], _LocationL());
+    },
+    get C38() {
+      return C38 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C39 || CT.C39,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 154,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C41() {
+      return C41 = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 8,
+        [EdgeInsets_right]: 8,
+        [EdgeInsets_top]: 8,
+        [EdgeInsets_left]: 8
+      });
+    },
+    get C44() {
+      return C44 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 27,
+        [_Location_line]: 161,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C45 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 27,
+        [_Location_line]: 162,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C43 = dart.constList([C44 || CT.C44, C45 || CT.C45], _LocationL());
+    },
+    get C42() {
+      return C42 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C43 || CT.C43,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 160,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C48() {
+      return C48 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 25,
+        [_Location_line]: 159,
+        [_Location_file]: null
+      });
+    },
+    get C49() {
+      return C49 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 25,
+        [_Location_line]: 160,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C47 = dart.constList([C48 || CT.C48, C49 || CT.C49], _LocationL());
+    },
+    get C46() {
+      return C46 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C47 || CT.C47,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 158,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C52() {
+      return C52 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 21,
+        [_Location_line]: 156,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C53 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 21,
+        [_Location_line]: 157,
+        [_Location_file]: null
+      });
+    },
+    get C51() {
+      return C51 = dart.constList([C52 || CT.C52, C53 || CT.C53], _LocationL());
+    },
+    get C50() {
+      return C50 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C51 || CT.C51,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 155,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C56() {
+      return C56 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 17,
+        [_Location_line]: 115,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C55 = dart.constList([C56 || CT.C56], _LocationL());
+    },
+    get C54() {
+      return C54 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C55 || CT.C55,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 114,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C59() {
+      return C59 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 15,
+        [_Location_line]: 99,
+        [_Location_file]: null
+      });
+    },
+    get C60() {
+      return C60 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 15,
+        [_Location_line]: 100,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C61 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 114,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C58 = dart.constList([C59 || CT.C59, C60 || CT.C60, C61 || CT.C61], _LocationL());
+    },
+    get C57() {
+      return C57 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C58 || CT.C58,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 98,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C62() {
+      return C62 = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 15,
+        [EdgeInsets_right]: 15,
+        [EdgeInsets_top]: 15,
+        [EdgeInsets_left]: 15
+      });
+    },
+    get C65() {
+      return C65 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 43,
+        [_Location_line]: 209,
+        [_Location_file]: null
+      });
+    },
+    get C66() {
+      return C66 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textAlign",
+        [_Location_column]: 29,
+        [_Location_line]: 210,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C67 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 29,
+        [_Location_line]: 211,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C64 = dart.constList([C65 || CT.C65, C66 || CT.C66, C67 || CT.C67], _LocationL());
+    },
+    get C63() {
+      return C63 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C64 || CT.C64,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 208,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C70() {
+      return C70 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 39,
+        [_Location_line]: 219,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C69 = dart.constList([C70 || CT.C70], _LocationL());
+    },
+    get C68() {
+      return C68 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C69 || CT.C69,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 219,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C73() {
+      return C73 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 37,
+        [_Location_line]: 222,
+        [_Location_file]: null
+      });
+    },
+    get C72() {
+      return C72 = dart.constList([C73 || CT.C73], _LocationL());
+    },
+    get C71() {
+      return C71 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C72 || CT.C72,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 222,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C76() {
+      return C76 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "future",
+        [_Location_column]: 23,
+        [_Location_line]: 205,
+        [_Location_file]: null
+      });
+    },
+    get C77() {
+      return C77 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 23,
+        [_Location_line]: 206,
+        [_Location_file]: null
+      });
+    },
+    get C75() {
+      return C75 = dart.constList([C76 || CT.C76, C77 || CT.C77], _LocationL());
+    },
+    get C74() {
+      return C74 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C75 || CT.C75,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 204,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C80() {
+      return C80 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 30,
+        [_Location_line]: 225,
+        [_Location_file]: null
+      });
+    },
+    get C79() {
+      return C79 = dart.constList([C80 || CT.C80], _LocationL());
+    },
+    get C78() {
+      return C78 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C79 || CT.C79,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 225,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C83() {
+      return C83 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 43,
+        [_Location_line]: 231,
+        [_Location_file]: null
+      });
+    },
+    get C84() {
+      return C84 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 29,
+        [_Location_line]: 232,
+        [_Location_file]: null
+      });
+    },
+    get C82() {
+      return C82 = dart.constList([C83 || CT.C83, C84 || CT.C84], _LocationL());
+    },
+    get C81() {
+      return C81 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C82 || CT.C82,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 230,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C87() {
+      return C87 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 39,
+        [_Location_line]: 240,
+        [_Location_file]: null
+      });
+    },
+    get C86() {
+      return C86 = dart.constList([C87 || CT.C87], _LocationL());
+    },
+    get C85() {
+      return C85 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C86 || CT.C86,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 240,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C90() {
+      return C90 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 37,
+        [_Location_line]: 243,
+        [_Location_file]: null
+      });
+    },
+    get C89() {
+      return C89 = dart.constList([C90 || CT.C90], _LocationL());
+    },
+    get C88() {
+      return C88 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C89 || CT.C89,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 243,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C93() {
+      return C93 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "future",
+        [_Location_column]: 23,
+        [_Location_line]: 227,
+        [_Location_file]: null
+      });
+    },
+    get C94() {
+      return C94 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 23,
+        [_Location_line]: 228,
+        [_Location_file]: null
+      });
+    },
+    get C92() {
+      return C92 = dart.constList([C93 || CT.C93, C94 || CT.C94], _LocationL());
+    },
+    get C91() {
+      return C91 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C92 || CT.C92,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 226,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C97() {
+      return C97 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 19,
+        [_Location_line]: 202,
+        [_Location_file]: null
+      });
+    },
+    get C98() {
+      return C98 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 19,
+        [_Location_line]: 203,
+        [_Location_file]: null
+      });
+    },
+    get C96() {
+      return C96 = dart.constList([C97 || CT.C97, C98 || CT.C98], _LocationL());
+    },
+    get C95() {
+      return C95 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C96 || CT.C96,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 201,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C101() {
+      return C101 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 17,
+        [_Location_line]: 198,
+        [_Location_file]: null
+      });
+    },
+    get C102() {
+      return C102 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 201,
+        [_Location_file]: null
+      });
+    },
+    get C100() {
+      return C100 = dart.constList([C101 || CT.C101, C102 || CT.C102], _LocationL());
+    },
+    get C99() {
+      return C99 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C100 || CT.C100,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 197,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C105() {
+      return C105 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "transform",
+        [_Location_column]: 15,
+        [_Location_line]: 177,
+        [_Location_file]: null
+      });
+    },
+    get C106() {
+      return C106 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 15,
+        [_Location_line]: 178,
+        [_Location_file]: null
+      });
+    },
+    get C107() {
+      return C107 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 15,
+        [_Location_line]: 179,
+        [_Location_file]: null
+      });
+    },
+    get C108() {
+      return C108 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 15,
+        [_Location_line]: 180,
+        [_Location_file]: null
+      });
+    },
+    get C109() {
+      return C109 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 15,
+        [_Location_line]: 181,
+        [_Location_file]: null
+      });
+    },
+    get C110() {
+      return C110 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 197,
+        [_Location_file]: null
+      });
+    },
+    get C104() {
+      return C104 = dart.constList([C105 || CT.C105, C106 || CT.C106, C107 || CT.C107, C108 || CT.C108, C109 || CT.C109, C110 || CT.C110], _LocationL());
+    },
+    get C103() {
+      return C103 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C104 || CT.C104,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 176,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C113() {
+      return C113 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 21,
+        [_Location_line]: 254,
+        [_Location_file]: null
+      });
+    },
+    get C114() {
+      return C114 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textAlign",
+        [_Location_column]: 21,
+        [_Location_line]: 255,
+        [_Location_file]: null
+      });
+    },
+    get C115() {
+      return C115 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 21,
+        [_Location_line]: 256,
+        [_Location_file]: null
+      });
+    },
+    get C112() {
+      return C112 = dart.constList([C113 || CT.C113, C114 || CT.C114, C115 || CT.C115], _LocationL());
+    },
+    get C111() {
+      return C111 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C112 || CT.C112,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 253,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C118() {
+      return C118 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 28,
+        [_Location_line]: 261,
+        [_Location_file]: null
+      });
+    },
+    get C117() {
+      return C117 = dart.constList([C118 || CT.C118], _LocationL());
+    },
+    get C116() {
+      return C116 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C117 || CT.C117,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 261,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C119() {
+      return C119 = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 10,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 10,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C122() {
+      return C122 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "image",
+        [_Location_column]: 31,
+        [_Location_line]: 282,
+        [_Location_file]: null
+      });
+    },
+    get C123() {
+      return C123 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 31,
+        [_Location_line]: 283,
+        [_Location_file]: null
+      });
+    },
+    get C121() {
+      return C121 = dart.constList([C122 || CT.C122, C123 || CT.C123], _LocationL());
+    },
+    get C120() {
+      return C120 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C121 || CT.C121,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 281,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C124() {
+      return C124 = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 10
+      });
+    },
+    get C127() {
+      return C127 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 31,
+        [_Location_line]: 287,
+        [_Location_file]: null
+      });
+    },
+    get C128() {
+      return C128 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 31,
+        [_Location_line]: 288,
+        [_Location_file]: null
+      });
+    },
+    get C126() {
+      return C126 = dart.constList([C127 || CT.C127, C128 || CT.C128], _LocationL());
+    },
+    get C125() {
+      return C125 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C126 || CT.C126,
+        [_Location_name]: null,
+        [_Location_column]: 36,
+        [_Location_line]: 286,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C131() {
+      return C131 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 29,
+        [_Location_line]: 285,
+        [_Location_file]: null
+      });
+    },
+    get C132() {
+      return C132 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 29,
+        [_Location_line]: 286,
+        [_Location_file]: null
+      });
+    },
+    get C130() {
+      return C130 = dart.constList([C131 || CT.C131, C132 || CT.C132], _LocationL());
+    },
+    get C129() {
+      return C129 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C130 || CT.C130,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 284,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C135() {
+      return C135 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisSize",
+        [_Location_column]: 25,
+        [_Location_line]: 278,
+        [_Location_file]: null
+      });
+    },
+    get C136() {
+      return C136 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 25,
+        [_Location_line]: 279,
+        [_Location_file]: null
+      });
+    },
+    get C137() {
+      return C137 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 25,
+        [_Location_line]: 280,
+        [_Location_file]: null
+      });
+    },
+    get C134() {
+      return C134 = dart.constList([C135 || CT.C135, C136 || CT.C136, C137 || CT.C137], _LocationL());
+    },
+    get C133() {
+      return C133 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C134 || CT.C134,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 277,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C140() {
+      return C140 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 23,
+        [_Location_line]: 276,
+        [_Location_file]: null
+      });
+    },
+    get C141() {
+      return C141 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 277,
+        [_Location_file]: null
+      });
+    },
+    get C139() {
+      return C139 = dart.constList([C140 || CT.C140, C141 || CT.C141], _LocationL());
+    },
+    get C138() {
+      return C138 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C139 || CT.C139,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 275,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C144() {
+      return C144 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "splashColor",
+        [_Location_column]: 21,
+        [_Location_line]: 263,
+        [_Location_file]: null
+      });
+    },
+    get C145() {
+      return C145 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 21,
+        [_Location_line]: 264,
+        [_Location_file]: null
+      });
+    },
+    get C146() {
+      return C146 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "shape",
+        [_Location_column]: 21,
+        [_Location_line]: 271,
+        [_Location_file]: null
+      });
+    },
+    get C147() {
+      return C147 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "highlightElevation",
+        [_Location_column]: 21,
+        [_Location_line]: 273,
+        [_Location_file]: null
+      });
+    },
+    get C148() {
+      return C148 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "borderSide",
+        [_Location_column]: 21,
+        [_Location_line]: 274,
+        [_Location_file]: null
+      });
+    },
+    get C149() {
+      return C149 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 275,
+        [_Location_file]: null
+      });
+    },
+    get C143() {
+      return C143 = dart.constList([C144 || CT.C144, C145 || CT.C145, C146 || CT.C146, C147 || CT.C147, C148 || CT.C148, C149 || CT.C149], _LocationL());
+    },
+    get C142() {
+      return C142 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C143 || CT.C143,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 262,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C152() {
+      return C152 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 27,
+        [_Location_line]: 308,
+        [_Location_file]: null
+      });
+    },
+    get C153() {
+      return C153 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 27,
+        [_Location_line]: 309,
+        [_Location_file]: null
+      });
+    },
+    get C151() {
+      return C151 = dart.constList([C152 || CT.C152, C153 || CT.C153], _LocationL());
+    },
+    get C150() {
+      return C150 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C151 || CT.C151,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 307,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C156() {
+      return C156 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 25,
+        [_Location_line]: 305,
+        [_Location_file]: null
+      });
+    },
+    get C157() {
+      return C157 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "transform",
+        [_Location_column]: 25,
+        [_Location_line]: 306,
+        [_Location_file]: null
+      });
+    },
+    get C158() {
+      return C158 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 25,
+        [_Location_line]: 307,
+        [_Location_file]: null
+      });
+    },
+    get C155() {
+      return C155 = dart.constList([C156 || CT.C156, C157 || CT.C157, C158 || CT.C158], _LocationL());
+    },
+    get C154() {
+      return C154 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C155 || CT.C155,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 304,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C161() {
+      return C161 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 21,
+        [_Location_line]: 302,
+        [_Location_file]: null
+      });
+    },
+    get C162() {
+      return C162 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 21,
+        [_Location_line]: 303,
+        [_Location_file]: null
+      });
+    },
+    get C160() {
+      return C160 = dart.constList([C161 || CT.C161, C162 || CT.C162], _LocationL());
+    },
+    get C159() {
+      return C159 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C160 || CT.C160,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 301,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C165() {
+      return C165 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 53,
+        [_Location_line]: 357,
+        [_Location_file]: null
+      });
+    },
+    get C166() {
+      return C166 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textAlign",
+        [_Location_column]: 39,
+        [_Location_line]: 358,
+        [_Location_file]: null
+      });
+    },
+    get C167() {
+      return C167 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 39,
+        [_Location_line]: 359,
+        [_Location_file]: null
+      });
+    },
+    get C164() {
+      return C164 = dart.constList([C165 || CT.C165, C166 || CT.C166, C167 || CT.C167], _LocationL());
+    },
+    get C163() {
+      return C163 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C164 || CT.C164,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 356,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C170() {
+      return C170 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 41,
+        [_Location_line]: 368,
+        [_Location_file]: null
+      });
+    },
+    get C169() {
+      return C169 = dart.constList([C170 || CT.C170], _LocationL());
+    },
+    get C168() {
+      return C168 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C169 || CT.C169,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 367,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C173() {
+      return C173 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 47,
+        [_Location_line]: 371,
+        [_Location_file]: null
+      });
+    },
+    get C172() {
+      return C172 = dart.constList([C173 || CT.C173], _LocationL());
+    },
+    get C171() {
+      return C171 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C172 || CT.C172,
+        [_Location_name]: null,
+        [_Location_column]: 42,
+        [_Location_line]: 371,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C176() {
+      return C176 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "future",
+        [_Location_column]: 33,
+        [_Location_line]: 353,
+        [_Location_file]: null
+      });
+    },
+    get C177() {
+      return C177 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 33,
+        [_Location_line]: 354,
+        [_Location_file]: null
+      });
+    },
+    get C175() {
+      return C175 = dart.constList([C176 || CT.C176, C177 || CT.C177], _LocationL());
+    },
+    get C174() {
+      return C174 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C175 || CT.C175,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 352,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C180() {
+      return C180 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 40,
+        [_Location_line]: 374,
+        [_Location_file]: null
+      });
+    },
+    get C179() {
+      return C179 = dart.constList([C180 || CT.C180], _LocationL());
+    },
+    get C178() {
+      return C178 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C179 || CT.C179,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 374,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C183() {
+      return C183 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 53,
+        [_Location_line]: 380,
+        [_Location_file]: null
+      });
+    },
+    get C184() {
+      return C184 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 39,
+        [_Location_line]: 381,
+        [_Location_file]: null
+      });
+    },
+    get C182() {
+      return C182 = dart.constList([C183 || CT.C183, C184 || CT.C184], _LocationL());
+    },
+    get C181() {
+      return C181 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C182 || CT.C182,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 379,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C187() {
+      return C187 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 49,
+        [_Location_line]: 389,
+        [_Location_file]: null
+      });
+    },
+    get C186() {
+      return C186 = dart.constList([C187 || CT.C187], _LocationL());
+    },
+    get C185() {
+      return C185 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C186 || CT.C186,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 389,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C190() {
+      return C190 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 47,
+        [_Location_line]: 392,
+        [_Location_file]: null
+      });
+    },
+    get C189() {
+      return C189 = dart.constList([C190 || CT.C190], _LocationL());
+    },
+    get C188() {
+      return C188 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C189 || CT.C189,
+        [_Location_name]: null,
+        [_Location_column]: 42,
+        [_Location_line]: 392,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C193() {
+      return C193 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "future",
+        [_Location_column]: 33,
+        [_Location_line]: 376,
+        [_Location_file]: null
+      });
+    },
+    get C194() {
+      return C194 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 33,
+        [_Location_line]: 377,
+        [_Location_file]: null
+      });
+    },
+    get C192() {
+      return C192 = dart.constList([C193 || CT.C193, C194 || CT.C194], _LocationL());
+    },
+    get C191() {
+      return C191 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C192 || CT.C192,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 375,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C197() {
+      return C197 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 29,
+        [_Location_line]: 350,
+        [_Location_file]: null
+      });
+    },
+    get C198() {
+      return C198 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 29,
+        [_Location_line]: 351,
+        [_Location_file]: null
+      });
+    },
+    get C196() {
+      return C196 = dart.constList([C197 || CT.C197, C198 || CT.C198], _LocationL());
+    },
+    get C195() {
+      return C195 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C196 || CT.C196,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 349,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C201() {
+      return C201 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 27,
+        [_Location_line]: 346,
+        [_Location_file]: null
+      });
+    },
+    get C202() {
+      return C202 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 27,
+        [_Location_line]: 349,
+        [_Location_file]: null
+      });
+    },
+    get C200() {
+      return C200 = dart.constList([C201 || CT.C201, C202 || CT.C202], _LocationL());
+    },
+    get C199() {
+      return C199 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C200 || CT.C200,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 345,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C205() {
+      return C205 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 25,
+        [_Location_line]: 324,
+        [_Location_file]: null
+      });
+    },
+    get C206() {
+      return C206 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 25,
+        [_Location_line]: 325,
+        [_Location_file]: null
+      });
+    },
+    get C207() {
+      return C207 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "transform",
+        [_Location_column]: 25,
+        [_Location_line]: 326,
+        [_Location_file]: null
+      });
+    },
+    get C208() {
+      return C208 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 25,
+        [_Location_line]: 327,
+        [_Location_file]: null
+      });
+    },
+    get C209() {
+      return C209 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 25,
+        [_Location_line]: 328,
+        [_Location_file]: null
+      });
+    },
+    get C210() {
+      return C210 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 25,
+        [_Location_line]: 345,
+        [_Location_file]: null
+      });
+    },
+    get C204() {
+      return C204 = dart.constList([C205 || CT.C205, C206 || CT.C206, C207 || CT.C207, C208 || CT.C208, C209 || CT.C209, C210 || CT.C210], _LocationL());
+    },
+    get C203() {
+      return C203 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C204 || CT.C204,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 323,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C213() {
+      return C213 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 53,
+        [_Location_line]: 433,
+        [_Location_file]: null
+      });
+    },
+    get C214() {
+      return C214 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textAlign",
+        [_Location_column]: 39,
+        [_Location_line]: 434,
+        [_Location_file]: null
+      });
+    },
+    get C215() {
+      return C215 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 39,
+        [_Location_line]: 435,
+        [_Location_file]: null
+      });
+    },
+    get C212() {
+      return C212 = dart.constList([C213 || CT.C213, C214 || CT.C214, C215 || CT.C215], _LocationL());
+    },
+    get C211() {
+      return C211 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C212 || CT.C212,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 432,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C218() {
+      return C218 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 41,
+        [_Location_line]: 444,
+        [_Location_file]: null
+      });
+    },
+    get C217() {
+      return C217 = dart.constList([C218 || CT.C218], _LocationL());
+    },
+    get C216() {
+      return C216 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C217 || CT.C217,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 443,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C221() {
+      return C221 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 47,
+        [_Location_line]: 447,
+        [_Location_file]: null
+      });
+    },
+    get C220() {
+      return C220 = dart.constList([C221 || CT.C221], _LocationL());
+    },
+    get C219() {
+      return C219 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C220 || CT.C220,
+        [_Location_name]: null,
+        [_Location_column]: 42,
+        [_Location_line]: 447,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C224() {
+      return C224 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "future",
+        [_Location_column]: 33,
+        [_Location_line]: 429,
+        [_Location_file]: null
+      });
+    },
+    get C225() {
+      return C225 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 33,
+        [_Location_line]: 430,
+        [_Location_file]: null
+      });
+    },
+    get C223() {
+      return C223 = dart.constList([C224 || CT.C224, C225 || CT.C225], _LocationL());
+    },
+    get C222() {
+      return C222 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C223 || CT.C223,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 428,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C228() {
+      return C228 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 40,
+        [_Location_line]: 450,
+        [_Location_file]: null
+      });
+    },
+    get C227() {
+      return C227 = dart.constList([C228 || CT.C228], _LocationL());
+    },
+    get C226() {
+      return C226 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C227 || CT.C227,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 450,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C231() {
+      return C231 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 53,
+        [_Location_line]: 456,
+        [_Location_file]: null
+      });
+    },
+    get C232() {
+      return C232 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 39,
+        [_Location_line]: 457,
+        [_Location_file]: null
+      });
+    },
+    get C230() {
+      return C230 = dart.constList([C231 || CT.C231, C232 || CT.C232], _LocationL());
+    },
+    get C229() {
+      return C229 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C230 || CT.C230,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 455,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C235() {
+      return C235 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 49,
+        [_Location_line]: 465,
+        [_Location_file]: null
+      });
+    },
+    get C234() {
+      return C234 = dart.constList([C235 || CT.C235], _LocationL());
+    },
+    get C233() {
+      return C233 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C234 || CT.C234,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 465,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C238() {
+      return C238 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 47,
+        [_Location_line]: 468,
+        [_Location_file]: null
+      });
+    },
+    get C237() {
+      return C237 = dart.constList([C238 || CT.C238], _LocationL());
+    },
+    get C236() {
+      return C236 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C237 || CT.C237,
+        [_Location_name]: null,
+        [_Location_column]: 42,
+        [_Location_line]: 468,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C241() {
+      return C241 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "future",
+        [_Location_column]: 33,
+        [_Location_line]: 452,
+        [_Location_file]: null
+      });
+    },
+    get C242() {
+      return C242 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 33,
+        [_Location_line]: 453,
+        [_Location_file]: null
+      });
+    },
+    get C240() {
+      return C240 = dart.constList([C241 || CT.C241, C242 || CT.C242], _LocationL());
+    },
+    get C239() {
+      return C239 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C240 || CT.C240,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 451,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C245() {
+      return C245 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 29,
+        [_Location_line]: 426,
+        [_Location_file]: null
+      });
+    },
+    get C246() {
+      return C246 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 29,
+        [_Location_line]: 427,
+        [_Location_file]: null
+      });
+    },
+    get C244() {
+      return C244 = dart.constList([C245 || CT.C245, C246 || CT.C246], _LocationL());
+    },
+    get C243() {
+      return C243 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C244 || CT.C244,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 425,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C249() {
+      return C249 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 27,
+        [_Location_line]: 422,
+        [_Location_file]: null
+      });
+    },
+    get C250() {
+      return C250 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 27,
+        [_Location_line]: 425,
+        [_Location_file]: null
+      });
+    },
+    get C248() {
+      return C248 = dart.constList([C249 || CT.C249, C250 || CT.C250], _LocationL());
+    },
+    get C247() {
+      return C247 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C248 || CT.C248,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 421,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C253() {
+      return C253 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 25,
+        [_Location_line]: 400,
+        [_Location_file]: null
+      });
+    },
+    get C254() {
+      return C254 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 25,
+        [_Location_line]: 401,
+        [_Location_file]: null
+      });
+    },
+    get C255() {
+      return C255 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "transform",
+        [_Location_column]: 25,
+        [_Location_line]: 402,
+        [_Location_file]: null
+      });
+    },
+    get C256() {
+      return C256 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 25,
+        [_Location_line]: 403,
+        [_Location_file]: null
+      });
+    },
+    get C257() {
+      return C257 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 25,
+        [_Location_line]: 404,
+        [_Location_file]: null
+      });
+    },
+    get C258() {
+      return C258 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 25,
+        [_Location_line]: 421,
+        [_Location_file]: null
+      });
+    },
+    get C252() {
+      return C252 = dart.constList([C253 || CT.C253, C254 || CT.C254, C255 || CT.C255, C256 || CT.C256, C257 || CT.C257, C258 || CT.C258], _LocationL());
+    },
+    get C251() {
+      return C251 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C252 || CT.C252,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 399,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C261() {
+      return C261 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 21,
+        [_Location_line]: 321,
+        [_Location_file]: null
+      });
+    },
+    get C262() {
+      return C262 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 21,
+        [_Location_line]: 322,
+        [_Location_file]: null
+      });
+    },
+    get C260() {
+      return C260 = dart.constList([C261 || CT.C261, C262 || CT.C262], _LocationL());
+    },
+    get C259() {
+      return C259 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C260 || CT.C260,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 320,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C265() {
+      return C265 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 15,
+        [_Location_line]: 251,
+        [_Location_file]: null
+      });
+    },
+    get C264() {
+      return C264 = dart.constList([C265 || CT.C265], _LocationL());
+    },
+    get C263() {
+      return C263 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C264 || CT.C264,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 250,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C268() {
+      return C268 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 11,
+        [_Location_line]: 97,
+        [_Location_file]: null
+      });
+    },
+    get C267() {
+      return C267 = dart.constList([C268 || CT.C268], _LocationL());
+    },
+    get C266() {
+      return C266 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C267 || CT.C267,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 96,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C271() {
+      return C271 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 96,
+        [_Location_file]: null
+      });
+    },
+    get C270() {
+      return C270 = dart.constList([C271 || CT.C271], _LocationL());
+    },
+    get C269() {
+      return C269 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C270 || CT.C270,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 95,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C274() {
+      return C274 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 95,
+        [_Location_file]: null
+      });
+    },
+    get C273() {
+      return C273 = dart.constList([C274 || CT.C274], _LocationL());
+    },
+    get C272() {
+      return C272 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C273 || CT.C273,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 94,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C277() {
+      return C277 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 11,
+        [_Location_line]: 502,
+        [_Location_file]: null
+      });
+    },
+    get C278() {
+      return C278 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 11,
+        [_Location_line]: 503,
+        [_Location_file]: null
+      });
+    },
+    get C276() {
+      return C276 = dart.constList([C277 || CT.C277, C278 || CT.C278], _LocationL());
+    },
+    get C275() {
+      return C275 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C276 || CT.C276,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 501,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C281() {
+      return C281 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 501,
+        [_Location_file]: null
+      });
+    },
+    get C282() {
+      return C282 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "centerTitle",
+        [_Location_column]: 9,
+        [_Location_line]: 508,
+        [_Location_file]: null
+      });
+    },
+    get C283() {
+      return C283 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 9,
+        [_Location_line]: 509,
+        [_Location_file]: null
+      });
+    },
+    get C284() {
+      return C284 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "brightness",
+        [_Location_column]: 9,
+        [_Location_line]: 510,
+        [_Location_file]: null
+      });
+    },
+    get C280() {
+      return C280 = dart.constList([C281 || CT.C281, C282 || CT.C282, C283 || CT.C283, C284 || CT.C284], _LocationL());
+    },
+    get C279() {
+      return C279 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C280 || CT.C280,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 500,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C287() {
+      return C287 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "gestureNavigationEnabled",
+        [_Location_column]: 9,
+        [_Location_line]: 513,
+        [_Location_file]: null
+      });
+    },
+    get C288() {
+      return C288 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "initialUrl",
+        [_Location_column]: 9,
+        [_Location_line]: 514,
+        [_Location_file]: null
+      });
+    },
+    get C289() {
+      return C289 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "javascriptMode",
+        [_Location_column]: 9,
+        [_Location_line]: 516,
+        [_Location_file]: null
+      });
+    },
+    get C286() {
+      return C286 = dart.constList([C287 || CT.C287, C288 || CT.C288, C289 || CT.C289], _LocationL());
+    },
+    get C285() {
+      return C285 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C286 || CT.C286,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 512,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C292() {
+      return C292 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 500,
+        [_Location_file]: null
+      });
+    },
+    get C293() {
+      return C293 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 512,
+        [_Location_file]: null
+      });
+    },
+    get C291() {
+      return C291 = dart.constList([C292 || CT.C292, C293 || CT.C293], _LocationL());
+    },
+    get C290() {
+      return C290 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C291 || CT.C291,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 499,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C296() {
+      return C296 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 11,
+        [_Location_line]: 528,
+        [_Location_file]: null
+      });
+    },
+    get C297() {
+      return C297 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 11,
+        [_Location_line]: 529,
+        [_Location_file]: null
+      });
+    },
+    get C295() {
+      return C295 = dart.constList([C296 || CT.C296, C297 || CT.C297], _LocationL());
+    },
+    get C294() {
+      return C294 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C295 || CT.C295,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 527,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C300() {
+      return C300 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 527,
+        [_Location_file]: null
+      });
+    },
+    get C301() {
+      return C301 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "centerTitle",
+        [_Location_column]: 9,
+        [_Location_line]: 534,
+        [_Location_file]: null
+      });
+    },
+    get C302() {
+      return C302 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 9,
+        [_Location_line]: 535,
+        [_Location_file]: null
+      });
+    },
+    get C303() {
+      return C303 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "brightness",
+        [_Location_column]: 9,
+        [_Location_line]: 536,
+        [_Location_file]: null
+      });
+    },
+    get C299() {
+      return C299 = dart.constList([C300 || CT.C300, C301 || CT.C301, C302 || CT.C302, C303 || CT.C303], _LocationL());
+    },
+    get C298() {
+      return C298 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C299 || CT.C299,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 526,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C306() {
+      return C306 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 20,
+        [_Location_line]: 540,
+        [_Location_file]: null
+      });
+    },
+    get C305() {
+      return C305 = dart.constList([C306 || CT.C306], _LocationL());
+    },
+    get C304() {
+      return C304 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C305 || CT.C305,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 540,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C309() {
+      return C309 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "name",
+        [_Location_column]: 13,
+        [_Location_line]: 542,
+        [_Location_file]: null
+      });
+    },
+    get C310() {
+      return C310 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 13,
+        [_Location_line]: 543,
+        [_Location_file]: null
+      });
+    },
+    get C308() {
+      return C308 = dart.constList([C309 || CT.C309, C310 || CT.C310], _LocationL());
+    },
+    get C307() {
+      return C307 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C308 || CT.C308,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 541,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C313() {
+      return C313 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 20,
+        [_Location_line]: 545,
+        [_Location_file]: null
+      });
+    },
+    get C312() {
+      return C312 = dart.constList([C313 || CT.C313], _LocationL());
+    },
+    get C311() {
+      return C311 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C312 || CT.C312,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 545,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C316() {
+      return C316 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 13,
+        [_Location_line]: 547,
+        [_Location_file]: null
+      });
+    },
+    get C317() {
+      return C317 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textAlign",
+        [_Location_column]: 13,
+        [_Location_line]: 548,
+        [_Location_file]: null
+      });
+    },
+    get C318() {
+      return C318 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 13,
+        [_Location_line]: 549,
+        [_Location_file]: null
+      });
+    },
+    get C315() {
+      return C315 = dart.constList([C316 || CT.C316, C317 || CT.C317, C318 || CT.C318], _LocationL());
+    },
+    get C314() {
+      return C314 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C315 || CT.C315,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 546,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C321() {
+      return C321 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 29,
+        [_Location_line]: 558,
+        [_Location_file]: null
+      });
+    },
+    get C320() {
+      return C320 = dart.constList([C321 || CT.C321], _LocationL());
+    },
+    get C319() {
+      return C319 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C320 || CT.C320,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 558,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C322() {
+      return C322 = dart.fn(app_settings.AppSettings.openAppSettings, VoidToFutureLOfvoid());
+    },
+    get C325() {
+      return C325 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 558,
+        [_Location_file]: null
+      });
+    },
+    get C326() {
+      return C326 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 17,
+        [_Location_line]: 559,
+        [_Location_file]: null
+      });
+    },
+    get C327() {
+      return C327 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "splashColor",
+        [_Location_column]: 17,
+        [_Location_line]: 560,
+        [_Location_file]: null
+      });
+    },
+    get C328() {
+      return C328 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onLongPress",
+        [_Location_column]: 17,
+        [_Location_line]: 561,
+        [_Location_file]: null
+      });
+    },
+    get C329() {
+      return C329 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "shape",
+        [_Location_column]: 17,
+        [_Location_line]: 562,
+        [_Location_file]: null
+      });
+    },
+    get C330() {
+      return C330 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 17,
+        [_Location_line]: 565,
+        [_Location_file]: null
+      });
+    },
+    get C324() {
+      return C324 = dart.constList([C325 || CT.C325, C326 || CT.C326, C327 || CT.C327, C328 || CT.C328, C329 || CT.C329, C330 || CT.C330], _LocationL());
+    },
+    get C323() {
+      return C323 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C324 || CT.C324,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 557,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C333() {
+      return C333 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 24,
+        [_Location_line]: 567,
+        [_Location_file]: null
+      });
+    },
+    get C332() {
+      return C332 = dart.constList([C333 || CT.C333], _LocationL());
+    },
+    get C331() {
+      return C331 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C332 || CT.C332,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 567,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C336() {
+      return C336 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 29,
+        [_Location_line]: 569,
+        [_Location_file]: null
+      });
+    },
+    get C335() {
+      return C335 = dart.constList([C336 || CT.C336], _LocationL());
+    },
+    get C334() {
+      return C334 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C335 || CT.C335,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 569,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C337() {
+      return C337 = dart.fn(app_settings.AppSettings.openNotificationSettings, VoidToFutureLOfvoid());
+    },
+    get C340() {
+      return C340 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 569,
+        [_Location_file]: null
+      });
+    },
+    get C341() {
+      return C341 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 17,
+        [_Location_line]: 570,
+        [_Location_file]: null
+      });
+    },
+    get C342() {
+      return C342 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "splashColor",
+        [_Location_column]: 17,
+        [_Location_line]: 571,
+        [_Location_file]: null
+      });
+    },
+    get C343() {
+      return C343 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "shape",
+        [_Location_column]: 17,
+        [_Location_line]: 572,
+        [_Location_file]: null
+      });
+    },
+    get C344() {
+      return C344 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 17,
+        [_Location_line]: 575,
+        [_Location_file]: null
+      });
+    },
+    get C339() {
+      return C339 = dart.constList([C340 || CT.C340, C341 || CT.C341, C342 || CT.C342, C343 || CT.C343, C344 || CT.C344], _LocationL());
+    },
+    get C338() {
+      return C338 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C339 || CT.C339,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 568,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C347() {
+      return C347 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 13,
+        [_Location_line]: 555,
+        [_Location_file]: null
+      });
+    },
+    get C348() {
+      return C348 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 13,
+        [_Location_line]: 556,
+        [_Location_file]: null
+      });
+    },
+    get C346() {
+      return C346 = dart.constList([C347 || CT.C347, C348 || CT.C348], _LocationL());
+    },
+    get C345() {
+      return C345 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C346 || CT.C346,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 554,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C351() {
+      return C351 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 539,
+        [_Location_file]: null
+      });
+    },
+    get C350() {
+      return C350 = dart.constList([C351 || CT.C351], _LocationL());
+    },
+    get C349() {
+      return C349 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C350 || CT.C350,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 538,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C354() {
+      return C354 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 526,
+        [_Location_file]: null
+      });
+    },
+    get C355() {
+      return C355 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 538,
+        [_Location_file]: null
+      });
+    },
+    get C353() {
+      return C353 = dart.constList([C354 || CT.C354, C355 || CT.C355], _LocationL());
+    },
+    get C352() {
+      return C352 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C353 || CT.C353,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 525,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C358() {
+      return C358 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 11,
+        [_Location_line]: 600,
+        [_Location_file]: null
+      });
+    },
+    get C359() {
+      return C359 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 11,
+        [_Location_line]: 601,
+        [_Location_file]: null
+      });
+    },
+    get C357() {
+      return C357 = dart.constList([C358 || CT.C358, C359 || CT.C359], _LocationL());
+    },
+    get C356() {
+      return C356 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C357 || CT.C357,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 599,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C362() {
+      return C362 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 599,
+        [_Location_file]: null
+      });
+    },
+    get C363() {
+      return C363 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "centerTitle",
+        [_Location_column]: 9,
+        [_Location_line]: 606,
+        [_Location_file]: null
+      });
+    },
+    get C364() {
+      return C364 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 9,
+        [_Location_line]: 607,
+        [_Location_file]: null
+      });
+    },
+    get C365() {
+      return C365 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "brightness",
+        [_Location_column]: 9,
+        [_Location_line]: 608,
+        [_Location_file]: null
+      });
+    },
+    get C361() {
+      return C361 = dart.constList([C362 || CT.C362, C363 || CT.C363, C364 || CT.C364, C365 || CT.C365], _LocationL());
+    },
+    get C360() {
+      return C360 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C361 || CT.C361,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 598,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C368() {
+      return C368 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 18,
+        [_Location_line]: 610,
+        [_Location_file]: null
+      });
+    },
+    get C367() {
+      return C367 = dart.constList([C368 || CT.C368], _LocationL());
+    },
+    get C366() {
+      return C366 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C367 || CT.C367,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 610,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C371() {
+      return C371 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 598,
+        [_Location_file]: null
+      });
+    },
+    get C372() {
+      return C372 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 610,
+        [_Location_file]: null
+      });
+    },
+    get C370() {
+      return C370 = dart.constList([C371 || CT.C371, C372 || CT.C372], _LocationL());
+    },
+    get C369() {
+      return C369 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C370 || CT.C370,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 597,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C374() {
+      return C374 = dart.constList([], _LocationL());
+    },
+    get C373() {
+      return C373 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C374 || CT.C374,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 652,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C377() {
+      return C377 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 11,
+        [_Location_line]: 667,
+        [_Location_file]: null
+      });
+    },
+    get C378() {
+      return C378 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 11,
+        [_Location_line]: 668,
+        [_Location_file]: null
+      });
+    },
+    get C376() {
+      return C376 = dart.constList([C377 || CT.C377, C378 || CT.C378], _LocationL());
+    },
+    get C375() {
+      return C375 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C376 || CT.C376,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 666,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C381() {
+      return C381 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 666,
+        [_Location_file]: null
+      });
+    },
+    get C382() {
+      return C382 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 9,
+        [_Location_line]: 673,
+        [_Location_file]: null
+      });
+    },
+    get C383() {
+      return C383 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "brightness",
+        [_Location_column]: 9,
+        [_Location_line]: 674,
+        [_Location_file]: null
+      });
+    },
+    get C380() {
+      return C380 = dart.constList([C381 || CT.C381, C382 || CT.C382, C383 || CT.C383], _LocationL());
+    },
+    get C379() {
+      return C379 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C380 || CT.C380,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 665,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    },
+    get C386() {
+      return C386 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 665,
+        [_Location_file]: null
+      });
+    },
+    get C385() {
+      return C385 = dart.constList([C386 || CT.C386], _LocationL());
+    },
+    get C384() {
+      return C384 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C385 || CT.C385,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 664,
+        [_Location_file]: "file:///C:/Users/Zach/Desktop/flutter/zachnology/lib/placeholder_widget.dart"
+      });
+    }
+  }, false);
+  var userId$ = dart.privateName(placeholder_widget, "Post.userId");
+  var id$ = dart.privateName(placeholder_widget, "Post.id");
+  var title$ = dart.privateName(placeholder_widget, "Post.title");
+  var body$ = dart.privateName(placeholder_widget, "Post.body");
+  placeholder_widget.Post = class Post extends core.Object {
+    get userId() {
+      return this[userId$];
+    }
+    set userId(value) {
+      super.userId = value;
+    }
+    get id() {
+      return this[id$];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get title() {
+      return this[title$];
+    }
+    set title(value) {
+      super.title = value;
+    }
+    get body() {
+      return this[body$];
+    }
+    set body(value) {
+      super.body = value;
+    }
+    static fromJson(json) {
+      return new placeholder_widget.Post.new({userId: intL().as(json[$_get]("userId")), id: intL().as(json[$_get]("id")), title: StringL().as(json[$_get]("title")), body: StringL().as(json[$_get]("body"))});
+    }
+  };
+  (placeholder_widget.Post.new = function(opts) {
+    let userId = opts && 'userId' in opts ? opts.userId : null;
+    let id = opts && 'id' in opts ? opts.id : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    let body = opts && 'body' in opts ? opts.body : null;
+    this[userId$] = userId;
+    this[id$] = id;
+    this[title$] = title;
+    this[body$] = body;
+    ;
+  }).prototype = placeholder_widget.Post.prototype;
+  dart.addTypeTests(placeholder_widget.Post);
+  dart.addTypeCaches(placeholder_widget.Post);
+  dart.setLibraryUri(placeholder_widget.Post, L0);
+  dart.setFieldSignature(placeholder_widget.Post, () => ({
+    __proto__: dart.getFields(placeholder_widget.Post.__proto__),
+    userId: dart.finalFieldType(dart.legacy(core.int)),
+    id: dart.finalFieldType(dart.legacy(core.int)),
+    title: dart.finalFieldType(dart.legacy(core.String)),
+    body: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  placeholder_widget.HomeWidget = class HomeWidget extends framework.StatefulWidget {
+    createState() {
+      return new placeholder_widget._HomeWidgetState.new();
+    }
+  };
+  (placeholder_widget.HomeWidget.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    placeholder_widget.HomeWidget.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = placeholder_widget.HomeWidget.prototype;
+  dart.addTypeTests(placeholder_widget.HomeWidget);
+  dart.addTypeCaches(placeholder_widget.HomeWidget);
+  dart.setMethodSignature(placeholder_widget.HomeWidget, () => ({
+    __proto__: dart.getMethods(placeholder_widget.HomeWidget.__proto__),
+    createState: dart.fnType(dart.legacy(placeholder_widget._HomeWidgetState), [])
+  }));
+  dart.setLibraryUri(placeholder_widget.HomeWidget, L0);
+  var _launchURL = dart.privateName(placeholder_widget, "_launchURL");
+  var _changeText = dart.privateName(placeholder_widget, "_changeText");
+  var Radius_y = dart.privateName(ui, "Radius.y");
+  var Radius_x = dart.privateName(ui, "Radius.x");
+  var C0;
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var C3;
+  var C2;
+  var C1;
+  var C6;
+  var C7;
+  var C5;
+  var C4;
+  var C10;
+  var C9;
+  var C8;
+  var C13;
+  var C12;
+  var C11;
+  var C16;
+  var C17;
+  var C15;
+  var C14;
+  var C20;
+  var C19;
+  var C18;
+  var C23;
+  var C22;
+  var C21;
+  var C26;
+  var C27;
+  var C25;
+  var C24;
+  var C30;
+  var C29;
+  var C28;
+  var C33;
+  var C32;
+  var C31;
+  var C36;
+  var C37;
+  var C35;
+  var C34;
+  var C40;
+  var C39;
+  var C38;
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var C41;
+  var C44;
+  var C45;
+  var C43;
+  var C42;
+  var C48;
+  var C49;
+  var C47;
+  var C46;
+  var C52;
+  var C53;
+  var C51;
+  var C50;
+  var C56;
+  var C55;
+  var C54;
+  var C59;
+  var C60;
+  var C61;
+  var C58;
+  var C57;
+  var C62;
+  var C65;
+  var C66;
+  var C67;
+  var C64;
+  var C63;
+  var C70;
+  var C69;
+  var C68;
+  var C73;
+  var C72;
+  var C71;
+  var C76;
+  var C77;
+  var C75;
+  var C74;
+  var C80;
+  var C79;
+  var C78;
+  var C83;
+  var C84;
+  var C82;
+  var C81;
+  var C87;
+  var C86;
+  var C85;
+  var C90;
+  var C89;
+  var C88;
+  var C93;
+  var C94;
+  var C92;
+  var C91;
+  var C97;
+  var C98;
+  var C96;
+  var C95;
+  var C101;
+  var C102;
+  var C100;
+  var C99;
+  var C105;
+  var C106;
+  var C107;
+  var C108;
+  var C109;
+  var C110;
+  var C104;
+  var C103;
+  var C113;
+  var C114;
+  var C115;
+  var C112;
+  var C111;
+  var C118;
+  var C117;
+  var C116;
+  var C119;
+  var C122;
+  var C123;
+  var C121;
+  var C120;
+  var C124;
+  var C127;
+  var C128;
+  var C126;
+  var C125;
+  var C131;
+  var C132;
+  var C130;
+  var C129;
+  var C135;
+  var C136;
+  var C137;
+  var C134;
+  var C133;
+  var C140;
+  var C141;
+  var C139;
+  var C138;
+  var C144;
+  var C145;
+  var C146;
+  var C147;
+  var C148;
+  var C149;
+  var C143;
+  var C142;
+  var C152;
+  var C153;
+  var C151;
+  var C150;
+  var C156;
+  var C157;
+  var C158;
+  var C155;
+  var C154;
+  var C161;
+  var C162;
+  var C160;
+  var C159;
+  var C165;
+  var C166;
+  var C167;
+  var C164;
+  var C163;
+  var C170;
+  var C169;
+  var C168;
+  var C173;
+  var C172;
+  var C171;
+  var C176;
+  var C177;
+  var C175;
+  var C174;
+  var C180;
+  var C179;
+  var C178;
+  var C183;
+  var C184;
+  var C182;
+  var C181;
+  var C187;
+  var C186;
+  var C185;
+  var C190;
+  var C189;
+  var C188;
+  var C193;
+  var C194;
+  var C192;
+  var C191;
+  var C197;
+  var C198;
+  var C196;
+  var C195;
+  var C201;
+  var C202;
+  var C200;
+  var C199;
+  var C205;
+  var C206;
+  var C207;
+  var C208;
+  var C209;
+  var C210;
+  var C204;
+  var C203;
+  var C213;
+  var C214;
+  var C215;
+  var C212;
+  var C211;
+  var C218;
+  var C217;
+  var C216;
+  var C221;
+  var C220;
+  var C219;
+  var C224;
+  var C225;
+  var C223;
+  var C222;
+  var C228;
+  var C227;
+  var C226;
+  var C231;
+  var C232;
+  var C230;
+  var C229;
+  var C235;
+  var C234;
+  var C233;
+  var C238;
+  var C237;
+  var C236;
+  var C241;
+  var C242;
+  var C240;
+  var C239;
+  var C245;
+  var C246;
+  var C244;
+  var C243;
+  var C249;
+  var C250;
+  var C248;
+  var C247;
+  var C253;
+  var C254;
+  var C255;
+  var C256;
+  var C257;
+  var C258;
+  var C252;
+  var C251;
+  var C261;
+  var C262;
+  var C260;
+  var C259;
+  var C265;
+  var C264;
+  var C263;
+  var C268;
+  var C267;
+  var C266;
+  var C271;
+  var C270;
+  var C269;
+  var C274;
+  var C273;
+  var C272;
+  placeholder_widget._HomeWidgetState = class _HomeWidgetState extends framework.State$(dart.legacy(placeholder_widget.HomeWidget)) {
+    [_launchURL]() {
+      return async.async(dart.dynamic, function* _launchURL() {
+        if (dart.test(yield url_launcher.canLaunch("https://flutter.dev"))) {
+          yield url_launcher.launch("https://flutter.dev");
+        } else {
+          dart.throw("Could not launch " + "https://flutter.dev");
+        }
+      });
+    }
+    [_changeText]() {
+      this.setState(dart.fn(() => {
+        let firstSpace = sign_in.name[$indexOf](" ");
+        placeholder_widget.firstName = sign_in.name[$substring](0, firstSpace);
+        let lastName = sign_in.name[$substring](firstSpace)[$trim]();
+        placeholder_widget.welcometext = "Hey, " + dart.str(placeholder_widget.firstName) + "!";
+        placeholder_widget._userLoggedIn = true;
+      }, VoidToNull()));
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({body: new single_child_scroll_view.SingleChildScrollView.new({child: new basic.Column.new({children: JSArrayOfWidgetL().of([new container.Container.new({height: 325.0, decoration: new box_decoration.BoxDecoration.new({boxShadow: JSArrayOfBoxShadowL().of([new box_shadow.BoxShadow.new({color: new ui.Color.new(4281232030).withOpacity(0.5), spreadRadius: 3.0, blurRadius: 7.0, offset: new ui.Offset.new(0.0, 3.0)})]), borderRadius: new border_radius.BorderRadius.only({bottomLeft: C0 || CT.C0, bottomRight: C0 || CT.C0}), color: new ui.Color.new(4280570490)}), child: new basic.Column.new({children: JSArrayOfWidgetL().of([new basic.SizedBox.new({height: 70.0, $creationLocationd_0dea112b090073317d4: C1 || CT.C1}), new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: JSArrayOfWidgetL().of([new container.Container.new({child: new image.Image.asset("assets/logo-transparent-inverted.png", {width: 70.0, $creationLocationd_0dea112b090073317d4: C4 || CT.C4}), $creationLocationd_0dea112b090073317d4: C8 || CT.C8}), new basic.SizedBox.new({width: 30.0, $creationLocationd_0dea112b090073317d4: C11 || CT.C11}), new basic.Column.new({children: JSArrayOfWidgetL().of([new container.Container.new({child: new text.Text.new(dart.str(placeholder_widget.welcometext), {style: new text_style.TextStyle.new({fontFamily: "ZachnologyEuclid", letterSpacing: -1.0, fontSize: 40.0, color: colors.Colors.white}), $creationLocationd_0dea112b090073317d4: C14 || CT.C14}), $creationLocationd_0dea112b090073317d4: C18 || CT.C18}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C21 || CT.C21}), new container.Container.new({child: new text.Text.new("Welcome back", {style: new text_style.TextStyle.new({fontFamily: "Bungee", fontSize: 20.0, color: colors.Colors.white}), $creationLocationd_0dea112b090073317d4: C24 || CT.C24}), $creationLocationd_0dea112b090073317d4: C28 || CT.C28})]), $creationLocationd_0dea112b090073317d4: C31 || CT.C31})]), $creationLocationd_0dea112b090073317d4: C34 || CT.C34}), new basic.SizedBox.new({height: 50.0, $creationLocationd_0dea112b090073317d4: C38 || CT.C38}), new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: JSArrayOfWidgetL().of([new container.Container.new({padding: C41 || CT.C41, child: new text.Text.new("Latest episode:", {style: new text_style.TextStyle.new({fontFamily: "ProductSans", fontWeight: ui.FontWeight.bold, letterSpacing: 0.5, fontSize: 22.0, color: colors.Colors.white}), $creationLocationd_0dea112b090073317d4: C42 || CT.C42}), $creationLocationd_0dea112b090073317d4: C46 || CT.C46})]), $creationLocationd_0dea112b090073317d4: C50 || CT.C50})]), $creationLocationd_0dea112b090073317d4: C54 || CT.C54}), $creationLocationd_0dea112b090073317d4: C57 || CT.C57}), new container.Container.new({transform: vector_math_64.Matrix4.translationValues(0.0, -70.0, 0.0), margin: C62 || CT.C62, padding: C62 || CT.C62, width: 330.0, decoration: new box_decoration.BoxDecoration.new({boxShadow: JSArrayOfBoxShadowL().of([new box_shadow.BoxShadow.new({color: colors.Colors.grey.withOpacity(0.5), spreadRadius: 3.0, blurRadius: 7.0, offset: new ui.Offset.new(0.0, 3.0)})]), color: colors.Colors.white, border: box_border.Border.all({width: 2.0, color: colors.Colors.white}), borderRadius: new border_radius.BorderRadius.all(new ui.Radius.circular(22.0))}), child: new ink_well.InkWell.new({onTap: dart.fn(() => {
+                    core.print("hey");
+                  }, VoidToNull()), child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: JSArrayOfWidgetL().of([new (FutureBuilderOfPostL()).new({future: placeholder_widget.fetchPost(), builder: dart.fn((context, snapshot) => {
+                          if (dart.test(snapshot.hasData)) {
+                            return new text.Text.new(snapshot.data.title, {textAlign: ui.TextAlign.left, style: new text_style.TextStyle.new({fontFamily: "Bungee", letterSpacing: 0.5, fontSize: 20.0, color: new ui.Color.new(4280570490)}), $creationLocationd_0dea112b090073317d4: C63 || CT.C63});
+                          } else if (dart.test(snapshot.hasError)) {
+                            return new text.Text.new("Can't load info, no Internet access", {$creationLocationd_0dea112b090073317d4: C68 || CT.C68});
+                          }
+                          return new text.Text.new(" ", {$creationLocationd_0dea112b090073317d4: C71 || CT.C71});
+                        }, BuildContextLAndAsyncSnapshotLOfPostLToTextL()), $creationLocationd_0dea112b090073317d4: C74 || CT.C74}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C78 || CT.C78}), new (FutureBuilderOfPostL()).new({future: placeholder_widget.fetchPost(), builder: dart.fn((context, snapshot) => {
+                          if (dart.test(snapshot.hasData)) {
+                            return new text.Text.new(snapshot.data.body, {style: new text_style.TextStyle.new({fontFamily: "ProductSans", letterSpacing: 0.5, fontSize: 20.0, color: new ui.Color.new(4280570490)}), $creationLocationd_0dea112b090073317d4: C81 || CT.C81});
+                          } else if (dart.test(snapshot.hasError)) {
+                            return new text.Text.new("", {$creationLocationd_0dea112b090073317d4: C85 || CT.C85});
+                          }
+                          return new text.Text.new(" ", {$creationLocationd_0dea112b090073317d4: C88 || CT.C88});
+                        }, BuildContextLAndAsyncSnapshotLOfPostLToTextL()), $creationLocationd_0dea112b090073317d4: C91 || CT.C91})]), $creationLocationd_0dea112b090073317d4: C95 || CT.C95}), $creationLocationd_0dea112b090073317d4: C99 || CT.C99}), $creationLocationd_0dea112b090073317d4: C103 || CT.C103}), new basic.Column.new({children: (() => {
+                  let t0 = JSArrayOfWidgetL().of([]);
+                  if (dart.equals(placeholder_widget._userLoggedIn, false)) t0[$addAll](JSArrayOfWidgetL().of([new text.Text.new("Please sign in so we can provide the \nbest experience possible:", {textAlign: ui.TextAlign.center, style: new text_style.TextStyle.new({fontSize: 17.0, color: new ui.Color.new(4280570490)}), $creationLocationd_0dea112b090073317d4: C111 || CT.C111}), new basic.SizedBox.new({height: 20.0, $creationLocationd_0dea112b090073317d4: C116 || CT.C116}), new outline_button.OutlineButton.new({splashColor: colors.Colors.grey, onPressed: dart.fn(() => {
+                        sign_in.signInWithGoogle().then(core.Null, dart.fn(result => {
+                          if (result != null) {
+                            this[_changeText]();
+                          }
+                        }, StringLToNull()));
+                      }, VoidToNull()), shape: new rounded_rectangle_border.RoundedRectangleBorder.new({borderRadius: new border_radius.BorderRadius.circular(40.0)}), highlightElevation: 0.0, borderSide: new borders.BorderSide.new({color: new ui.Color.new(4280570490)}), child: new basic.Padding.new({padding: C119 || CT.C119, child: new basic.Row.new({mainAxisSize: flex.MainAxisSize.min, mainAxisAlignment: flex.MainAxisAlignment.center, children: JSArrayOfWidgetL().of([new image.Image.new({image: new image_resolution.AssetImage.new("assets/google_logo.png"), height: 35.0, $creationLocationd_0dea112b090073317d4: C120 || CT.C120}), new basic.Padding.new({padding: C124 || CT.C124, child: new text.Text.new("Sign in", {style: new text_style.TextStyle.new({fontSize: 20.0, fontFamily: "ProductSans", color: new ui.Color.new(4280570490)}), $creationLocationd_0dea112b090073317d4: C125 || CT.C125}), $creationLocationd_0dea112b090073317d4: C129 || CT.C129})]), $creationLocationd_0dea112b090073317d4: C133 || CT.C133}), $creationLocationd_0dea112b090073317d4: C138 || CT.C138}), $creationLocationd_0dea112b090073317d4: C142 || CT.C142})]));
+                  if (dart.equals(placeholder_widget._userLoggedIn, true)) t0[$addAll](JSArrayOfWidgetL().of([new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: JSArrayOfWidgetL().of([new container.Container.new({padding: C41 || CT.C41, transform: vector_math_64.Matrix4.translationValues(0.0, -50.0, 0.0), child: new text.Text.new("Recommended for you:", {style: new text_style.TextStyle.new({fontFamily: "ProductSans", fontWeight: ui.FontWeight.bold, color: new ui.Color.new(4280570490), letterSpacing: 0.5, fontSize: 22.0}), $creationLocationd_0dea112b090073317d4: C150 || CT.C150}), $creationLocationd_0dea112b090073317d4: C154 || CT.C154})]), $creationLocationd_0dea112b090073317d4: C159 || CT.C159}), new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: JSArrayOfWidgetL().of([new container.Container.new({margin: C62 || CT.C62, padding: C62 || CT.C62, transform: vector_math_64.Matrix4.translationValues(0.0, -50.0, 0.0), width: 150.0, decoration: new box_decoration.BoxDecoration.new({boxShadow: JSArrayOfBoxShadowL().of([new box_shadow.BoxShadow.new({color: colors.Colors.grey.withOpacity(0.5), spreadRadius: 3.0, blurRadius: 7.0, offset: new ui.Offset.new(0.0, 3.0)})]), color: colors.Colors.white, border: box_border.Border.all({width: 2.0, color: colors.Colors.white}), borderRadius: new border_radius.BorderRadius.all(new ui.Radius.circular(22.0))}), child: new ink_well.InkWell.new({onTap: dart.fn(() => {
+                              core.print("hey");
+                            }, VoidToNull()), child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: JSArrayOfWidgetL().of([new (FutureBuilderOfPostL()).new({future: placeholder_widget.fetchPost(), builder: dart.fn((context, snapshot) => {
+                                    if (dart.test(snapshot.hasData)) {
+                                      return new text.Text.new(snapshot.data.title, {textAlign: ui.TextAlign.left, style: new text_style.TextStyle.new({fontFamily: "Bungee", letterSpacing: 0.5, fontSize: 17.0, color: new ui.Color.new(4280570490)}), $creationLocationd_0dea112b090073317d4: C163 || CT.C163});
+                                    } else if (dart.test(snapshot.hasError)) {
+                                      return new text.Text.new("Can't load info, no Internet access", {$creationLocationd_0dea112b090073317d4: C168 || CT.C168});
+                                    }
+                                    return new text.Text.new(" ", {$creationLocationd_0dea112b090073317d4: C171 || CT.C171});
+                                  }, BuildContextLAndAsyncSnapshotLOfPostLToTextL()), $creationLocationd_0dea112b090073317d4: C174 || CT.C174}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C178 || CT.C178}), new (FutureBuilderOfPostL()).new({future: placeholder_widget.fetchPost(), builder: dart.fn((context, snapshot) => {
+                                    if (dart.test(snapshot.hasData)) {
+                                      return new text.Text.new(snapshot.data.body, {style: new text_style.TextStyle.new({fontFamily: "ProductSans", letterSpacing: 0.5, fontSize: 17.0, color: new ui.Color.new(4280570490)}), $creationLocationd_0dea112b090073317d4: C181 || CT.C181});
+                                    } else if (dart.test(snapshot.hasError)) {
+                                      return new text.Text.new("", {$creationLocationd_0dea112b090073317d4: C185 || CT.C185});
+                                    }
+                                    return new text.Text.new(" ", {$creationLocationd_0dea112b090073317d4: C188 || CT.C188});
+                                  }, BuildContextLAndAsyncSnapshotLOfPostLToTextL()), $creationLocationd_0dea112b090073317d4: C191 || CT.C191})]), $creationLocationd_0dea112b090073317d4: C195 || CT.C195}), $creationLocationd_0dea112b090073317d4: C199 || CT.C199}), $creationLocationd_0dea112b090073317d4: C203 || CT.C203}), new container.Container.new({margin: C62 || CT.C62, padding: C62 || CT.C62, transform: vector_math_64.Matrix4.translationValues(0.0, -50.0, 0.0), width: 150.0, decoration: new box_decoration.BoxDecoration.new({boxShadow: JSArrayOfBoxShadowL().of([new box_shadow.BoxShadow.new({color: colors.Colors.grey.withOpacity(0.5), spreadRadius: 3.0, blurRadius: 7.0, offset: new ui.Offset.new(0.0, 3.0)})]), color: colors.Colors.white, border: box_border.Border.all({width: 2.0, color: colors.Colors.white}), borderRadius: new border_radius.BorderRadius.all(new ui.Radius.circular(22.0))}), child: new ink_well.InkWell.new({onTap: dart.fn(() => {
+                              core.print("hey");
+                            }, VoidToNull()), child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: JSArrayOfWidgetL().of([new (FutureBuilderOfPostL()).new({future: placeholder_widget.fetchPost(), builder: dart.fn((context, snapshot) => {
+                                    if (dart.test(snapshot.hasData)) {
+                                      return new text.Text.new(snapshot.data.title, {textAlign: ui.TextAlign.center, style: new text_style.TextStyle.new({fontFamily: "Bungee", letterSpacing: 0.5, fontSize: 17.0, color: new ui.Color.new(4280570490)}), $creationLocationd_0dea112b090073317d4: C211 || CT.C211});
+                                    } else if (dart.test(snapshot.hasError)) {
+                                      return new text.Text.new("Can't load info, no Internet access", {$creationLocationd_0dea112b090073317d4: C216 || CT.C216});
+                                    }
+                                    return new text.Text.new(" ", {$creationLocationd_0dea112b090073317d4: C219 || CT.C219});
+                                  }, BuildContextLAndAsyncSnapshotLOfPostLToTextL()), $creationLocationd_0dea112b090073317d4: C222 || CT.C222}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C226 || CT.C226}), new (FutureBuilderOfPostL()).new({future: placeholder_widget.fetchPost(), builder: dart.fn((context, snapshot) => {
+                                    if (dart.test(snapshot.hasData)) {
+                                      return new text.Text.new(snapshot.data.body, {style: new text_style.TextStyle.new({fontFamily: "ProductSans", letterSpacing: 0.5, fontSize: 17.0, color: new ui.Color.new(4280570490)}), $creationLocationd_0dea112b090073317d4: C229 || CT.C229});
+                                    } else if (dart.test(snapshot.hasError)) {
+                                      return new text.Text.new("", {$creationLocationd_0dea112b090073317d4: C233 || CT.C233});
+                                    }
+                                    return new text.Text.new(" ", {$creationLocationd_0dea112b090073317d4: C236 || CT.C236});
+                                  }, BuildContextLAndAsyncSnapshotLOfPostLToTextL()), $creationLocationd_0dea112b090073317d4: C239 || CT.C239})]), $creationLocationd_0dea112b090073317d4: C243 || CT.C243}), $creationLocationd_0dea112b090073317d4: C247 || CT.C247}), $creationLocationd_0dea112b090073317d4: C251 || CT.C251})]), $creationLocationd_0dea112b090073317d4: C259 || CT.C259})]));
+                  return t0;
+                })(), $creationLocationd_0dea112b090073317d4: C263 || CT.C263})]), $creationLocationd_0dea112b090073317d4: C266 || CT.C266}), $creationLocationd_0dea112b090073317d4: C269 || CT.C269}), $creationLocationd_0dea112b090073317d4: C272 || CT.C272});
+    }
+  };
+  (placeholder_widget._HomeWidgetState.new = function() {
+    placeholder_widget._HomeWidgetState.__proto__.new.call(this);
+    ;
+  }).prototype = placeholder_widget._HomeWidgetState.prototype;
+  dart.addTypeTests(placeholder_widget._HomeWidgetState);
+  dart.addTypeCaches(placeholder_widget._HomeWidgetState);
+  dart.setMethodSignature(placeholder_widget._HomeWidgetState, () => ({
+    __proto__: dart.getMethods(placeholder_widget._HomeWidgetState.__proto__),
+    [_launchURL]: dart.fnType(dart.dynamic, []),
+    [_changeText]: dart.fnType(dart.void, []),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(placeholder_widget._HomeWidgetState, L0);
+  var C277;
+  var C278;
+  var C276;
+  var C275;
+  var C281;
+  var C282;
+  var C283;
+  var C284;
+  var C280;
+  var C279;
+  var C287;
+  var C288;
+  var C289;
+  var C286;
+  var C285;
+  var C292;
+  var C293;
+  var C291;
+  var C290;
+  placeholder_widget.ListenWidget = class ListenWidget extends framework.StatelessWidget {
+    [_launchURL]() {
+      return async.async(dart.dynamic, function* _launchURL() {
+        if (dart.test(yield url_launcher.canLaunch("https://flutter.dev"))) {
+          yield url_launcher.launch("https://flutter.dev");
+        } else {
+          dart.throw("Could not launch " + "https://flutter.dev");
+        }
+      });
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("Listen to our Podcast", {style: new text_style.TextStyle.new({fontFamily: "ZachnologyEuclid", fontSize: 22.0}), $creationLocationd_0dea112b090073317d4: C275 || CT.C275}), centerTitle: true, backgroundColor: new ui.Color.new(4280570490), brightness: ui.Brightness.dark, $creationLocationd_0dea112b090073317d4: C279 || CT.C279}), body: new webview_flutter.WebView.new({gestureNavigationEnabled: true, initialUrl: "https://zachnologytechreviews173012.web.app/app-resources/podcast-player/", javascriptMode: webview_flutter.JavascriptMode.unrestricted, $creationLocationd_0dea112b090073317d4: C285 || CT.C285}), $creationLocationd_0dea112b090073317d4: C290 || CT.C290});
+    }
+  };
+  (placeholder_widget.ListenWidget.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    placeholder_widget.ListenWidget.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = placeholder_widget.ListenWidget.prototype;
+  dart.addTypeTests(placeholder_widget.ListenWidget);
+  dart.addTypeCaches(placeholder_widget.ListenWidget);
+  dart.setMethodSignature(placeholder_widget.ListenWidget, () => ({
+    __proto__: dart.getMethods(placeholder_widget.ListenWidget.__proto__),
+    [_launchURL]: dart.fnType(dart.dynamic, []),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(placeholder_widget.ListenWidget, L0);
+  var C296;
+  var C297;
+  var C295;
+  var C294;
+  var C300;
+  var C301;
+  var C302;
+  var C303;
+  var C299;
+  var C298;
+  var C306;
+  var C305;
+  var C304;
+  var C309;
+  var C310;
+  var C308;
+  var C307;
+  var C313;
+  var C312;
+  var C311;
+  var C316;
+  var C317;
+  var C318;
+  var C315;
+  var C314;
+  var C321;
+  var C320;
+  var C319;
+  var C322;
+  var C325;
+  var C326;
+  var C327;
+  var C328;
+  var C329;
+  var C330;
+  var C324;
+  var C323;
+  var C333;
+  var C332;
+  var C331;
+  var C336;
+  var C335;
+  var C334;
+  var C337;
+  var C340;
+  var C341;
+  var C342;
+  var C343;
+  var C344;
+  var C339;
+  var C338;
+  var C347;
+  var C348;
+  var C346;
+  var C345;
+  var C351;
+  var C350;
+  var C349;
+  var C354;
+  var C355;
+  var C353;
+  var C352;
+  placeholder_widget.SettingsWidget = class SettingsWidget extends framework.StatelessWidget {
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("App Settings/Info", {style: new text_style.TextStyle.new({fontFamily: "ZachnologyEuclid", fontSize: 22.0}), $creationLocationd_0dea112b090073317d4: C294 || CT.C294}), centerTitle: true, backgroundColor: new ui.Color.new(4280570490), brightness: ui.Brightness.dark, $creationLocationd_0dea112b090073317d4: C298 || CT.C298}), body: new basic.Column.new({children: JSArrayOfWidgetL().of([new basic.SizedBox.new({height: 20.0, $creationLocationd_0dea112b090073317d4: C304 || CT.C304}), new image.Image.asset("assets/fulllogocircle.png", {height: 120.0, $creationLocationd_0dea112b090073317d4: C307 || CT.C307}), new basic.SizedBox.new({height: 20.0, $creationLocationd_0dea112b090073317d4: C311 || CT.C311}), new text.Text.new("Zachnology Tech \nReviews", {textAlign: ui.TextAlign.center, style: new text_style.TextStyle.new({fontFamily: "ZachnologyEuclid", fontSize: 30.0}), $creationLocationd_0dea112b090073317d4: C314 || CT.C314}), new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: JSArrayOfWidgetL().of([new raised_button.RaisedButton.new({child: new text.Text.new("App Settings", {$creationLocationd_0dea112b090073317d4: C319 || CT.C319}), color: colors.Colors.white, splashColor: colors.Colors.grey, onLongPress: C322 || CT.C322, shape: new rounded_rectangle_border.RoundedRectangleBorder.new({borderRadius: new border_radius.BorderRadius.circular(8.0), side: new borders.BorderSide.new({color: new ui.Color.new(4280570490)})}), onPressed: C322 || CT.C322, $creationLocationd_0dea112b090073317d4: C323 || CT.C323}), new basic.SizedBox.new({width: 10.0, $creationLocationd_0dea112b090073317d4: C331 || CT.C331}), new raised_button.RaisedButton.new({child: new text.Text.new("Notification Settings", {$creationLocationd_0dea112b090073317d4: C334 || CT.C334}), color: colors.Colors.white, splashColor: colors.Colors.grey, shape: new rounded_rectangle_border.RoundedRectangleBorder.new({borderRadius: new border_radius.BorderRadius.circular(8.0), side: new borders.BorderSide.new({color: new ui.Color.new(4280570490)})}), onPressed: C337 || CT.C337, $creationLocationd_0dea112b090073317d4: C338 || CT.C338})]), $creationLocationd_0dea112b090073317d4: C345 || CT.C345})]), $creationLocationd_0dea112b090073317d4: C349 || CT.C349}), $creationLocationd_0dea112b090073317d4: C352 || CT.C352});
+    }
+  };
+  (placeholder_widget.SettingsWidget.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    placeholder_widget.SettingsWidget.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = placeholder_widget.SettingsWidget.prototype;
+  dart.addTypeTests(placeholder_widget.SettingsWidget);
+  dart.addTypeCaches(placeholder_widget.SettingsWidget);
+  dart.setMethodSignature(placeholder_widget.SettingsWidget, () => ({
+    __proto__: dart.getMethods(placeholder_widget.SettingsWidget.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(placeholder_widget.SettingsWidget, L0);
+  var C358;
+  var C359;
+  var C357;
+  var C356;
+  var C362;
+  var C363;
+  var C364;
+  var C365;
+  var C361;
+  var C360;
+  var C368;
+  var C367;
+  var C366;
+  var C371;
+  var C372;
+  var C370;
+  var C369;
+  placeholder_widget.AboutWidget = class AboutWidget extends framework.StatelessWidget {
+    [_launchURL]() {
+      return async.async(dart.dynamic, function* _launchURL() {
+        if (dart.test(yield url_launcher.canLaunch("https://flutter.dev"))) {
+          yield url_launcher.launch("https://flutter.dev");
+        } else {
+          dart.throw("Could not launch " + "https://flutter.dev");
+        }
+      });
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("Zachnology Tech Reviews", {style: new text_style.TextStyle.new({fontFamily: "ZachnologyEuclid", fontSize: 22.0}), $creationLocationd_0dea112b090073317d4: C356 || CT.C356}), centerTitle: true, backgroundColor: new ui.Color.new(4280570490), brightness: ui.Brightness.dark, $creationLocationd_0dea112b090073317d4: C360 || CT.C360}), body: new text.Text.new("settings", {$creationLocationd_0dea112b090073317d4: C366 || CT.C366}), $creationLocationd_0dea112b090073317d4: C369 || CT.C369});
+    }
+  };
+  (placeholder_widget.AboutWidget.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    placeholder_widget.AboutWidget.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = placeholder_widget.AboutWidget.prototype;
+  dart.addTypeTests(placeholder_widget.AboutWidget);
+  dart.addTypeCaches(placeholder_widget.AboutWidget);
+  dart.setMethodSignature(placeholder_widget.AboutWidget, () => ({
+    __proto__: dart.getMethods(placeholder_widget.AboutWidget.__proto__),
+    [_launchURL]: dart.fnType(dart.dynamic, []),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(placeholder_widget.AboutWidget, L0);
+  placeholder_widget.DividerWidget = class DividerWidget extends framework.StatefulWidget {
+    createState() {
+      return new placeholder_widget._DividerWidgetState.new();
+    }
+  };
+  (placeholder_widget.DividerWidget.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    placeholder_widget.DividerWidget.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = placeholder_widget.DividerWidget.prototype;
+  dart.addTypeTests(placeholder_widget.DividerWidget);
+  dart.addTypeCaches(placeholder_widget.DividerWidget);
+  dart.setMethodSignature(placeholder_widget.DividerWidget, () => ({
+    __proto__: dart.getMethods(placeholder_widget.DividerWidget.__proto__),
+    createState: dart.fnType(dart.legacy(placeholder_widget._DividerWidgetState), [])
+  }));
+  dart.setLibraryUri(placeholder_widget.DividerWidget, L0);
+  var C374;
+  var C373;
+  placeholder_widget._DividerWidgetState = class _DividerWidgetState extends framework.State$(dart.legacy(placeholder_widget.DividerWidget)) {
+    initState() {
+      super.initState();
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({$creationLocationd_0dea112b090073317d4: C373 || CT.C373});
+    }
+  };
+  (placeholder_widget._DividerWidgetState.new = function() {
+    placeholder_widget._DividerWidgetState.__proto__.new.call(this);
+    ;
+  }).prototype = placeholder_widget._DividerWidgetState.prototype;
+  dart.addTypeTests(placeholder_widget._DividerWidgetState);
+  dart.addTypeCaches(placeholder_widget._DividerWidgetState);
+  dart.setMethodSignature(placeholder_widget._DividerWidgetState, () => ({
+    __proto__: dart.getMethods(placeholder_widget._DividerWidgetState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(placeholder_widget._DividerWidgetState, L0);
+  placeholder_widget.VoiceRecorder = class VoiceRecorder extends framework.StatefulWidget {
+    createState() {
+      return new placeholder_widget._VoiceRecorderState.new();
+    }
+  };
+  (placeholder_widget.VoiceRecorder.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    placeholder_widget.VoiceRecorder.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = placeholder_widget.VoiceRecorder.prototype;
+  dart.addTypeTests(placeholder_widget.VoiceRecorder);
+  dart.addTypeCaches(placeholder_widget.VoiceRecorder);
+  dart.setMethodSignature(placeholder_widget.VoiceRecorder, () => ({
+    __proto__: dart.getMethods(placeholder_widget.VoiceRecorder.__proto__),
+    createState: dart.fnType(dart.legacy(placeholder_widget._VoiceRecorderState), [])
+  }));
+  dart.setLibraryUri(placeholder_widget.VoiceRecorder, L0);
+  var C377;
+  var C378;
+  var C376;
+  var C375;
+  var C381;
+  var C382;
+  var C383;
+  var C380;
+  var C379;
+  var C386;
+  var C385;
+  var C384;
+  placeholder_widget._VoiceRecorderState = class _VoiceRecorderState extends framework.State$(dart.legacy(placeholder_widget.VoiceRecorder)) {
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("Voice Message", {style: new text_style.TextStyle.new({fontFamily: "ZachnologyEuclid", fontSize: 22.0}), $creationLocationd_0dea112b090073317d4: C375 || CT.C375}), backgroundColor: new ui.Color.new(4283154388), brightness: ui.Brightness.dark, $creationLocationd_0dea112b090073317d4: C379 || CT.C379}), $creationLocationd_0dea112b090073317d4: C384 || CT.C384});
+    }
+  };
+  (placeholder_widget._VoiceRecorderState.new = function() {
+    placeholder_widget._VoiceRecorderState.__proto__.new.call(this);
+    ;
+  }).prototype = placeholder_widget._VoiceRecorderState.prototype;
+  dart.addTypeTests(placeholder_widget._VoiceRecorderState);
+  dart.addTypeCaches(placeholder_widget._VoiceRecorderState);
+  dart.setMethodSignature(placeholder_widget._VoiceRecorderState, () => ({
+    __proto__: dart.getMethods(placeholder_widget._VoiceRecorderState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(placeholder_widget._VoiceRecorderState, L0);
+  placeholder_widget.fetchPost = function fetchPost() {
+    return async.async(PostL(), function* fetchPost() {
+      let response = (yield http.get("https://zachnologytechreviews173012.web.app/app-resources/latest-episode-data.json"));
+      if (response.statusCode === 200) {
+        return placeholder_widget.Post.fromJson(MapLOfStringL$dynamic().as(convert.json.decode(response.body)));
+      } else {
+        dart.throw(core.Exception.new("Failed to load post"));
+      }
+    });
+  };
+  dart.defineLazy(placeholder_widget, {
+    /*placeholder_widget._userLoggedIn*/get _userLoggedIn() {
+      return false;
+    },
+    set _userLoggedIn(_) {},
+    /*placeholder_widget.welcometext*/get welcometext() {
+      return "Hey there!";
+    },
+    set welcometext(_) {},
+    /*placeholder_widget.firstName*/get firstName() {
+      return null;
+    },
+    set firstName(_) {},
+    /*placeholder_widget._auth*/get _auth() {
+      return firebase_auth.FirebaseAuth.instance;
+    },
+    /*placeholder_widget._googleSignIn*/get _googleSignIn() {
+      return new google_sign_in.GoogleSignIn.new();
+    }
+  }, true);
+  dart.trackLibraries("packages/zachnology_tech_reviews/placeholder_widget.dart", {
+    "package:zachnology_tech_reviews/placeholder_widget.dart": placeholder_widget
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["placeholder_widget.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA2CY;;;;;;IACA;;;;;;IACG;;;;;;IACA;;;;;;oBAI8B;AACzC,YAAO,oDACG,AAAI,IAAA,QAAC,0BACT,AAAI,IAAA,QAAC,4BACF,AAAI,IAAA,QAAC,8BACN,AAAI,IAAA,QAAC;IAEf;;;QATW;QAAa;QAAS;QAAY;IAAlC;IAAa;IAAS;IAAY;;EAAM;;;;;;;;;;;;;AAcjB;IAAkB;;;;;;EACtD;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAGY;AAER,sBAAI,MAAM;AACS,UAAjB,MAAM;;AAEuB,UAA7B,WAAM,AAAuB;;MAEjC;;;AAeI,MAZF,cAAS;AAMH,yBAAa,AAAK,uBAAQ;AAEZ,QADlB,+BAAY,AAAK,yBACb,GAAG,UAAU;AACV,uBAAW,AAAK,AAAsB,yBAAZ,UAAU;AACX,QAAhC,iCAAc,AAAkB,mBAAX,gCAAS;AACV,QAApB,mCAAgB;;IAEpB;UAG0B;AACxB,YAAO,kCACC,+DACG,gCACa,uBAChB,qCACU,mBACI,iDACC,0BACT,qCACS,AAAkB,iBAAZ,wBAAwB,oBACvB,iBACF,aACJ,kBAAO,KAAG,wBAGJ,iGAGX,iBAAM,sBAER,gCACa,uBAChB,gCAAiB,6DACjB,sCACuC,yCACnB,uBAChB,oCACiB,sBACf,gDACO,oHAET,+BAAgB,+DAChB,gCACoB,uBAChB,oCACS,kBACS,SAAZ,yCACK,0CACO,mCACG,gBACL,aACI,yIAIpB,gCAAiB,+DACjB,oCACS,kBACL,wBACO,0CACO,oBACF,aACI,+PAQ5B,gCAAiB,+DACjB,sCACuC,yCACnB,uBAChB,4DAES,kBACL,2BACO,0CACO,2BACW,mCACR,eACL,aACI,wTAS9B,wCACqB,yCAAkB,KAAK,CAAC,MAAM,4DAG1C,mBACK,iDACC,0BACT,qCACgB,AAAK,+BAAY,oBACjB,iBACF,aACJ,kBAAO,KAAG,iBAGR,6BACC,8BACN,YACO,qCAEW,mCAAW,uBAAS,iBAE1C,iCACE;AACO,oBAAZ,WAAM;2CAED,0CACkC,yCACrB,uBAChB,0CACU,yCACC,SAAC,SAAS;AACjB,wCAAI,AAAS,QAAD;AACV,kCAAO,mBACL,AAAS,AAAK,QAAN,yBACa,0BACd,0CACO,yBACG,eACL,aACH,iBAAM;gCAGZ,eAAI,AAAS,QAAD;AACjB,kCAAO,mBAAK;;AAGd,gCAAO,mBAAK;qIAGhB,gCAAiB,+DACjB,0CACU,yCACC,SAAC,SAAS;AACjB,wCAAI,AAAS,QAAD;AACV,kCAAO,mBACL,AAAS,AAAK,QAAN,oBACD,0CACO,8BACG,eACL,aACH,iBAAM;gCAGZ,eAAI,AAAS,QAAD;AACjB,kCAAO,mBAAK;;AAGd,gCAAO,mBAAK;oTAOxB,gCACoB;;AAChB,sBAAkB,YAAd,kCAAiB,QAAU,mCAC7B,kBACE,gFACqB,4BACd,wCACK,aACH,iBAAM,0EAGjB,gCAAiB,iEACjB,mDACsB,+BACT;AAKP,wBAJF,AAAmB,2CAAK,QAAC;AACvB,8BAAI,MAAM,IAAI;AACC,4BAAb;;;+CAIC,uEACwB,wCAAS,6BACpB,iBACR,mCAAkB,iBAAM,sBAC7B,wDAEE,iCACsB,0CACU,yCACnB,uBAChB,4BACW,oCAAW,mCACV,iEACZ,wDAES,kBACL,mBACO,wCACK,kBACE,sBACL,iBAAM;AAS7B,sBAAkB,YAAd,kCAAiB,OAAS,mCAC5B,sCACuC,yCACnB,uBAChB,gEAEqB,yCAAkB,KAAK,CAAC,MAAM,aAC1C,kBACL,gCACO,0CACO,2BACW,2BAChB,iBAAM,4BACE,eACL,2LAMpB,sCACuC,yCACnB,uBAChB,uFAGqB,yCAAkB,KAAK,CAAC,MAAM,aAC1C,mBACK,iDACC,0BACT,qCACgB,AAAK,+BAAY,oBACjB,iBACF,aAER,kBAAO,KAAG,iBAGJ,6BACC,8BACN,YACO,qCAEW,mCAAW,uBAAS,iBAE1C,iCACE;AACO,8BAAZ,WAAM;qDAED,0CACkC,yCACrB,uBAChB,0CACU,yCACC,SAAC,SAAS;AACjB,kDAAI,AAAS,QAAD;AACV,4CAAO,mBACL,AAAS,AAAK,QAAN,yBACa,0BACd,0CACO,yBACG,eACL,aACH,iBAAM;0CAGZ,eAAI,AAAS,QAAD;AACjB,4CAAO,mBACH;;AAGN,0CAAO,mBAAK;iJAGhB,gCAAiB,iEACjB,0CACU,yCACC,SAAC,SAAS;AACjB,kDAAI,AAAS,QAAD;AACV,4CAAO,mBACL,AAAS,AAAK,QAAN,oBACD,0CACO,8BACG,eACL,aACH,iBAAM;0CAGZ,eAAI,AAAS,QAAD;AACjB,4CAAO,mBAAK;;AAGd,0CAAO,mBAAK;oUAOxB,uFAGqB,yCAAkB,KAAK,CAAC,MAAM,aAC1C,mBACK,iDACC,0BACT,qCACgB,AAAK,+BAAY,oBACjB,iBACF,aAER,kBAAO,KAAG,iBAGJ,6BACC,8BACN,YACO,qCAEW,mCAAW,uBAAS,iBAE1C,iCACE;AACO,8BAAZ,WAAM;qDAED,0CACkC,yCACrB,uBAChB,0CACU,yCACC,SAAC,SAAS;AACjB,kDAAI,AAAS,QAAD;AACV,4CAAO,mBACL,AAAS,AAAK,QAAN,yBACa,4BACd,0CACO,yBACG,eACL,aACH,iBAAM;0CAGZ,eAAI,AAAS,QAAD;AACjB,4CAAO,mBACH;;AAGN,0CAAO,mBAAK;iJAGhB,gCAAiB,iEACjB,0CACU,yCACC,SAAC,SAAS;AACjB,kDAAI,AAAS,QAAD;AACV,4CAAO,mBACL,AAAS,AAAK,QAAN,oBACD,0CACO,8BACG,eACL,aACH,iBAAM;0CAGZ,eAAI,AAAS,QAAD;AACjB,4CAAO,mBAAK;;AAGd,0CAAO,mBAAK;;;;IAgB5C;;;;;EACF;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAGY;AAER,sBAAI,MAAM;AACS,UAAjB,MAAM;;AAEuB,UAA7B,WAAM,AAAuB;;MAEjC;;UAG0B;AACxB,YAAO,oCACG,+BACC,kBACL,iCACO,0CACO,8BACF,gFAGD,uBACI,iBAAM,yBACA,qFAEnB,2DACsB,kBAEtB,6FAC2B;IAGrC;;;;;;EACF;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAI4B;AACxB,YAAO,oCACG,+BACC,kBACL,6BACO,0CACO,8BACF,gFAGD,uBACI,iBAAM,yBACA,qFAEnB,gCACc,uBAChB,gCAAiB,iEACX,sBACJ,sCACQ,kEAEV,gCAAiB,iEACjB,kBACE,yCACqB,4BACd,0CACO,8BACF,mEAGd,sCACuC,yCACnB,uBAChB,2CACS,kBAAK,mFACE,kCACM,yDAEb,uEACwB,wCAAS,YAC9B,mCAAkB,iBAAM,wGAGpC,+BAAgB,iEAChB,2CACS,kBAAK,4FACE,kCACM,2BACb,uEACwB,wCAAS,YAC9B,mCAAkB,iBAAM;IAQhD;;;;;;EACF;;;;;;;;;;;;;;;;;;;;;;;;;;;AAGY;AAER,sBAAI,MAAM;AACS,UAAjB,MAAM;;AAEuB,UAA7B,WAAM,AAAuB;;MAEjC;;UAG0B;AACxB,YAAO,oCACG,+BACC,kBACL,mCACO,0CACO,8BACF,gFAGD,uBACI,iBAAM,yBACA,qFAEnB,kBAAK;IAEf;;;;;;EACF;;;;;;;;;;;AA4BuC;IAAqB;;;QAHvC;;AAAQ,oEAAW,GAAG;;EAAC;;;;;;;;;;;;AASvB,MAAX;IACR;UAG0B;AACxB,YAAO;IACT;;;;;EACF;;;;;;;;;;AAIuC;IAAqB;;;;;;EAC5D;;;;;;;;;;;;;;;;;;;;;UAI4B;AACxB,YAAO,oCACG,+BACC,kBACL,yBACO,0CACO,8BACF,oFAGG,iBAAM,yBACA;IAG7B;;;;;EACF;;;;;;;;;AA/oBsB;AACd,sBAAW,MAAM,SACnB;AAEJ,UAAI,AAAS,AAAW,QAAZ,gBAAe;AAEzB,cAAY,6DAAS,AAAK,oBAAO,AAAS,QAAD;;AAGH,QAAtC,WAAM,mBAAU;;IAEpB;;;MAEK,gCAAa;YAAG;;;MACd,8BAAW;YAAG;;;MACd,4BAAS;YAAG;;;MAEA,wBAAK;YAAgB;;MACrB,gCAAa;YAAG","file":"../../../../../../packages/zachnology_tech_reviews/placeholder_widget.dart.lib.js"}');
+  // Exports:
+  return {
+    placeholder_widget: placeholder_widget
+  };
+}));
+
+//# sourceMappingURL=placeholder_widget.dart.lib.js.map

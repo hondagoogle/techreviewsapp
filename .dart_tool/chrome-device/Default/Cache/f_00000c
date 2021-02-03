@@ -1,0 +1,1932 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/platform_view.dart', 'packages/flutter/src/services/system_channels.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/foundation/basic_types.dart', 'packages/flutter/src/gestures/recognizer.dart', 'packages/flutter/src/foundation/_platform_web.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__webview_flutter__src__webview_cupertino_dart(dart_sdk, packages__flutter__src__widgets__platform_view$46dart, packages__flutter__src__services__system_channels$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__foundation__basic_types$46dart, packages__flutter__src__gestures__recognizer$46dart, packages__flutter__src__foundation___platform_web$46dart, packages__flutter__src__foundation__debug$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const _js_helper = dart_sdk._js_helper;
+  const ui = dart_sdk.ui;
+  const collection = dart_sdk.collection;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const platform_view = packages__flutter__src__widgets__platform_view$46dart.src__widgets__platform_view;
+  const message_codecs = packages__flutter__src__services__system_channels$46dart.src__services__message_codecs;
+  const platform_channel = packages__flutter__src__services__system_channels$46dart.src__services__platform_channel;
+  const message_codec = packages__flutter__src__services__system_channels$46dart.src__services__message_codec;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const gesture_detector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__gesture_detector;
+  const basic_types = packages__flutter__src__foundation__basic_types$46dart.src__foundation__basic_types;
+  const recognizer = packages__flutter__src__gestures__recognizer$46dart.src__gestures__recognizer;
+  const platform = packages__flutter__src__foundation___platform_web$46dart.src__foundation__platform;
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  var webview_cupertino = Object.create(dart.library);
+  var webview_method_channel = Object.create(dart.library);
+  var webview_android = Object.create(dart.library);
+  var platform_interface = Object.create(dart.library);
+  var webview_flutter = Object.create(dart.library);
+  var $firstWhere = dartx.firstWhere;
+  var $isEmpty = dartx.isEmpty;
+  var $toList = dartx.toList;
+  var $_set = dartx._set;
+  var $toString = dartx.toString;
+  var $runtimeType = dartx.runtimeType;
+  var $_equals = dartx._equals;
+  var $hashCode = dartx.hashCode;
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  var $clear = dartx.clear;
+  var $keys = dartx.keys;
+  var $toSet = dartx.toSet;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $map = dartx.map;
+  dart._checkModuleNullSafetyMode(false);
+  var intL = () => (intL = dart.constFn(dart.legacy(core.int)))();
+  var intLToNull = () => (intLToNull = dart.constFn(dart.fnType(core.Null, [intL()])))();
+  var _LocationL = () => (_LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))();
+  var StringL = () => (StringL = dart.constFn(dart.legacy(core.String)))();
+  var boolL = () => (boolL = dart.constFn(dart.legacy(core.bool)))();
+  var WebResourceErrorTypeL = () => (WebResourceErrorTypeL = dart.constFn(dart.legacy(platform_interface.WebResourceErrorType)))();
+  var WebResourceErrorTypeLToboolL = () => (WebResourceErrorTypeLToboolL = dart.constFn(dart.fnType(boolL(), [WebResourceErrorTypeL()])))();
+  var IdentityMapOfStringL$dynamic = () => (IdentityMapOfStringL$dynamic = dart.constFn(_js_helper.IdentityMap$(StringL(), dart.dynamic)))();
+  var IdentityMapOfStringL$intL = () => (IdentityMapOfStringL$intL = dart.constFn(_js_helper.IdentityMap$(StringL(), intL())))();
+  var FutureOrOfboolL = () => (FutureOrOfboolL = dart.constFn(async.FutureOr$(boolL())))();
+  var FutureOrLOfboolL = () => (FutureOrLOfboolL = dart.constFn(dart.legacy(FutureOrOfboolL())))();
+  var dynamicToFutureOrLOfboolL = () => (dynamicToFutureOrLOfboolL = dart.constFn(dart.fnType(FutureOrLOfboolL(), [dart.dynamic])))();
+  var StringLAnddynamicTovoid = () => (StringLAnddynamicTovoid = dart.constFn(dart.fnType(dart.void, [StringL(), dart.dynamic])))();
+  var StringLAndWebSettingLOfTLTovoid = () => (StringLAndWebSettingLOfTLTovoid = dart.constFn(dart.gFnType(T => {
+    var TL = () => (TL = dart.constFn(dart.legacy(T)))();
+    var WebSettingOfTL = () => (WebSettingOfTL = dart.constFn(platform_interface.WebSetting$(TL())))();
+    var WebSettingLOfTL = () => (WebSettingLOfTL = dart.constFn(dart.legacy(WebSettingOfTL())))();
+    return [dart.void, [StringL(), WebSettingLOfTL()]];
+  })))();
+  var VoidToNull = () => (VoidToNull = dart.constFn(dart.fnType(core.Null, [])))();
+  var JavascriptModeL = () => (JavascriptModeL = dart.constFn(dart.legacy(webview_flutter.JavascriptMode)))();
+  var NavigationDecisionL = () => (NavigationDecisionL = dart.constFn(dart.legacy(webview_flutter.NavigationDecision)))();
+  var AutoMediaPlaybackPolicyL = () => (AutoMediaPlaybackPolicyL = dart.constFn(dart.legacy(webview_flutter.AutoMediaPlaybackPolicy)))();
+  var WebViewControllerL = () => (WebViewControllerL = dart.constFn(dart.legacy(webview_flutter.WebViewController)))();
+  var CompleterOfWebViewControllerL = () => (CompleterOfWebViewControllerL = dart.constFn(async.Completer$(WebViewControllerL())))();
+  var WebViewL = () => (WebViewL = dart.constFn(dart.legacy(webview_flutter.WebView)))();
+  var WebViewControllerLToNull = () => (WebViewControllerLToNull = dart.constFn(dart.fnType(core.Null, [WebViewControllerL()])))();
+  var JavascriptChannelL = () => (JavascriptChannelL = dart.constFn(dart.legacy(webview_flutter.JavascriptChannel)))();
+  var IdentityMapOfStringL$JavascriptChannelL = () => (IdentityMapOfStringL$JavascriptChannelL = dart.constFn(_js_helper.IdentityMap$(StringL(), JavascriptChannelL())))();
+  var FutureOfStringL = () => (FutureOfStringL = dart.constFn(async.Future$(StringL())))();
+  var WebSettingOfStringL = () => (WebSettingOfStringL = dart.constFn(platform_interface.WebSetting$(StringL())))();
+  var _IdentityHashSetOfStringL = () => (_IdentityHashSetOfStringL = dart.constFn(collection._IdentityHashSet$(StringL())))();
+  var JavascriptChannelLToStringL = () => (JavascriptChannelLToStringL = dart.constFn(dart.fnType(StringL(), [JavascriptChannelL()])))();
+  var FormatExceptionL = () => (FormatExceptionL = dart.constFn(dart.legacy(core.FormatException)))();
+  const CT = Object.create(null);
+  var L0 = "package:webview_flutter/src/webview_cupertino.dart";
+  var L5 = "package:webview_flutter/platform_interface.dart";
+  var L1 = "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.24/lib/src/webview_method_channel.dart";
+  var L6 = "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.24/lib/platform_interface.dart";
+  var L7 = "package:webview_flutter/webview_flutter.dart";
+  var L8 = "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.24/lib/webview_flutter.dart";
+  var L4 = "package:webview_flutter/src/webview_android.dart";
+  var L3 = "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.24/lib/src/webview_android.dart";
+  var L2 = "package:webview_flutter/src/webview_method_channel.dart";
+  dart.defineLazy(CT, {
+    get C0() {
+      return C0 = dart.const({
+        __proto__: message_codecs.StandardMessageCodec.prototype
+      });
+    },
+    get C3() {
+      return C3 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "viewType",
+        [_Location_column]: 7,
+        [_Location_line]: 30,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C4 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPlatformViewCreated",
+        [_Location_column]: 7,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C5 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "gestureRecognizers",
+        [_Location_column]: 7,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C6 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "creationParams",
+        [_Location_column]: 7,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C7 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "creationParamsCodec",
+        [_Location_column]: 7,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C2() {
+      return C2 = dart.constList([C3 || CT.C3, C4 || CT.C4, C5 || CT.C5, C6 || CT.C6, C7 || CT.C7], _LocationL());
+    },
+    get C1() {
+      return C1 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C2 || CT.C2,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 29,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.24/lib/src/webview_cupertino.dart"
+      });
+    },
+    get C9() {
+      return C9 = dart.const({
+        __proto__: message_codecs.StandardMethodCodec.prototype,
+        [StandardMethodCodec_messageCodec]: C0 || CT.C0
+      });
+    },
+    get C8() {
+      return C8 = dart.const({
+        __proto__: platform_channel.MethodChannel.prototype,
+        [MethodChannel__binaryMessenger]: null,
+        [MethodChannel_codec]: C9 || CT.C9,
+        [MethodChannel_name]: "plugins.flutter.io/cookie_manager"
+      });
+    },
+    get C12() {
+      return C12 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "viewType",
+        [_Location_column]: 9,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C13 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPlatformViewCreated",
+        [_Location_column]: 9,
+        [_Location_line]: 42,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C14 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "gestureRecognizers",
+        [_Location_column]: 9,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C15 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "layoutDirection",
+        [_Location_column]: 9,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C16 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "creationParams",
+        [_Location_column]: 9,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C17 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "creationParamsCodec",
+        [_Location_column]: 9,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C11 = dart.constList([C12 || CT.C12, C13 || CT.C13, C14 || CT.C14, C15 || CT.C15, C16 || CT.C16, C17 || CT.C17], _LocationL());
+    },
+    get C10() {
+      return C10 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C11 || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 40,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.24/lib/src/webview_android.dart"
+      });
+    },
+    get C20() {
+      return C20 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onLongPress",
+        [_Location_column]: 7,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C21 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "excludeFromSemantics",
+        [_Location_column]: 7,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C22 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C19 = dart.constList([C20 || CT.C20, C21 || CT.C21, C22 || CT.C22], _LocationL());
+    },
+    get C18() {
+      return C18 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C19 || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 30,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.24/lib/src/webview_android.dart"
+      });
+    },
+    get C23() {
+      return C23 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.authentication",
+        index: 0
+      });
+    },
+    get C24() {
+      return C24 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.badUrl",
+        index: 1
+      });
+    },
+    get C25() {
+      return C25 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.connect",
+        index: 2
+      });
+    },
+    get C26() {
+      return C26 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.failedSslHandshake",
+        index: 3
+      });
+    },
+    get C27() {
+      return C27 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.file",
+        index: 4
+      });
+    },
+    get C28() {
+      return C28 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.fileNotFound",
+        index: 5
+      });
+    },
+    get C29() {
+      return C29 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.hostLookup",
+        index: 6
+      });
+    },
+    get C30() {
+      return C30 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.io",
+        index: 7
+      });
+    },
+    get C31() {
+      return C31 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.proxyAuthentication",
+        index: 8
+      });
+    },
+    get C32() {
+      return C32 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.redirectLoop",
+        index: 9
+      });
+    },
+    get C33() {
+      return C33 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.timeout",
+        index: 10
+      });
+    },
+    get C34() {
+      return C34 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.tooManyRequests",
+        index: 11
+      });
+    },
+    get C35() {
+      return C35 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.unknown",
+        index: 12
+      });
+    },
+    get C36() {
+      return C36 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.unsafeResource",
+        index: 13
+      });
+    },
+    get C37() {
+      return C37 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.unsupportedAuthScheme",
+        index: 14
+      });
+    },
+    get C38() {
+      return C38 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.unsupportedScheme",
+        index: 15
+      });
+    },
+    get C39() {
+      return C39 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.webContentProcessTerminated",
+        index: 16
+      });
+    },
+    get C40() {
+      return C40 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.webViewInvalidated",
+        index: 17
+      });
+    },
+    get C41() {
+      return C41 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.javaScriptExceptionOccurred",
+        index: 18
+      });
+    },
+    get C42() {
+      return C42 = dart.const({
+        __proto__: platform_interface.WebResourceErrorType.prototype,
+        [_name$]: "WebResourceErrorType.javaScriptResultTypeIsUnsupported",
+        index: 19
+      });
+    },
+    get C43() {
+      return C43 = dart.constList([C23 || CT.C23, C24 || CT.C24, C25 || CT.C25, C26 || CT.C26, C27 || CT.C27, C28 || CT.C28, C29 || CT.C29, C30 || CT.C30, C31 || CT.C31, C32 || CT.C32, C33 || CT.C33, C34 || CT.C34, C35 || CT.C35, C36 || CT.C36, C37 || CT.C37, C38 || CT.C38, C39 || CT.C39, C40 || CT.C40, C41 || CT.C41, C42 || CT.C42], WebResourceErrorTypeL());
+    },
+    get C44() {
+      return C44 = dart.const({
+        __proto__: webview_flutter.AutoMediaPlaybackPolicy.prototype,
+        [_name$0]: "AutoMediaPlaybackPolicy.require_user_action_for_all_media_types",
+        index: 0
+      });
+    },
+    get C45() {
+      return C45 = dart.const({
+        __proto__: webview_flutter.JavascriptMode.prototype,
+        [_name$0]: "JavascriptMode.disabled",
+        index: 0
+      });
+    },
+    get C46() {
+      return C46 = dart.const({
+        __proto__: webview_flutter.JavascriptMode.prototype,
+        [_name$0]: "JavascriptMode.unrestricted",
+        index: 1
+      });
+    },
+    get C47() {
+      return C47 = dart.constList([C45 || CT.C45, C46 || CT.C46], JavascriptModeL());
+    },
+    get C48() {
+      return C48 = dart.const({
+        __proto__: webview_flutter.NavigationDecision.prototype,
+        [_name$0]: "NavigationDecision.prevent",
+        index: 0
+      });
+    },
+    get C49() {
+      return C49 = dart.const({
+        __proto__: webview_flutter.NavigationDecision.prototype,
+        [_name$0]: "NavigationDecision.navigate",
+        index: 1
+      });
+    },
+    get C50() {
+      return C50 = dart.constList([C48 || CT.C48, C49 || CT.C49], NavigationDecisionL());
+    },
+    get C51() {
+      return C51 = dart.const({
+        __proto__: webview_flutter.AutoMediaPlaybackPolicy.prototype,
+        [_name$0]: "AutoMediaPlaybackPolicy.always_allow",
+        index: 1
+      });
+    },
+    get C52() {
+      return C52 = dart.constList([C44 || CT.C44, C51 || CT.C51], AutoMediaPlaybackPolicyL());
+    },
+    get C53() {
+      return C53 = dart.const({
+        __proto__: platform.TargetPlatform.prototype,
+        [_name]: "TargetPlatform.android",
+        index: 0
+      });
+    },
+    get C54() {
+      return C54 = dart.const({
+        __proto__: platform.TargetPlatform.prototype,
+        [_name]: "TargetPlatform.iOS",
+        index: 2
+      });
+    }
+  }, false);
+  var C0;
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var C3;
+  var C4;
+  var C5;
+  var C6;
+  var C7;
+  var C2;
+  var C1;
+  webview_cupertino.CupertinoWebView = class CupertinoWebView extends core.Object {
+    build(opts) {
+      let context = opts && 'context' in opts ? opts.context : null;
+      let creationParams = opts && 'creationParams' in opts ? opts.creationParams : null;
+      let webViewPlatformCallbacksHandler = opts && 'webViewPlatformCallbacksHandler' in opts ? opts.webViewPlatformCallbacksHandler : null;
+      let onWebViewPlatformCreated = opts && 'onWebViewPlatformCreated' in opts ? opts.onWebViewPlatformCreated : null;
+      let gestureRecognizers = opts && 'gestureRecognizers' in opts ? opts.gestureRecognizers : null;
+      return new platform_view.UiKitView.new({viewType: "plugins.flutter.io/webview", onPlatformViewCreated: dart.fn(id => {
+          if (onWebViewPlatformCreated == null) {
+            return;
+          }
+          onWebViewPlatformCreated(new webview_method_channel.MethodChannelWebViewPlatform.new(id, webViewPlatformCallbacksHandler));
+        }, intLToNull()), gestureRecognizers: gestureRecognizers, creationParams: webview_method_channel.MethodChannelWebViewPlatform.creationParamsToMap(creationParams), creationParamsCodec: C0 || CT.C0, $creationLocationd_0dea112b090073317d4: C1 || CT.C1});
+    }
+    clearCookies() {
+      return webview_method_channel.MethodChannelWebViewPlatform.clearCookies();
+    }
+  };
+  (webview_cupertino.CupertinoWebView.new = function() {
+    ;
+  }).prototype = webview_cupertino.CupertinoWebView.prototype;
+  dart.addTypeTests(webview_cupertino.CupertinoWebView);
+  dart.addTypeCaches(webview_cupertino.CupertinoWebView);
+  webview_cupertino.CupertinoWebView[dart.implements] = () => [platform_interface.WebViewPlatform];
+  dart.setMethodSignature(webview_cupertino.CupertinoWebView, () => ({
+    __proto__: dart.getMethods(webview_cupertino.CupertinoWebView.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [], {context: dart.legacy(framework.BuildContext), creationParams: dart.legacy(platform_interface.CreationParams), gestureRecognizers: dart.legacy(core.Set$(dart.legacy(basic_types.Factory$(dart.legacy(recognizer.OneSequenceGestureRecognizer))))), onWebViewPlatformCreated: dart.legacy(dart.fnType(dart.void, [dart.legacy(platform_interface.WebViewPlatformController)])), webViewPlatformCallbacksHandler: dart.legacy(platform_interface.WebViewPlatformCallbacksHandler)}, {}),
+    clearCookies: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.bool))), [])
+  }));
+  dart.setLibraryUri(webview_cupertino.CupertinoWebView, L0);
+  var _platformCallbacksHandler$ = dart.privateName(webview_method_channel, "_platformCallbacksHandler");
+  var _channel = dart.privateName(webview_method_channel, "_channel");
+  var _onMethodCall = dart.privateName(webview_method_channel, "_onMethodCall");
+  var MethodChannel__binaryMessenger = dart.privateName(platform_channel, "MethodChannel._binaryMessenger");
+  var StandardMethodCodec_messageCodec = dart.privateName(message_codecs, "StandardMethodCodec.messageCodec");
+  var C9;
+  var MethodChannel_codec = dart.privateName(platform_channel, "MethodChannel.codec");
+  var MethodChannel_name = dart.privateName(platform_channel, "MethodChannel.name");
+  var C8;
+  webview_method_channel.MethodChannelWebViewPlatform = class MethodChannelWebViewPlatform extends core.Object {
+    [_onMethodCall](call) {
+      return async.async(boolL(), (function* _onMethodCall() {
+        switch (call.method) {
+          case "javascriptChannelMessage":
+          {
+            let channel = StringL().as(dart.dsend(call.arguments, '_get', ["channel"]));
+            let message = StringL().as(dart.dsend(call.arguments, '_get', ["message"]));
+            this[_platformCallbacksHandler$].onJavaScriptChannelMessage(channel, message);
+            return true;
+          }
+          case "navigationRequest":
+          {
+            return yield this[_platformCallbacksHandler$].onNavigationRequest({url: StringL().as(dart.dsend(call.arguments, '_get', ["url"])), isForMainFrame: boolL().as(dart.dsend(call.arguments, '_get', ["isForMainFrame"]))});
+          }
+          case "onPageFinished":
+          {
+            this[_platformCallbacksHandler$].onPageFinished(StringL().as(dart.dsend(call.arguments, '_get', ["url"])));
+            return null;
+          }
+          case "onPageStarted":
+          {
+            this[_platformCallbacksHandler$].onPageStarted(StringL().as(dart.dsend(call.arguments, '_get', ["url"])));
+            return null;
+          }
+          case "onWebResourceError":
+          {
+            this[_platformCallbacksHandler$].onWebResourceError(new platform_interface.WebResourceError.new({errorCode: intL().as(dart.dsend(call.arguments, '_get', ["errorCode"])), description: StringL().as(dart.dsend(call.arguments, '_get', ["description"])), domain: StringL().as(dart.dsend(call.arguments, '_get', ["domain"])), failingUrl: StringL().as(dart.dsend(call.arguments, '_get', ["failingUrl"])), errorType: dart.dsend(call.arguments, '_get', ["errorType"]) == null ? null : platform_interface.WebResourceErrorType.values[$firstWhere](dart.fn(type => dart.toString(type) === dart.str(dart.wrapType(WebResourceErrorTypeL())) + "." + dart.str(dart.dsend(call.arguments, '_get', ["errorType"])), WebResourceErrorTypeLToboolL()))}));
+            return null;
+          }
+        }
+        dart.throw(new message_codec.MissingPluginException.new(dart.str(call.method) + " was invoked but has no handler"));
+      }).bind(this));
+    }
+    loadUrl(url, headers) {
+      return async.async(dart.void, (function* loadUrl() {
+        if (!(url != null)) dart.assertFailed(null, L1, 76, 12, "url != null");
+        return this[_channel].invokeMethod(dart.void, "loadUrl", new (IdentityMapOfStringL$dynamic()).from(["url", url, "headers", headers]));
+      }).bind(this));
+    }
+    currentUrl() {
+      return this[_channel].invokeMethod(StringL(), "currentUrl");
+    }
+    canGoBack() {
+      return this[_channel].invokeMethod(boolL(), "canGoBack");
+    }
+    canGoForward() {
+      return this[_channel].invokeMethod(boolL(), "canGoForward");
+    }
+    goBack() {
+      return this[_channel].invokeMethod(dart.void, "goBack");
+    }
+    goForward() {
+      return this[_channel].invokeMethod(dart.void, "goForward");
+    }
+    reload() {
+      return this[_channel].invokeMethod(dart.void, "reload");
+    }
+    clearCache() {
+      return this[_channel].invokeMethod(dart.void, "clearCache");
+    }
+    updateSettings(settings) {
+      let updatesMap = webview_method_channel.MethodChannelWebViewPlatform._webSettingsToMap(settings);
+      if (dart.test(updatesMap[$isEmpty])) {
+        return null;
+      }
+      return this[_channel].invokeMethod(dart.void, "updateSettings", updatesMap);
+    }
+    evaluateJavascript(javascriptString) {
+      return this[_channel].invokeMethod(StringL(), "evaluateJavascript", javascriptString);
+    }
+    addJavascriptChannels(javascriptChannelNames) {
+      return this[_channel].invokeMethod(dart.void, "addJavascriptChannels", javascriptChannelNames[$toList]());
+    }
+    removeJavascriptChannels(javascriptChannelNames) {
+      return this[_channel].invokeMethod(dart.void, "removeJavascriptChannels", javascriptChannelNames[$toList]());
+    }
+    getTitle() {
+      return this[_channel].invokeMethod(StringL(), "getTitle");
+    }
+    scrollTo(x, y) {
+      return this[_channel].invokeMethod(dart.void, "scrollTo", new (IdentityMapOfStringL$intL()).from(["x", x, "y", y]));
+    }
+    scrollBy(x, y) {
+      return this[_channel].invokeMethod(dart.void, "scrollBy", new (IdentityMapOfStringL$intL()).from(["x", x, "y", y]));
+    }
+    getScrollX() {
+      return this[_channel].invokeMethod(intL(), "getScrollX");
+    }
+    getScrollY() {
+      return this[_channel].invokeMethod(intL(), "getScrollY");
+    }
+    static clearCookies() {
+      return webview_method_channel.MethodChannelWebViewPlatform._cookieManagerChannel.invokeMethod(boolL(), "clearCookies").then(boolL(), dart.fn(result => FutureOrLOfboolL().as(result), dynamicToFutureOrLOfboolL()));
+    }
+    static _webSettingsToMap(settings) {
+      let t0;
+      let map = new (IdentityMapOfStringL$dynamic()).new();
+      function _addIfNonNull(key, value) {
+        if (value == null) {
+          return;
+        }
+        map[$_set](key, value);
+      }
+      dart.fn(_addIfNonNull, StringLAnddynamicTovoid());
+      function _addSettingIfPresent(T, key, setting) {
+        if (!dart.test(setting.isPresent)) {
+          return;
+        }
+        map[$_set](key, setting.value);
+      }
+      dart.fn(_addSettingIfPresent, StringLAndWebSettingLOfTLTovoid());
+      _addIfNonNull("jsMode", (t0 = settings.javascriptMode, t0 == null ? null : t0.index));
+      _addIfNonNull("hasNavigationDelegate", settings.hasNavigationDelegate);
+      _addIfNonNull("debuggingEnabled", settings.debuggingEnabled);
+      _addIfNonNull("gestureNavigationEnabled", settings.gestureNavigationEnabled);
+      _addSettingIfPresent(StringL(), "userAgent", settings.userAgent);
+      return map;
+    }
+    static creationParamsToMap(creationParams) {
+      return new (IdentityMapOfStringL$dynamic()).from(["initialUrl", creationParams.initialUrl, "settings", webview_method_channel.MethodChannelWebViewPlatform._webSettingsToMap(creationParams.webSettings), "javascriptChannelNames", creationParams.javascriptChannelNames[$toList](), "userAgent", creationParams.userAgent, "autoMediaPlaybackPolicy", creationParams.autoMediaPlaybackPolicy.index]);
+    }
+  };
+  (webview_method_channel.MethodChannelWebViewPlatform.new = function(id, _platformCallbacksHandler) {
+    this[_platformCallbacksHandler$] = _platformCallbacksHandler;
+    if (!(_platformCallbacksHandler != null)) dart.assertFailed(null, L1, 16, 16, "_platformCallbacksHandler != null");
+    this[_channel] = new platform_channel.MethodChannel.new("plugins.flutter.io/webview_" + dart.str(id));
+    this[_channel].setMethodCallHandler(dart.bind(this, _onMethodCall));
+  }).prototype = webview_method_channel.MethodChannelWebViewPlatform.prototype;
+  dart.addTypeTests(webview_method_channel.MethodChannelWebViewPlatform);
+  dart.addTypeCaches(webview_method_channel.MethodChannelWebViewPlatform);
+  webview_method_channel.MethodChannelWebViewPlatform[dart.implements] = () => [platform_interface.WebViewPlatformController];
+  dart.setMethodSignature(webview_method_channel.MethodChannelWebViewPlatform, () => ({
+    __proto__: dart.getMethods(webview_method_channel.MethodChannelWebViewPlatform.__proto__),
+    [_onMethodCall]: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.bool))), [dart.legacy(message_codec.MethodCall)]),
+    loadUrl: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(core.String), dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.String)))]),
+    currentUrl: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.String))), []),
+    canGoBack: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.bool))), []),
+    canGoForward: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.bool))), []),
+    goBack: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+    goForward: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+    reload: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+    clearCache: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+    updateSettings: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(platform_interface.WebSettings)]),
+    evaluateJavascript: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.String))), [dart.legacy(core.String)]),
+    addJavascriptChannels: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(core.Set$(dart.legacy(core.String)))]),
+    removeJavascriptChannels: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(core.Set$(dart.legacy(core.String)))]),
+    getTitle: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.String))), []),
+    scrollTo: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(core.int), dart.legacy(core.int)]),
+    scrollBy: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(core.int), dart.legacy(core.int)]),
+    getScrollX: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.int))), []),
+    getScrollY: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.int))), [])
+  }));
+  dart.setLibraryUri(webview_method_channel.MethodChannelWebViewPlatform, L2);
+  dart.setFieldSignature(webview_method_channel.MethodChannelWebViewPlatform, () => ({
+    __proto__: dart.getFields(webview_method_channel.MethodChannelWebViewPlatform.__proto__),
+    [_platformCallbacksHandler$]: dart.finalFieldType(dart.legacy(platform_interface.WebViewPlatformCallbacksHandler)),
+    [_channel]: dart.finalFieldType(dart.legacy(platform_channel.MethodChannel))
+  }));
+  dart.defineLazy(webview_method_channel.MethodChannelWebViewPlatform, {
+    /*webview_method_channel.MethodChannelWebViewPlatform._cookieManagerChannel*/get _cookieManagerChannel() {
+      return C8 || CT.C8;
+    }
+  }, true);
+  var C12;
+  var C13;
+  var C14;
+  var C15;
+  var C16;
+  var C17;
+  var C11;
+  var C10;
+  var C20;
+  var C21;
+  var C22;
+  var C19;
+  var C18;
+  webview_android.AndroidWebView = class AndroidWebView extends core.Object {
+    build(opts) {
+      let context = opts && 'context' in opts ? opts.context : null;
+      let creationParams = opts && 'creationParams' in opts ? opts.creationParams : null;
+      let webViewPlatformCallbacksHandler = opts && 'webViewPlatformCallbacksHandler' in opts ? opts.webViewPlatformCallbacksHandler : null;
+      let onWebViewPlatformCreated = opts && 'onWebViewPlatformCreated' in opts ? opts.onWebViewPlatformCreated : null;
+      let gestureRecognizers = opts && 'gestureRecognizers' in opts ? opts.gestureRecognizers : null;
+      if (!(webViewPlatformCallbacksHandler != null)) dart.assertFailed(null, L3, 29, 12, "webViewPlatformCallbacksHandler != null");
+      return new gesture_detector.GestureDetector.new({onLongPress: dart.fn(() => {
+        }, VoidToNull()), excludeFromSemantics: true, child: new platform_view.AndroidView.new({viewType: "plugins.flutter.io/webview", onPlatformViewCreated: dart.fn(id => {
+            if (onWebViewPlatformCreated == null) {
+              return;
+            }
+            onWebViewPlatformCreated(new webview_method_channel.MethodChannelWebViewPlatform.new(id, webViewPlatformCallbacksHandler));
+          }, intLToNull()), gestureRecognizers: gestureRecognizers, layoutDirection: ui.TextDirection.rtl, creationParams: webview_method_channel.MethodChannelWebViewPlatform.creationParamsToMap(creationParams), creationParamsCodec: C0 || CT.C0, $creationLocationd_0dea112b090073317d4: C10 || CT.C10}), $creationLocationd_0dea112b090073317d4: C18 || CT.C18});
+    }
+    clearCookies() {
+      return webview_method_channel.MethodChannelWebViewPlatform.clearCookies();
+    }
+  };
+  (webview_android.AndroidWebView.new = function() {
+    ;
+  }).prototype = webview_android.AndroidWebView.prototype;
+  dart.addTypeTests(webview_android.AndroidWebView);
+  dart.addTypeCaches(webview_android.AndroidWebView);
+  webview_android.AndroidWebView[dart.implements] = () => [platform_interface.WebViewPlatform];
+  dart.setMethodSignature(webview_android.AndroidWebView, () => ({
+    __proto__: dart.getMethods(webview_android.AndroidWebView.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [], {context: dart.legacy(framework.BuildContext), creationParams: dart.legacy(platform_interface.CreationParams), gestureRecognizers: dart.legacy(core.Set$(dart.legacy(basic_types.Factory$(dart.legacy(recognizer.OneSequenceGestureRecognizer))))), onWebViewPlatformCreated: dart.legacy(dart.fnType(dart.void, [dart.legacy(platform_interface.WebViewPlatformController)])), webViewPlatformCallbacksHandler: dart.legacy(platform_interface.WebViewPlatformCallbacksHandler)}, {}),
+    clearCookies: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.bool))), [])
+  }));
+  dart.setLibraryUri(webview_android.AndroidWebView, L4);
+  platform_interface.WebViewPlatformCallbacksHandler = class WebViewPlatformCallbacksHandler extends core.Object {};
+  (platform_interface.WebViewPlatformCallbacksHandler.new = function() {
+    ;
+  }).prototype = platform_interface.WebViewPlatformCallbacksHandler.prototype;
+  dart.addTypeTests(platform_interface.WebViewPlatformCallbacksHandler);
+  dart.addTypeCaches(platform_interface.WebViewPlatformCallbacksHandler);
+  dart.setLibraryUri(platform_interface.WebViewPlatformCallbacksHandler, L5);
+  var _name$ = dart.privateName(platform_interface, "_name");
+  var C23;
+  var C24;
+  var C25;
+  var C26;
+  var C27;
+  var C28;
+  var C29;
+  var C30;
+  var C31;
+  var C32;
+  var C33;
+  var C34;
+  var C35;
+  var C36;
+  var C37;
+  var C38;
+  var C39;
+  var C40;
+  var C41;
+  var C42;
+  var C43;
+  platform_interface.WebResourceErrorType = class WebResourceErrorType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (platform_interface.WebResourceErrorType.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = platform_interface.WebResourceErrorType.prototype;
+  dart.addTypeTests(platform_interface.WebResourceErrorType);
+  dart.addTypeCaches(platform_interface.WebResourceErrorType);
+  dart.setMethodSignature(platform_interface.WebResourceErrorType, () => ({
+    __proto__: dart.getMethods(platform_interface.WebResourceErrorType.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(platform_interface.WebResourceErrorType, L5);
+  dart.setFieldSignature(platform_interface.WebResourceErrorType, () => ({
+    __proto__: dart.getFields(platform_interface.WebResourceErrorType.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(platform_interface.WebResourceErrorType, ['toString']);
+  platform_interface.WebResourceErrorType.authentication = C23 || CT.C23;
+  platform_interface.WebResourceErrorType.badUrl = C24 || CT.C24;
+  platform_interface.WebResourceErrorType.connect = C25 || CT.C25;
+  platform_interface.WebResourceErrorType.failedSslHandshake = C26 || CT.C26;
+  platform_interface.WebResourceErrorType.file = C27 || CT.C27;
+  platform_interface.WebResourceErrorType.fileNotFound = C28 || CT.C28;
+  platform_interface.WebResourceErrorType.hostLookup = C29 || CT.C29;
+  platform_interface.WebResourceErrorType.io = C30 || CT.C30;
+  platform_interface.WebResourceErrorType.proxyAuthentication = C31 || CT.C31;
+  platform_interface.WebResourceErrorType.redirectLoop = C32 || CT.C32;
+  platform_interface.WebResourceErrorType.timeout = C33 || CT.C33;
+  platform_interface.WebResourceErrorType.tooManyRequests = C34 || CT.C34;
+  platform_interface.WebResourceErrorType.unknown = C35 || CT.C35;
+  platform_interface.WebResourceErrorType.unsafeResource = C36 || CT.C36;
+  platform_interface.WebResourceErrorType.unsupportedAuthScheme = C37 || CT.C37;
+  platform_interface.WebResourceErrorType.unsupportedScheme = C38 || CT.C38;
+  platform_interface.WebResourceErrorType.webContentProcessTerminated = C39 || CT.C39;
+  platform_interface.WebResourceErrorType.webViewInvalidated = C40 || CT.C40;
+  platform_interface.WebResourceErrorType.javaScriptExceptionOccurred = C41 || CT.C41;
+  platform_interface.WebResourceErrorType.javaScriptResultTypeIsUnsupported = C42 || CT.C42;
+  platform_interface.WebResourceErrorType.values = C43 || CT.C43;
+  var errorCode$ = dart.privateName(platform_interface, "WebResourceError.errorCode");
+  var domain$ = dart.privateName(platform_interface, "WebResourceError.domain");
+  var description$ = dart.privateName(platform_interface, "WebResourceError.description");
+  var errorType$ = dart.privateName(platform_interface, "WebResourceError.errorType");
+  var failingUrl$ = dart.privateName(platform_interface, "WebResourceError.failingUrl");
+  platform_interface.WebResourceError = class WebResourceError extends core.Object {
+    get errorCode() {
+      return this[errorCode$];
+    }
+    set errorCode(value) {
+      super.errorCode = value;
+    }
+    get domain() {
+      return this[domain$];
+    }
+    set domain(value) {
+      super.domain = value;
+    }
+    get description() {
+      return this[description$];
+    }
+    set description(value) {
+      super.description = value;
+    }
+    get errorType() {
+      return this[errorType$];
+    }
+    set errorType(value) {
+      super.errorType = value;
+    }
+    get failingUrl() {
+      return this[failingUrl$];
+    }
+    set failingUrl(value) {
+      super.failingUrl = value;
+    }
+  };
+  (platform_interface.WebResourceError.new = function(opts) {
+    let errorCode = opts && 'errorCode' in opts ? opts.errorCode : null;
+    let description = opts && 'description' in opts ? opts.description : null;
+    let domain = opts && 'domain' in opts ? opts.domain : null;
+    let errorType = opts && 'errorType' in opts ? opts.errorType : null;
+    let failingUrl = opts && 'failingUrl' in opts ? opts.failingUrl : null;
+    this[errorCode$] = errorCode;
+    this[description$] = description;
+    this[domain$] = domain;
+    this[errorType$] = errorType;
+    this[failingUrl$] = failingUrl;
+    if (!(errorCode != null)) dart.assertFailed(null, L6, 111, 16, "errorCode != null");
+    if (!(description != null)) dart.assertFailed(null, L6, 112, 16, "description != null");
+    ;
+  }).prototype = platform_interface.WebResourceError.prototype;
+  dart.addTypeTests(platform_interface.WebResourceError);
+  dart.addTypeCaches(platform_interface.WebResourceError);
+  dart.setLibraryUri(platform_interface.WebResourceError, L5);
+  dart.setFieldSignature(platform_interface.WebResourceError, () => ({
+    __proto__: dart.getFields(platform_interface.WebResourceError.__proto__),
+    errorCode: dart.finalFieldType(dart.legacy(core.int)),
+    domain: dart.finalFieldType(dart.legacy(core.String)),
+    description: dart.finalFieldType(dart.legacy(core.String)),
+    errorType: dart.finalFieldType(dart.legacy(platform_interface.WebResourceErrorType)),
+    failingUrl: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  platform_interface.WebViewPlatformController = class WebViewPlatformController extends core.Object {
+    loadUrl(url, headers) {
+      dart.throw(new core.UnimplementedError.new("WebView loadUrl is not implemented on the current platform"));
+    }
+    updateSettings(setting) {
+      dart.throw(new core.UnimplementedError.new("WebView updateSettings is not implemented on the current platform"));
+    }
+    currentUrl() {
+      dart.throw(new core.UnimplementedError.new("WebView currentUrl is not implemented on the current platform"));
+    }
+    canGoBack() {
+      dart.throw(new core.UnimplementedError.new("WebView canGoBack is not implemented on the current platform"));
+    }
+    canGoForward() {
+      dart.throw(new core.UnimplementedError.new("WebView canGoForward is not implemented on the current platform"));
+    }
+    goBack() {
+      dart.throw(new core.UnimplementedError.new("WebView goBack is not implemented on the current platform"));
+    }
+    goForward() {
+      dart.throw(new core.UnimplementedError.new("WebView goForward is not implemented on the current platform"));
+    }
+    reload() {
+      dart.throw(new core.UnimplementedError.new("WebView reload is not implemented on the current platform"));
+    }
+    clearCache() {
+      dart.throw(new core.UnimplementedError.new("WebView clearCache is not implemented on the current platform"));
+    }
+    evaluateJavascript(javascriptString) {
+      dart.throw(new core.UnimplementedError.new("WebView evaluateJavascript is not implemented on the current platform"));
+    }
+    addJavascriptChannels(javascriptChannelNames) {
+      dart.throw(new core.UnimplementedError.new("WebView addJavascriptChannels is not implemented on the current platform"));
+    }
+    removeJavascriptChannels(javascriptChannelNames) {
+      dart.throw(new core.UnimplementedError.new("WebView removeJavascriptChannels is not implemented on the current platform"));
+    }
+    getTitle() {
+      dart.throw(new core.UnimplementedError.new("WebView getTitle is not implemented on the current platform"));
+    }
+    scrollTo(x, y) {
+      dart.throw(new core.UnimplementedError.new("WebView scrollTo is not implemented on the current platform"));
+    }
+    scrollBy(x, y) {
+      dart.throw(new core.UnimplementedError.new("WebView scrollBy is not implemented on the current platform"));
+    }
+    getScrollX() {
+      dart.throw(new core.UnimplementedError.new("WebView getScrollX is not implemented on the current platform"));
+    }
+    getScrollY() {
+      dart.throw(new core.UnimplementedError.new("WebView getScrollY is not implemented on the current platform"));
+    }
+  };
+  (platform_interface.WebViewPlatformController.new = function(handler) {
+    ;
+  }).prototype = platform_interface.WebViewPlatformController.prototype;
+  dart.addTypeTests(platform_interface.WebViewPlatformController);
+  dart.addTypeCaches(platform_interface.WebViewPlatformController);
+  dart.setMethodSignature(platform_interface.WebViewPlatformController, () => ({
+    __proto__: dart.getMethods(platform_interface.WebViewPlatformController.__proto__),
+    loadUrl: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(core.String), dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.String)))]),
+    updateSettings: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(platform_interface.WebSettings)]),
+    currentUrl: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.String))), []),
+    canGoBack: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.bool))), []),
+    canGoForward: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.bool))), []),
+    goBack: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+    goForward: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+    reload: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+    clearCache: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+    evaluateJavascript: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.String))), [dart.legacy(core.String)]),
+    addJavascriptChannels: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(core.Set$(dart.legacy(core.String)))]),
+    removeJavascriptChannels: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(core.Set$(dart.legacy(core.String)))]),
+    getTitle: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.String))), []),
+    scrollTo: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(core.int), dart.legacy(core.int)]),
+    scrollBy: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(core.int), dart.legacy(core.int)]),
+    getScrollX: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.int))), []),
+    getScrollY: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.int))), [])
+  }));
+  dart.setLibraryUri(platform_interface.WebViewPlatformController, L5);
+  var _value = dart.privateName(platform_interface, "_value");
+  const _is_WebSetting_default = Symbol('_is_WebSetting_default');
+  var isPresent = dart.privateName(platform_interface, "WebSetting.isPresent");
+  platform_interface.WebSetting$ = dart.generic(T => {
+    var TL = () => (TL = dart.constFn(dart.legacy(T)))();
+    var WebSettingOfTL = () => (WebSettingOfTL = dart.constFn(platform_interface.WebSetting$(TL())))();
+    var WebSettingLOfTL = () => (WebSettingLOfTL = dart.constFn(dart.legacy(WebSettingOfTL())))();
+    class WebSetting extends core.Object {
+      get isPresent() {
+        return this[isPresent];
+      }
+      set isPresent(value) {
+        super.isPresent = value;
+      }
+      get value() {
+        if (!dart.test(this.isPresent)) {
+          dart.throw(new core.StateError.new("Cannot access a value of an absent WebSetting"));
+        }
+        if (!dart.test(this.isPresent)) dart.assertFailed(null, L6, 349, 12, "isPresent");
+        return this[_value];
+      }
+      _equals(other) {
+        if (other == null) return false;
+        if (!dart.equals(dart.runtimeType(other), this.runtimeType)) return false;
+        let typedOther = WebSettingLOfTL().as(other);
+        return dart.equals(typedOther.isPresent, this.isPresent) && dart.equals(typedOther[_value], this[_value]);
+      }
+      get hashCode() {
+        return ui.hashValues(this[_value], this.isPresent);
+      }
+    }
+    (WebSetting.absent = function() {
+      this[_value] = null;
+      this[isPresent] = false;
+      ;
+    }).prototype = WebSetting.prototype;
+    (WebSetting.of = function(value) {
+      this[_value] = value;
+      this[isPresent] = true;
+      ;
+    }).prototype = WebSetting.prototype;
+    dart.addTypeTests(WebSetting);
+    WebSetting.prototype[_is_WebSetting_default] = true;
+    dart.addTypeCaches(WebSetting);
+    dart.setMethodSignature(WebSetting, () => ({
+      __proto__: dart.getMethods(WebSetting.__proto__),
+      _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+      [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+    }));
+    dart.setGetterSignature(WebSetting, () => ({
+      __proto__: dart.getGetters(WebSetting.__proto__),
+      value: dart.legacy(T),
+      hashCode: dart.legacy(core.int),
+      [$hashCode]: dart.legacy(core.int)
+    }));
+    dart.setLibraryUri(WebSetting, L5);
+    dart.setFieldSignature(WebSetting, () => ({
+      __proto__: dart.getFields(WebSetting.__proto__),
+      [_value]: dart.finalFieldType(dart.legacy(T)),
+      isPresent: dart.finalFieldType(dart.legacy(core.bool))
+    }));
+    dart.defineExtensionMethods(WebSetting, ['_equals']);
+    dart.defineExtensionAccessors(WebSetting, ['hashCode']);
+    return WebSetting;
+  });
+  platform_interface.WebSetting = platform_interface.WebSetting$();
+  dart.addTypeTests(platform_interface.WebSetting, _is_WebSetting_default);
+  var javascriptMode$ = dart.privateName(platform_interface, "WebSettings.javascriptMode");
+  var hasNavigationDelegate$ = dart.privateName(platform_interface, "WebSettings.hasNavigationDelegate");
+  var debuggingEnabled$ = dart.privateName(platform_interface, "WebSettings.debuggingEnabled");
+  var userAgent$ = dart.privateName(platform_interface, "WebSettings.userAgent");
+  var gestureNavigationEnabled$ = dart.privateName(platform_interface, "WebSettings.gestureNavigationEnabled");
+  platform_interface.WebSettings = class WebSettings extends core.Object {
+    get javascriptMode() {
+      return this[javascriptMode$];
+    }
+    set javascriptMode(value) {
+      super.javascriptMode = value;
+    }
+    get hasNavigationDelegate() {
+      return this[hasNavigationDelegate$];
+    }
+    set hasNavigationDelegate(value) {
+      super.hasNavigationDelegate = value;
+    }
+    get debuggingEnabled() {
+      return this[debuggingEnabled$];
+    }
+    set debuggingEnabled(value) {
+      super.debuggingEnabled = value;
+    }
+    get userAgent() {
+      return this[userAgent$];
+    }
+    set userAgent(value) {
+      super.userAgent = value;
+    }
+    get gestureNavigationEnabled() {
+      return this[gestureNavigationEnabled$];
+    }
+    set gestureNavigationEnabled(value) {
+      super.gestureNavigationEnabled = value;
+    }
+    toString() {
+      return "WebSettings(javascriptMode: " + dart.str(this.javascriptMode) + ", hasNavigationDelegate: " + dart.str(this.hasNavigationDelegate) + ", debuggingEnabled: " + dart.str(this.debuggingEnabled) + ", gestureNavigationEnabled: " + dart.str(this.gestureNavigationEnabled) + ", userAgent: " + dart.str(this.userAgent) + ")";
+    }
+  };
+  (platform_interface.WebSettings.new = function(opts) {
+    let javascriptMode = opts && 'javascriptMode' in opts ? opts.javascriptMode : null;
+    let hasNavigationDelegate = opts && 'hasNavigationDelegate' in opts ? opts.hasNavigationDelegate : null;
+    let debuggingEnabled = opts && 'debuggingEnabled' in opts ? opts.debuggingEnabled : null;
+    let gestureNavigationEnabled = opts && 'gestureNavigationEnabled' in opts ? opts.gestureNavigationEnabled : null;
+    let userAgent = opts && 'userAgent' in opts ? opts.userAgent : null;
+    this[javascriptMode$] = javascriptMode;
+    this[hasNavigationDelegate$] = hasNavigationDelegate;
+    this[debuggingEnabled$] = debuggingEnabled;
+    this[gestureNavigationEnabled$] = gestureNavigationEnabled;
+    this[userAgent$] = userAgent;
+    if (!(userAgent != null)) dart.assertFailed(null, L6, 386, 15, "userAgent != null");
+    ;
+  }).prototype = platform_interface.WebSettings.prototype;
+  dart.addTypeTests(platform_interface.WebSettings);
+  dart.addTypeCaches(platform_interface.WebSettings);
+  dart.setMethodSignature(platform_interface.WebSettings, () => ({
+    __proto__: dart.getMethods(platform_interface.WebSettings.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(platform_interface.WebSettings, L5);
+  dart.setFieldSignature(platform_interface.WebSettings, () => ({
+    __proto__: dart.getFields(platform_interface.WebSettings.__proto__),
+    javascriptMode: dart.finalFieldType(dart.legacy(webview_flutter.JavascriptMode)),
+    hasNavigationDelegate: dart.finalFieldType(dart.legacy(core.bool)),
+    debuggingEnabled: dart.finalFieldType(dart.legacy(core.bool)),
+    userAgent: dart.finalFieldType(dart.legacy(platform_interface.WebSetting$(dart.legacy(core.String)))),
+    gestureNavigationEnabled: dart.finalFieldType(dart.legacy(core.bool))
+  }));
+  dart.defineExtensionMethods(platform_interface.WebSettings, ['toString']);
+  var _name$0 = dart.privateName(webview_flutter, "_name");
+  var C44;
+  var initialUrl$ = dart.privateName(platform_interface, "CreationParams.initialUrl");
+  var webSettings$ = dart.privateName(platform_interface, "CreationParams.webSettings");
+  var javascriptChannelNames$ = dart.privateName(platform_interface, "CreationParams.javascriptChannelNames");
+  var userAgent$0 = dart.privateName(platform_interface, "CreationParams.userAgent");
+  var autoMediaPlaybackPolicy$ = dart.privateName(platform_interface, "CreationParams.autoMediaPlaybackPolicy");
+  platform_interface.CreationParams = class CreationParams extends core.Object {
+    get initialUrl() {
+      return this[initialUrl$];
+    }
+    set initialUrl(value) {
+      super.initialUrl = value;
+    }
+    get webSettings() {
+      return this[webSettings$];
+    }
+    set webSettings(value) {
+      super.webSettings = value;
+    }
+    get javascriptChannelNames() {
+      return this[javascriptChannelNames$];
+    }
+    set javascriptChannelNames(value) {
+      super.javascriptChannelNames = value;
+    }
+    get userAgent() {
+      return this[userAgent$0];
+    }
+    set userAgent(value) {
+      super.userAgent = value;
+    }
+    get autoMediaPlaybackPolicy() {
+      return this[autoMediaPlaybackPolicy$];
+    }
+    set autoMediaPlaybackPolicy(value) {
+      super.autoMediaPlaybackPolicy = value;
+    }
+    toString() {
+      return dart.str(this.runtimeType) + "(initialUrl: " + dart.str(this.initialUrl) + ", settings: " + dart.str(this.webSettings) + ", javascriptChannelNames: " + dart.str(this.javascriptChannelNames) + ", UserAgent: " + dart.str(this.userAgent) + ")";
+    }
+  };
+  (platform_interface.CreationParams.new = function(opts) {
+    let initialUrl = opts && 'initialUrl' in opts ? opts.initialUrl : null;
+    let webSettings = opts && 'webSettings' in opts ? opts.webSettings : null;
+    let javascriptChannelNames = opts && 'javascriptChannelNames' in opts ? opts.javascriptChannelNames : null;
+    let userAgent = opts && 'userAgent' in opts ? opts.userAgent : null;
+    let autoMediaPlaybackPolicy = opts && 'autoMediaPlaybackPolicy' in opts ? opts.autoMediaPlaybackPolicy : C44 || CT.C44;
+    this[initialUrl$] = initialUrl;
+    this[webSettings$] = webSettings;
+    this[javascriptChannelNames$] = javascriptChannelNames;
+    this[userAgent$0] = userAgent;
+    this[autoMediaPlaybackPolicy$] = autoMediaPlaybackPolicy;
+    if (!(autoMediaPlaybackPolicy != null)) dart.assertFailed(null, L6, 435, 15, "autoMediaPlaybackPolicy != null");
+    ;
+  }).prototype = platform_interface.CreationParams.prototype;
+  dart.addTypeTests(platform_interface.CreationParams);
+  dart.addTypeCaches(platform_interface.CreationParams);
+  dart.setMethodSignature(platform_interface.CreationParams, () => ({
+    __proto__: dart.getMethods(platform_interface.CreationParams.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(platform_interface.CreationParams, L5);
+  dart.setFieldSignature(platform_interface.CreationParams, () => ({
+    __proto__: dart.getFields(platform_interface.CreationParams.__proto__),
+    initialUrl: dart.finalFieldType(dart.legacy(core.String)),
+    webSettings: dart.finalFieldType(dart.legacy(platform_interface.WebSettings)),
+    javascriptChannelNames: dart.finalFieldType(dart.legacy(core.Set$(dart.legacy(core.String)))),
+    userAgent: dart.finalFieldType(dart.legacy(core.String)),
+    autoMediaPlaybackPolicy: dart.finalFieldType(dart.legacy(webview_flutter.AutoMediaPlaybackPolicy))
+  }));
+  dart.defineExtensionMethods(platform_interface.CreationParams, ['toString']);
+  platform_interface.WebViewPlatform = class WebViewPlatform extends core.Object {
+    clearCookies() {
+      dart.throw(new core.UnimplementedError.new("WebView clearCookies is not implemented on the current platform"));
+    }
+  };
+  (platform_interface.WebViewPlatform.new = function() {
+    ;
+  }).prototype = platform_interface.WebViewPlatform.prototype;
+  dart.addTypeTests(platform_interface.WebViewPlatform);
+  dart.addTypeCaches(platform_interface.WebViewPlatform);
+  dart.setMethodSignature(platform_interface.WebViewPlatform, () => ({
+    __proto__: dart.getMethods(platform_interface.WebViewPlatform.__proto__),
+    clearCookies: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.bool))), [])
+  }));
+  dart.setLibraryUri(platform_interface.WebViewPlatform, L5);
+  var C45;
+  var C46;
+  var C47;
+  webview_flutter.JavascriptMode = class JavascriptMode extends core.Object {
+    toString() {
+      return this[_name$0];
+    }
+  };
+  (webview_flutter.JavascriptMode.new = function(index, _name) {
+    this.index = index;
+    this[_name$0] = _name;
+    ;
+  }).prototype = webview_flutter.JavascriptMode.prototype;
+  dart.addTypeTests(webview_flutter.JavascriptMode);
+  dart.addTypeCaches(webview_flutter.JavascriptMode);
+  dart.setMethodSignature(webview_flutter.JavascriptMode, () => ({
+    __proto__: dart.getMethods(webview_flutter.JavascriptMode.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(webview_flutter.JavascriptMode, L7);
+  dart.setFieldSignature(webview_flutter.JavascriptMode, () => ({
+    __proto__: dart.getFields(webview_flutter.JavascriptMode.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$0]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(webview_flutter.JavascriptMode, ['toString']);
+  webview_flutter.JavascriptMode.disabled = C45 || CT.C45;
+  webview_flutter.JavascriptMode.unrestricted = C46 || CT.C46;
+  webview_flutter.JavascriptMode.values = C47 || CT.C47;
+  var message$ = dart.privateName(webview_flutter, "JavascriptMessage.message");
+  webview_flutter.JavascriptMessage = class JavascriptMessage extends core.Object {
+    get message() {
+      return this[message$];
+    }
+    set message(value) {
+      super.message = value;
+    }
+  };
+  (webview_flutter.JavascriptMessage.new = function(message) {
+    this[message$] = message;
+    if (!(message != null)) dart.assertFailed(null, L8, 33, 50, "message != null");
+    ;
+  }).prototype = webview_flutter.JavascriptMessage.prototype;
+  dart.addTypeTests(webview_flutter.JavascriptMessage);
+  dart.addTypeCaches(webview_flutter.JavascriptMessage);
+  dart.setLibraryUri(webview_flutter.JavascriptMessage, L7);
+  dart.setFieldSignature(webview_flutter.JavascriptMessage, () => ({
+    __proto__: dart.getFields(webview_flutter.JavascriptMessage.__proto__),
+    message: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var url$ = dart.privateName(webview_flutter, "NavigationRequest.url");
+  var isForMainFrame$ = dart.privateName(webview_flutter, "NavigationRequest.isForMainFrame");
+  webview_flutter.NavigationRequest = class NavigationRequest extends core.Object {
+    get url() {
+      return this[url$];
+    }
+    set url(value) {
+      super.url = value;
+    }
+    get isForMainFrame() {
+      return this[isForMainFrame$];
+    }
+    set isForMainFrame(value) {
+      super.isForMainFrame = value;
+    }
+    toString() {
+      return dart.str(this.runtimeType) + "(url: " + dart.str(this.url) + ", isForMainFrame: " + dart.str(this.isForMainFrame) + ")";
+    }
+  };
+  (webview_flutter.NavigationRequest.__ = function(opts) {
+    let url = opts && 'url' in opts ? opts.url : null;
+    let isForMainFrame = opts && 'isForMainFrame' in opts ? opts.isForMainFrame : null;
+    this[url$] = url;
+    this[isForMainFrame$] = isForMainFrame;
+    ;
+  }).prototype = webview_flutter.NavigationRequest.prototype;
+  dart.addTypeTests(webview_flutter.NavigationRequest);
+  dart.addTypeCaches(webview_flutter.NavigationRequest);
+  dart.setMethodSignature(webview_flutter.NavigationRequest, () => ({
+    __proto__: dart.getMethods(webview_flutter.NavigationRequest.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(webview_flutter.NavigationRequest, L7);
+  dart.setFieldSignature(webview_flutter.NavigationRequest, () => ({
+    __proto__: dart.getFields(webview_flutter.NavigationRequest.__proto__),
+    url: dart.finalFieldType(dart.legacy(core.String)),
+    isForMainFrame: dart.finalFieldType(dart.legacy(core.bool))
+  }));
+  dart.defineExtensionMethods(webview_flutter.NavigationRequest, ['toString']);
+  var C48;
+  var C49;
+  var C50;
+  webview_flutter.NavigationDecision = class NavigationDecision extends core.Object {
+    toString() {
+      return this[_name$0];
+    }
+  };
+  (webview_flutter.NavigationDecision.new = function(index, _name) {
+    this.index = index;
+    this[_name$0] = _name;
+    ;
+  }).prototype = webview_flutter.NavigationDecision.prototype;
+  dart.addTypeTests(webview_flutter.NavigationDecision);
+  dart.addTypeCaches(webview_flutter.NavigationDecision);
+  dart.setMethodSignature(webview_flutter.NavigationDecision, () => ({
+    __proto__: dart.getMethods(webview_flutter.NavigationDecision.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(webview_flutter.NavigationDecision, L7);
+  dart.setFieldSignature(webview_flutter.NavigationDecision, () => ({
+    __proto__: dart.getFields(webview_flutter.NavigationDecision.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$0]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(webview_flutter.NavigationDecision, ['toString']);
+  webview_flutter.NavigationDecision.prevent = C48 || CT.C48;
+  webview_flutter.NavigationDecision.navigate = C49 || CT.C49;
+  webview_flutter.NavigationDecision.values = C50 || CT.C50;
+  var C51;
+  var C52;
+  webview_flutter.AutoMediaPlaybackPolicy = class AutoMediaPlaybackPolicy extends core.Object {
+    toString() {
+      return this[_name$0];
+    }
+  };
+  (webview_flutter.AutoMediaPlaybackPolicy.new = function(index, _name) {
+    this.index = index;
+    this[_name$0] = _name;
+    ;
+  }).prototype = webview_flutter.AutoMediaPlaybackPolicy.prototype;
+  dart.addTypeTests(webview_flutter.AutoMediaPlaybackPolicy);
+  dart.addTypeCaches(webview_flutter.AutoMediaPlaybackPolicy);
+  dart.setMethodSignature(webview_flutter.AutoMediaPlaybackPolicy, () => ({
+    __proto__: dart.getMethods(webview_flutter.AutoMediaPlaybackPolicy.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(webview_flutter.AutoMediaPlaybackPolicy, L7);
+  dart.setFieldSignature(webview_flutter.AutoMediaPlaybackPolicy, () => ({
+    __proto__: dart.getFields(webview_flutter.AutoMediaPlaybackPolicy.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$0]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(webview_flutter.AutoMediaPlaybackPolicy, ['toString']);
+  webview_flutter.AutoMediaPlaybackPolicy.require_user_action_for_all_media_types = C44 || CT.C44;
+  webview_flutter.AutoMediaPlaybackPolicy.always_allow = C51 || CT.C51;
+  webview_flutter.AutoMediaPlaybackPolicy.values = C52 || CT.C52;
+  var name$ = dart.privateName(webview_flutter, "JavascriptChannel.name");
+  var onMessageReceived$ = dart.privateName(webview_flutter, "JavascriptChannel.onMessageReceived");
+  webview_flutter.JavascriptChannel = class JavascriptChannel extends core.Object {
+    get name() {
+      return this[name$];
+    }
+    set name(value) {
+      super.name = value;
+    }
+    get onMessageReceived() {
+      return this[onMessageReceived$];
+    }
+    set onMessageReceived(value) {
+      super.onMessageReceived = value;
+    }
+  };
+  (webview_flutter.JavascriptChannel.new = function(opts) {
+    let name = opts && 'name' in opts ? opts.name : null;
+    let onMessageReceived = opts && 'onMessageReceived' in opts ? opts.onMessageReceived : null;
+    this[name$] = name;
+    this[onMessageReceived$] = onMessageReceived;
+    if (!(name != null)) dart.assertFailed(null, L8, 114, 16, "name != null");
+    if (!(onMessageReceived != null)) dart.assertFailed(null, L8, 115, 16, "onMessageReceived != null");
+    if (!dart.test(webview_flutter._validChannelNames.hasMatch(name))) dart.assertFailed(null, L8, 116, 16, "_validChannelNames.hasMatch(name)");
+    ;
+  }).prototype = webview_flutter.JavascriptChannel.prototype;
+  dart.addTypeTests(webview_flutter.JavascriptChannel);
+  dart.addTypeCaches(webview_flutter.JavascriptChannel);
+  dart.setLibraryUri(webview_flutter.JavascriptChannel, L7);
+  dart.setFieldSignature(webview_flutter.JavascriptChannel, () => ({
+    __proto__: dart.getFields(webview_flutter.JavascriptChannel.__proto__),
+    name: dart.finalFieldType(dart.legacy(core.String)),
+    onMessageReceived: dart.finalFieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(webview_flutter.JavascriptMessage)])))
+  }));
+  var _name = dart.privateName(platform, "_name");
+  var C53;
+  var C54;
+  var onWebViewCreated$ = dart.privateName(webview_flutter, "WebView.onWebViewCreated");
+  var gestureRecognizers$ = dart.privateName(webview_flutter, "WebView.gestureRecognizers");
+  var initialUrl$0 = dart.privateName(webview_flutter, "WebView.initialUrl");
+  var javascriptMode$0 = dart.privateName(webview_flutter, "WebView.javascriptMode");
+  var javascriptChannels$ = dart.privateName(webview_flutter, "WebView.javascriptChannels");
+  var navigationDelegate$ = dart.privateName(webview_flutter, "WebView.navigationDelegate");
+  var onPageStarted$ = dart.privateName(webview_flutter, "WebView.onPageStarted");
+  var onPageFinished$ = dart.privateName(webview_flutter, "WebView.onPageFinished");
+  var onWebResourceError$ = dart.privateName(webview_flutter, "WebView.onWebResourceError");
+  var debuggingEnabled$0 = dart.privateName(webview_flutter, "WebView.debuggingEnabled");
+  var gestureNavigationEnabled$0 = dart.privateName(webview_flutter, "WebView.gestureNavigationEnabled");
+  var userAgent$1 = dart.privateName(webview_flutter, "WebView.userAgent");
+  var initialMediaPlaybackPolicy$ = dart.privateName(webview_flutter, "WebView.initialMediaPlaybackPolicy");
+  webview_flutter.WebView = class WebView extends framework.StatefulWidget {
+    get onWebViewCreated() {
+      return this[onWebViewCreated$];
+    }
+    set onWebViewCreated(value) {
+      super.onWebViewCreated = value;
+    }
+    get gestureRecognizers() {
+      return this[gestureRecognizers$];
+    }
+    set gestureRecognizers(value) {
+      super.gestureRecognizers = value;
+    }
+    get initialUrl() {
+      return this[initialUrl$0];
+    }
+    set initialUrl(value) {
+      super.initialUrl = value;
+    }
+    get javascriptMode() {
+      return this[javascriptMode$0];
+    }
+    set javascriptMode(value) {
+      super.javascriptMode = value;
+    }
+    get javascriptChannels() {
+      return this[javascriptChannels$];
+    }
+    set javascriptChannels(value) {
+      super.javascriptChannels = value;
+    }
+    get navigationDelegate() {
+      return this[navigationDelegate$];
+    }
+    set navigationDelegate(value) {
+      super.navigationDelegate = value;
+    }
+    get onPageStarted() {
+      return this[onPageStarted$];
+    }
+    set onPageStarted(value) {
+      super.onPageStarted = value;
+    }
+    get onPageFinished() {
+      return this[onPageFinished$];
+    }
+    set onPageFinished(value) {
+      super.onPageFinished = value;
+    }
+    get onWebResourceError() {
+      return this[onWebResourceError$];
+    }
+    set onWebResourceError(value) {
+      super.onWebResourceError = value;
+    }
+    get debuggingEnabled() {
+      return this[debuggingEnabled$0];
+    }
+    set debuggingEnabled(value) {
+      super.debuggingEnabled = value;
+    }
+    get gestureNavigationEnabled() {
+      return this[gestureNavigationEnabled$0];
+    }
+    set gestureNavigationEnabled(value) {
+      super.gestureNavigationEnabled = value;
+    }
+    get userAgent() {
+      return this[userAgent$1];
+    }
+    set userAgent(value) {
+      super.userAgent = value;
+    }
+    get initialMediaPlaybackPolicy() {
+      return this[initialMediaPlaybackPolicy$];
+    }
+    set initialMediaPlaybackPolicy(value) {
+      super.initialMediaPlaybackPolicy = value;
+    }
+    static set platform(platform) {
+      webview_flutter.WebView._platform = platform;
+    }
+    static get platform() {
+      if (webview_flutter.WebView._platform == null) {
+        switch (platform.defaultTargetPlatform) {
+          case C53 || CT.C53:
+          {
+            webview_flutter.WebView._platform = new webview_android.AndroidWebView.new();
+            break;
+          }
+          case C54 || CT.C54:
+          {
+            webview_flutter.WebView._platform = new webview_cupertino.CupertinoWebView.new();
+            break;
+          }
+          default:
+          {
+            dart.throw(new core.UnsupportedError.new("Trying to use the default webview implementation for " + dart.str(platform.defaultTargetPlatform) + " but there isn't a default one"));
+          }
+        }
+      }
+      return webview_flutter.WebView._platform;
+    }
+    createState() {
+      return new webview_flutter._WebViewState.new();
+    }
+  };
+  (webview_flutter.WebView.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let onWebViewCreated = opts && 'onWebViewCreated' in opts ? opts.onWebViewCreated : null;
+    let initialUrl = opts && 'initialUrl' in opts ? opts.initialUrl : null;
+    let javascriptMode = opts && 'javascriptMode' in opts ? opts.javascriptMode : C45 || CT.C45;
+    let javascriptChannels = opts && 'javascriptChannels' in opts ? opts.javascriptChannels : null;
+    let navigationDelegate = opts && 'navigationDelegate' in opts ? opts.navigationDelegate : null;
+    let gestureRecognizers = opts && 'gestureRecognizers' in opts ? opts.gestureRecognizers : null;
+    let onPageStarted = opts && 'onPageStarted' in opts ? opts.onPageStarted : null;
+    let onPageFinished = opts && 'onPageFinished' in opts ? opts.onPageFinished : null;
+    let onWebResourceError = opts && 'onWebResourceError' in opts ? opts.onWebResourceError : null;
+    let debuggingEnabled = opts && 'debuggingEnabled' in opts ? opts.debuggingEnabled : false;
+    let gestureNavigationEnabled = opts && 'gestureNavigationEnabled' in opts ? opts.gestureNavigationEnabled : false;
+    let userAgent = opts && 'userAgent' in opts ? opts.userAgent : null;
+    let initialMediaPlaybackPolicy = opts && 'initialMediaPlaybackPolicy' in opts ? opts.initialMediaPlaybackPolicy : C44 || CT.C44;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[onWebViewCreated$] = onWebViewCreated;
+    this[initialUrl$0] = initialUrl;
+    this[javascriptMode$0] = javascriptMode;
+    this[javascriptChannels$] = javascriptChannels;
+    this[navigationDelegate$] = navigationDelegate;
+    this[gestureRecognizers$] = gestureRecognizers;
+    this[onPageStarted$] = onPageStarted;
+    this[onPageFinished$] = onPageFinished;
+    this[onWebResourceError$] = onWebResourceError;
+    this[debuggingEnabled$0] = debuggingEnabled;
+    this[gestureNavigationEnabled$0] = gestureNavigationEnabled;
+    this[userAgent$1] = userAgent;
+    this[initialMediaPlaybackPolicy$] = initialMediaPlaybackPolicy;
+    if (!(javascriptMode != null)) dart.assertFailed(null, L8, 159, 16, "javascriptMode != null");
+    if (!(initialMediaPlaybackPolicy != null)) dart.assertFailed(null, L8, 160, 16, "initialMediaPlaybackPolicy != null");
+    webview_flutter.WebView.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = webview_flutter.WebView.prototype;
+  dart.addTypeTests(webview_flutter.WebView);
+  dart.addTypeCaches(webview_flutter.WebView);
+  dart.setMethodSignature(webview_flutter.WebView, () => ({
+    __proto__: dart.getMethods(webview_flutter.WebView.__proto__),
+    createState: dart.fnType(dart.legacy(framework.State$(dart.legacy(framework.StatefulWidget))), [])
+  }));
+  dart.setLibraryUri(webview_flutter.WebView, L7);
+  dart.setFieldSignature(webview_flutter.WebView, () => ({
+    __proto__: dart.getFields(webview_flutter.WebView.__proto__),
+    onWebViewCreated: dart.finalFieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(webview_flutter.WebViewController)]))),
+    gestureRecognizers: dart.finalFieldType(dart.legacy(core.Set$(dart.legacy(basic_types.Factory$(dart.legacy(recognizer.OneSequenceGestureRecognizer)))))),
+    initialUrl: dart.finalFieldType(dart.legacy(core.String)),
+    javascriptMode: dart.finalFieldType(dart.legacy(webview_flutter.JavascriptMode)),
+    javascriptChannels: dart.finalFieldType(dart.legacy(core.Set$(dart.legacy(webview_flutter.JavascriptChannel)))),
+    navigationDelegate: dart.finalFieldType(dart.legacy(dart.fnType(dart.legacy(async.FutureOr$(dart.legacy(webview_flutter.NavigationDecision))), [dart.legacy(webview_flutter.NavigationRequest)]))),
+    onPageStarted: dart.finalFieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(core.String)]))),
+    onPageFinished: dart.finalFieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(core.String)]))),
+    onWebResourceError: dart.finalFieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(platform_interface.WebResourceError)]))),
+    debuggingEnabled: dart.finalFieldType(dart.legacy(core.bool)),
+    gestureNavigationEnabled: dart.finalFieldType(dart.legacy(core.bool)),
+    userAgent: dart.finalFieldType(dart.legacy(core.String)),
+    initialMediaPlaybackPolicy: dart.finalFieldType(dart.legacy(webview_flutter.AutoMediaPlaybackPolicy))
+  }));
+  dart.defineLazy(webview_flutter.WebView, {
+    /*webview_flutter.WebView._platform*/get _platform() {
+      return null;
+    },
+    set _platform(_) {}
+  }, true);
+  var _controller = dart.privateName(webview_flutter, "_controller");
+  var _platformCallbacksHandler$0 = dart.privateName(webview_flutter, "_platformCallbacksHandler");
+  var _onWebViewPlatformCreated = dart.privateName(webview_flutter, "_onWebViewPlatformCreated");
+  var _assertJavascriptChannelNamesAreUnique = dart.privateName(webview_flutter, "_assertJavascriptChannelNamesAreUnique");
+  var _widget$ = dart.privateName(webview_flutter, "_widget");
+  var _updateWidget = dart.privateName(webview_flutter, "_updateWidget");
+  webview_flutter._WebViewState = class _WebViewState extends framework.State$(dart.legacy(webview_flutter.WebView)) {
+    build(context) {
+      return webview_flutter.WebView.platform.build({context: context, onWebViewPlatformCreated: dart.bind(this, _onWebViewPlatformCreated), webViewPlatformCallbacksHandler: this[_platformCallbacksHandler$0], gestureRecognizers: this.widget.gestureRecognizers, creationParams: webview_flutter._creationParamsfromWidget(this.widget)});
+    }
+    initState() {
+      super.initState();
+      this[_assertJavascriptChannelNamesAreUnique]();
+      this[_platformCallbacksHandler$0] = new webview_flutter._PlatformCallbacksHandler.new(this.widget);
+    }
+    didUpdateWidget(oldWidget) {
+      WebViewL().as(oldWidget);
+      super.didUpdateWidget(oldWidget);
+      this[_assertJavascriptChannelNamesAreUnique]();
+      this[_controller].future.then(core.Null, dart.fn(controller => {
+        this[_platformCallbacksHandler$0][_widget$] = this.widget;
+        controller[_updateWidget](this.widget);
+      }, WebViewControllerLToNull()));
+    }
+    [_onWebViewPlatformCreated](webViewPlatform) {
+      let t1, t0;
+      let controller = new webview_flutter.WebViewController.__(this.widget, webViewPlatform, this[_platformCallbacksHandler$0]);
+      this[_controller].complete(controller);
+      if (this.widget.onWebViewCreated != null) {
+        t0 = this.widget;
+        t1 = controller;
+        t0.onWebViewCreated(t1);
+      }
+    }
+    [_assertJavascriptChannelNamesAreUnique]() {
+      if (this.widget.javascriptChannels == null || dart.test(this.widget.javascriptChannels[$isEmpty])) {
+        return;
+      }
+      if (!(webview_flutter._extractChannelNames(this.widget.javascriptChannels)[$length] == this.widget.javascriptChannels[$length])) dart.assertFailed(null, L8, 384, 12, "_extractChannelNames(widget.javascriptChannels).length ==\n        widget.javascriptChannels.length");
+    }
+  };
+  (webview_flutter._WebViewState.new = function() {
+    this[_controller] = CompleterOfWebViewControllerL().new();
+    this[_platformCallbacksHandler$0] = null;
+    webview_flutter._WebViewState.__proto__.new.call(this);
+    ;
+  }).prototype = webview_flutter._WebViewState.prototype;
+  dart.addTypeTests(webview_flutter._WebViewState);
+  dart.addTypeCaches(webview_flutter._WebViewState);
+  dart.setMethodSignature(webview_flutter._WebViewState, () => ({
+    __proto__: dart.getMethods(webview_flutter._WebViewState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]),
+    didUpdateWidget: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+    [_onWebViewPlatformCreated]: dart.fnType(dart.void, [dart.legacy(platform_interface.WebViewPlatformController)]),
+    [_assertJavascriptChannelNamesAreUnique]: dart.fnType(dart.void, [])
+  }));
+  dart.setLibraryUri(webview_flutter._WebViewState, L7);
+  dart.setFieldSignature(webview_flutter._WebViewState, () => ({
+    __proto__: dart.getFields(webview_flutter._WebViewState.__proto__),
+    [_controller]: dart.finalFieldType(dart.legacy(async.Completer$(dart.legacy(webview_flutter.WebViewController)))),
+    [_platformCallbacksHandler$0]: dart.fieldType(dart.legacy(webview_flutter._PlatformCallbacksHandler))
+  }));
+  var _javascriptChannels = dart.privateName(webview_flutter, "_javascriptChannels");
+  var _updateJavascriptChannelsFromSet = dart.privateName(webview_flutter, "_updateJavascriptChannelsFromSet");
+  webview_flutter._PlatformCallbacksHandler = class _PlatformCallbacksHandler extends core.Object {
+    onJavaScriptChannelMessage(channel, message) {
+      let t1, t0;
+      t0 = this[_javascriptChannels][$_get](channel);
+      t1 = new webview_flutter.JavascriptMessage.new(message);
+      t0.onMessageReceived(t1);
+    }
+    onNavigationRequest(opts) {
+      let url = opts && 'url' in opts ? opts.url : null;
+      let isForMainFrame = opts && 'isForMainFrame' in opts ? opts.isForMainFrame : null;
+      return async.async(boolL(), (function* onNavigationRequest() {
+        let t1, t0;
+        let request = new webview_flutter.NavigationRequest.__({url: url, isForMainFrame: isForMainFrame});
+        let allowNavigation = this[_widget$].navigationDelegate == null || (yield (t0 = this[_widget$], t1 = request, t0.navigationDelegate(t1))) == webview_flutter.NavigationDecision.navigate;
+        return allowNavigation;
+      }).bind(this));
+    }
+    onPageStarted(url) {
+      let t1, t0;
+      if (this[_widget$].onPageStarted != null) {
+        t0 = this[_widget$];
+        t1 = url;
+        t0.onPageStarted(t1);
+      }
+    }
+    onPageFinished(url) {
+      let t1, t0;
+      if (this[_widget$].onPageFinished != null) {
+        t0 = this[_widget$];
+        t1 = url;
+        t0.onPageFinished(t1);
+      }
+    }
+    onWebResourceError(error) {
+      let t1, t0;
+      if (this[_widget$].onWebResourceError != null) {
+        t0 = this[_widget$];
+        t1 = error;
+        t0.onWebResourceError(t1);
+      }
+    }
+    [_updateJavascriptChannelsFromSet](channels) {
+      this[_javascriptChannels][$clear]();
+      if (channels == null) {
+        return;
+      }
+      for (let channel of channels) {
+        this[_javascriptChannels][$_set](channel.name, channel);
+      }
+    }
+  };
+  (webview_flutter._PlatformCallbacksHandler.new = function(_widget) {
+    this[_javascriptChannels] = new (IdentityMapOfStringL$JavascriptChannelL()).new();
+    this[_widget$] = _widget;
+    this[_updateJavascriptChannelsFromSet](this[_widget$].javascriptChannels);
+  }).prototype = webview_flutter._PlatformCallbacksHandler.prototype;
+  dart.addTypeTests(webview_flutter._PlatformCallbacksHandler);
+  dart.addTypeCaches(webview_flutter._PlatformCallbacksHandler);
+  webview_flutter._PlatformCallbacksHandler[dart.implements] = () => [platform_interface.WebViewPlatformCallbacksHandler];
+  dart.setMethodSignature(webview_flutter._PlatformCallbacksHandler, () => ({
+    __proto__: dart.getMethods(webview_flutter._PlatformCallbacksHandler.__proto__),
+    onJavaScriptChannelMessage: dart.fnType(dart.void, [dart.legacy(core.String), dart.legacy(core.String)]),
+    onNavigationRequest: dart.fnType(dart.legacy(async.FutureOr$(dart.legacy(core.bool))), [], {isForMainFrame: dart.legacy(core.bool), url: dart.legacy(core.String)}, {}),
+    onPageStarted: dart.fnType(dart.void, [dart.legacy(core.String)]),
+    onPageFinished: dart.fnType(dart.void, [dart.legacy(core.String)]),
+    onWebResourceError: dart.fnType(dart.void, [dart.legacy(platform_interface.WebResourceError)]),
+    [_updateJavascriptChannelsFromSet]: dart.fnType(dart.void, [dart.legacy(core.Set$(dart.legacy(webview_flutter.JavascriptChannel)))])
+  }));
+  dart.setLibraryUri(webview_flutter._PlatformCallbacksHandler, L7);
+  dart.setFieldSignature(webview_flutter._PlatformCallbacksHandler, () => ({
+    __proto__: dart.getFields(webview_flutter._PlatformCallbacksHandler.__proto__),
+    [_widget$]: dart.fieldType(dart.legacy(webview_flutter.WebView)),
+    [_javascriptChannels]: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(webview_flutter.JavascriptChannel))))
+  }));
+  var _settings = dart.privateName(webview_flutter, "_settings");
+  var _webViewPlatformController$ = dart.privateName(webview_flutter, "_webViewPlatformController");
+  var _updateSettings = dart.privateName(webview_flutter, "_updateSettings");
+  var _updateJavascriptChannels = dart.privateName(webview_flutter, "_updateJavascriptChannels");
+  webview_flutter.WebViewController = class WebViewController extends core.Object {
+    loadUrl(url, opts) {
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      return async.async(dart.void, (function* loadUrl() {
+        if (!(url != null)) dart.assertFailed(null, L8, 546, 12, "url != null");
+        webview_flutter._validateUrlString(url);
+        return this[_webViewPlatformController$].loadUrl(url, headers);
+      }).bind(this));
+    }
+    currentUrl() {
+      return this[_webViewPlatformController$].currentUrl();
+    }
+    canGoBack() {
+      return this[_webViewPlatformController$].canGoBack();
+    }
+    canGoForward() {
+      return this[_webViewPlatformController$].canGoForward();
+    }
+    goBack() {
+      return this[_webViewPlatformController$].goBack();
+    }
+    goForward() {
+      return this[_webViewPlatformController$].goForward();
+    }
+    reload() {
+      return this[_webViewPlatformController$].reload();
+    }
+    clearCache() {
+      return async.async(dart.void, (function* clearCache() {
+        yield this[_webViewPlatformController$].clearCache();
+        return this.reload();
+      }).bind(this));
+    }
+    [_updateWidget](widget) {
+      return async.async(dart.void, (function* _updateWidget() {
+        this[_widget$] = widget;
+        yield this[_updateSettings](webview_flutter._webSettingsFromWidget(widget));
+        yield this[_updateJavascriptChannels](widget.javascriptChannels);
+      }).bind(this));
+    }
+    [_updateSettings](newSettings) {
+      let update = webview_flutter._clearUnchangedWebSettings(this[_settings], newSettings);
+      this[_settings] = newSettings;
+      return this[_webViewPlatformController$].updateSettings(update);
+    }
+    [_updateJavascriptChannels](newChannels) {
+      return async.async(dart.void, (function* _updateJavascriptChannels() {
+        let currentChannels = this[_platformCallbacksHandler$0][_javascriptChannels][$keys][$toSet]();
+        let newChannelNames = webview_flutter._extractChannelNames(newChannels);
+        let channelsToAdd = newChannelNames.difference(currentChannels);
+        let channelsToRemove = currentChannels.difference(newChannelNames);
+        if (dart.test(channelsToRemove[$isNotEmpty])) {
+          yield this[_webViewPlatformController$].removeJavascriptChannels(channelsToRemove);
+        }
+        if (dart.test(channelsToAdd[$isNotEmpty])) {
+          yield this[_webViewPlatformController$].addJavascriptChannels(channelsToAdd);
+        }
+        this[_platformCallbacksHandler$0][_updateJavascriptChannelsFromSet](newChannels);
+      }).bind(this));
+    }
+    evaluateJavascript(javascriptString) {
+      if (this[_settings].javascriptMode == webview_flutter.JavascriptMode.disabled) {
+        return FutureOfStringL().error(assertions.FlutterError.new("JavaScript mode must be enabled/unrestricted when calling evaluateJavascript."));
+      }
+      if (javascriptString == null) {
+        return FutureOfStringL().error(new core.ArgumentError.new("The argument javascriptString must not be null."));
+      }
+      return this[_webViewPlatformController$].evaluateJavascript(javascriptString);
+    }
+    getTitle() {
+      return this[_webViewPlatformController$].getTitle();
+    }
+    scrollTo(x, y) {
+      return this[_webViewPlatformController$].scrollTo(x, y);
+    }
+    scrollBy(x, y) {
+      return this[_webViewPlatformController$].scrollBy(x, y);
+    }
+    getScrollX() {
+      return this[_webViewPlatformController$].getScrollX();
+    }
+    getScrollY() {
+      return this[_webViewPlatformController$].getScrollY();
+    }
+  };
+  (webview_flutter.WebViewController.__ = function(_widget, _webViewPlatformController, _platformCallbacksHandler) {
+    this[_settings] = null;
+    this[_widget$] = _widget;
+    this[_webViewPlatformController$] = _webViewPlatformController;
+    this[_platformCallbacksHandler$0] = _platformCallbacksHandler;
+    if (!(_webViewPlatformController != null)) dart.assertFailed(null, L8, 522, 14, "_webViewPlatformController != null");
+    this[_settings] = webview_flutter._webSettingsFromWidget(this[_widget$]);
+  }).prototype = webview_flutter.WebViewController.prototype;
+  dart.addTypeTests(webview_flutter.WebViewController);
+  dart.addTypeCaches(webview_flutter.WebViewController);
+  dart.setMethodSignature(webview_flutter.WebViewController, () => ({
+    __proto__: dart.getMethods(webview_flutter.WebViewController.__proto__),
+    loadUrl: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(core.String)], {headers: dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.String)))}, {}),
+    currentUrl: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.String))), []),
+    canGoBack: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.bool))), []),
+    canGoForward: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.bool))), []),
+    goBack: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+    goForward: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+    reload: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+    clearCache: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+    [_updateWidget]: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(webview_flutter.WebView)]),
+    [_updateSettings]: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(platform_interface.WebSettings)]),
+    [_updateJavascriptChannels]: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(core.Set$(dart.legacy(webview_flutter.JavascriptChannel)))]),
+    evaluateJavascript: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.String))), [dart.legacy(core.String)]),
+    getTitle: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.String))), []),
+    scrollTo: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(core.int), dart.legacy(core.int)]),
+    scrollBy: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(core.int), dart.legacy(core.int)]),
+    getScrollX: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.int))), []),
+    getScrollY: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.int))), [])
+  }));
+  dart.setLibraryUri(webview_flutter.WebViewController, L7);
+  dart.setFieldSignature(webview_flutter.WebViewController, () => ({
+    __proto__: dart.getFields(webview_flutter.WebViewController.__proto__),
+    [_webViewPlatformController$]: dart.finalFieldType(dart.legacy(platform_interface.WebViewPlatformController)),
+    [_platformCallbacksHandler$0]: dart.finalFieldType(dart.legacy(webview_flutter._PlatformCallbacksHandler)),
+    [_settings]: dart.fieldType(dart.legacy(platform_interface.WebSettings)),
+    [_widget$]: dart.fieldType(dart.legacy(webview_flutter.WebView))
+  }));
+  webview_flutter.CookieManager = class CookieManager extends core.Object {
+    static new() {
+      let t0;
+      t0 = webview_flutter.CookieManager._instance;
+      return t0 == null ? webview_flutter.CookieManager._instance = new webview_flutter.CookieManager.__() : t0;
+    }
+    clearCookies() {
+      return webview_flutter.WebView.platform.clearCookies();
+    }
+  };
+  (webview_flutter.CookieManager.__ = function() {
+    ;
+  }).prototype = webview_flutter.CookieManager.prototype;
+  dart.addTypeTests(webview_flutter.CookieManager);
+  dart.addTypeCaches(webview_flutter.CookieManager);
+  dart.setMethodSignature(webview_flutter.CookieManager, () => ({
+    __proto__: dart.getMethods(webview_flutter.CookieManager.__proto__),
+    clearCookies: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.bool))), [])
+  }));
+  dart.setLibraryUri(webview_flutter.CookieManager, L7);
+  dart.defineLazy(webview_flutter.CookieManager, {
+    /*webview_flutter.CookieManager._instance*/get _instance() {
+      return null;
+    },
+    set _instance(_) {}
+  }, true);
+  webview_flutter._creationParamsfromWidget = function _creationParamsfromWidget(widget) {
+    return new platform_interface.CreationParams.new({initialUrl: widget.initialUrl, webSettings: webview_flutter._webSettingsFromWidget(widget), javascriptChannelNames: webview_flutter._extractChannelNames(widget.javascriptChannels), userAgent: widget.userAgent, autoMediaPlaybackPolicy: widget.initialMediaPlaybackPolicy});
+  };
+  webview_flutter._webSettingsFromWidget = function _webSettingsFromWidget(widget) {
+    return new platform_interface.WebSettings.new({javascriptMode: widget.javascriptMode, hasNavigationDelegate: widget.navigationDelegate != null, debuggingEnabled: widget.debuggingEnabled, gestureNavigationEnabled: widget.gestureNavigationEnabled, userAgent: new (WebSettingOfStringL()).of(widget.userAgent)});
+  };
+  webview_flutter._clearUnchangedWebSettings = function _clearUnchangedWebSettings(currentValue, newValue) {
+    if (!(currentValue.javascriptMode != null)) dart.assertFailed(null, L8, 412, 10, "currentValue.javascriptMode != null");
+    if (!(currentValue.hasNavigationDelegate != null)) dart.assertFailed(null, L8, 413, 10, "currentValue.hasNavigationDelegate != null");
+    if (!(currentValue.debuggingEnabled != null)) dart.assertFailed(null, L8, 414, 10, "currentValue.debuggingEnabled != null");
+    if (!dart.test(currentValue.userAgent.isPresent)) dart.assertFailed(null, L8, 415, 10, "currentValue.userAgent.isPresent");
+    if (!(newValue.javascriptMode != null)) dart.assertFailed(null, L8, 416, 10, "newValue.javascriptMode != null");
+    if (!(newValue.hasNavigationDelegate != null)) dart.assertFailed(null, L8, 417, 10, "newValue.hasNavigationDelegate != null");
+    if (!(newValue.debuggingEnabled != null)) dart.assertFailed(null, L8, 418, 10, "newValue.debuggingEnabled != null");
+    if (!dart.test(newValue.userAgent.isPresent)) dart.assertFailed(null, L8, 419, 10, "newValue.userAgent.isPresent");
+    let javascriptMode = null;
+    let hasNavigationDelegate = null;
+    let debuggingEnabled = null;
+    let userAgent = new (WebSettingOfStringL()).absent();
+    if (currentValue.javascriptMode != newValue.javascriptMode) {
+      javascriptMode = newValue.javascriptMode;
+    }
+    if (!dart.equals(currentValue.hasNavigationDelegate, newValue.hasNavigationDelegate)) {
+      hasNavigationDelegate = newValue.hasNavigationDelegate;
+    }
+    if (!dart.equals(currentValue.debuggingEnabled, newValue.debuggingEnabled)) {
+      debuggingEnabled = newValue.debuggingEnabled;
+    }
+    if (!dart.equals(currentValue.userAgent, newValue.userAgent)) {
+      userAgent = newValue.userAgent;
+    }
+    return new platform_interface.WebSettings.new({javascriptMode: javascriptMode, hasNavigationDelegate: hasNavigationDelegate, debuggingEnabled: debuggingEnabled, userAgent: userAgent});
+  };
+  webview_flutter._extractChannelNames = function _extractChannelNames(channels) {
+    let channelNames = channels == null ? new (_IdentityHashSetOfStringL()).new() : channels[$map](StringL(), dart.fn(channel => channel.name, JavascriptChannelLToStringL()))[$toSet]();
+    return channelNames;
+  };
+  webview_flutter._validateUrlString = function _validateUrlString(url) {
+    try {
+      let uri = core.Uri.parse(url);
+      if (uri.scheme[$isEmpty]) {
+        dart.throw(new core.ArgumentError.new("Missing scheme in URL string: \"" + dart.str(url) + "\""));
+      }
+    } catch (e$) {
+      let e = dart.getThrown(e$);
+      if (FormatExceptionL().is(e)) {
+        dart.throw(new core.ArgumentError.new(e));
+      } else
+        throw e$;
+    }
+  };
+  dart.defineLazy(webview_flutter, {
+    /*webview_flutter._validChannelNames*/get _validChannelNames() {
+      return core.RegExp.new("^[a-zA-Z_][a-zA-Z0-9_]*$");
+    }
+  }, true);
+  dart.trackLibraries("packages/webview_flutter/src/webview_cupertino.dart", {
+    "package:webview_flutter/src/webview_cupertino.dart": webview_cupertino,
+    "package:webview_flutter/src/webview_method_channel.dart": webview_method_channel,
+    "package:webview_flutter/src/webview_android.dart": webview_android,
+    "package:webview_flutter/platform_interface.dart": platform_interface,
+    "package:webview_flutter/webview_flutter.dart": webview_flutter
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["webview_cupertino.dart","webview_method_channel.dart","webview_android.dart","../platform_interface.dart","../webview_flutter.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAsBiB;UACE;UAC2B;UACX;UACY;AAE3C,YAAO,4CACK,qDACa,QAAK;AAC1B,cAAI,AAAyB,wBAAD,IAAI;AAC9B;;AAGoE,UADtE,AAAwB,wBAAA,CACpB,4DAA6B,EAAE,EAAE,+BAA+B;8CAElD,kBAAkB,kBAEL,wEAAoB,cAAc;IAGvE;;AAG+B,YAA6B;IAAc;;;;EAC5E;;;;;;;;;;;;;;;;;;;;oBCnBwC;AAAZ;AACxB,gBAAQ,AAAK,IAAD;;;AAEK,uCAAwB,WAAd,AAAK,IAAD,qBAAW;AACzB,uCAAwB,WAAd,AAAK,IAAD,qBAAW;AACgC,YAAtE,AAA0B,4DAA2B,OAAO,EAAE,OAAO;AACrE,kBAAO;;;;AAEP,kBAAO,OAAM,AAA0B,wEAClB,WAAd,AAAK,IAAD,qBAAW,qCACU,WAAd,AAAK,IAAD,qBAAW;;;;AAG8B,YAA/D,AAA0B,6DAA6B,WAAd,AAAK,IAAD,qBAAW;AACxD,kBAAO;;;;AAEuD,YAA9D,AAA0B,4DAA4B,WAAd,AAAK,IAAD,qBAAW;AACvD,kBAAO;;;;AAiBN,YAfD,AAA0B,oDACxB,kEAC2B,WAAd,AAAK,IAAD,qBAAW,0CACC,WAAd,AAAK,IAAD,qBAAW,uCACN,WAAd,AAAK,IAAD,qBAAW,sCACG,WAAd,AAAK,IAAD,qBAAW,4BACF,AAAc,WAA5B,AAAK,IAAD,qBAAW,iBAAgB,OACpC,OACqB,AAAO,4DAC1B,QAAsB,QACR,AAAW,cAAhB,IAAI,MAC+C,SAApD,0CAAoB,eAAiB,WAAd,AAAK,IAAD,qBAAW;AAK1D,kBAAO;;;AAKV,QAFD,WAAM,6CAC2C,SAA5C,AAAK,IAAD,WAAQ;MAEnB;;YAIS,KACa;AAFF;AAIlB,cAAO,AAAI,GAAD,IAAI;AACd,cAAO,AAAS,wCAAmB,WAA4B,2CAC7D,OAAO,GAAG,EACV,WAAW,OAAO;MAEtB;;;AAG+B,YAAA,AAAS,wCAAqB;IAAa;;AAG9C,YAAA,AAAS,sCAAmB;IAAY;;AAGrC,YAAA,AAAS,sCAAmB;IAAe;;AAGjD,YAAA,AAAS,wCAAmB;IAAS;;AAGlC,YAAA,AAAS,wCAAmB;IAAY;;AAG3C,YAAA,AAAS,wCAAmB;IAAS;;AAGjC,YAAA,AAAS,wCAAmB;IAAa;mBAG9B;AACX,uBAAa,sEAAkB,QAAQ;AAClE,oBAAI,AAAW,UAAD;AACZ,cAAO;;AAET,YAAO,AAAS,wCAAmB,kBAAkB,UAAU;IACjE;uBAGyC;AACvC,YAAO,AAAS,wCACZ,sBAAsB,gBAAgB;IAC5C;0BAG+C;AAC7C,YAAO,AAAS,wCACZ,yBAAyB,AAAuB,sBAAD;IACrD;6BAGkD;AAChD,YAAO,AAAS,wCACZ,4BAA4B,AAAuB,sBAAD;IACxD;;AAG6B,YAAA,AAAS,wCAAqB;IAAW;aAG5C,GAAO;AAC/B,YAAO,AAAS,wCAAmB,YAAyB,wCAC1D,KAAK,CAAC,EACN,KAAK,CAAC;IAEV;aAG0B,GAAO;AAC/B,YAAO,AAAS,wCAAmB,YAAyB,wCAC1D,KAAK,CAAC,EACN,KAAK,CAAC;IAEV;;AAG4B,YAAA,AAAS,qCAAkB;IAAa;;AAGxC,YAAA,AAAS,qCAAkB;IAAa;;AAIlE,YAAO,AACF,AACA,iGADmB,8BACR,QAAS,gCAAW,MAAM;IAC5C;6BAE0D;;AAC7B,gBAAuB;AAClD,eAAK,cAAqB,KAAa;AACrC,YAAI,AAAM,KAAD,IAAI;AACX;;AAEc,QAAhB,AAAG,GAAA,QAAC,GAAG,EAAI,KAAK;;;AAGlB,eAAK,wBAA+B,KAAmB;AACrD,uBAAK,AAAQ,OAAD;AACV;;AAEsB,QAAxB,AAAG,GAAA,QAAC,GAAG,EAAI,AAAQ,OAAD;;;AAGmC,MAAvD,AAAa,aAAA,CAAC,gBAAU,AAAS,QAAD,8BAAC,OAAgB;AACqB,MAAtE,AAAa,aAAA,CAAC,yBAAyB,AAAS,QAAD;AACa,MAA5D,AAAa,aAAA,CAAC,oBAAoB,AAAS,QAAD;AAEwB,MADlE,AAAa,aAAA,CACT,4BAA4B,AAAS,QAAD;AACa,MAArD,AAAoB,oBAAA,YAAC,aAAa,AAAS,QAAD;AAC1C,YAAO,IAAG;IACZ;+BAOmB;AACjB,YAAwB,4CACtB,cAAc,AAAe,cAAD,aAC5B,YAAY,sEAAkB,AAAe,cAAD,eAC5C,0BAA0B,AAAe,AAAuB,cAAxB,oCACxC,aAAa,AAAe,cAAD,YAC3B,2BAA2B,AAAe,AAAwB,cAAzB;IAE7C;;sEA1LiC;IAAS;UAC7B,AAA0B,yBAAD,IAAI;IAC3B,iBAAE,uCAAc,AAAgC,yCAAH,EAAE;AAChB,IAA5C,AAAS,8CAAqB;EAChC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAM2B,yEAAqB;;;;;;;;;;;;;;;;;;;UCFjC;UACE;UAC2B;UACX;UACY;AAE3C,YAAO,AAAgC,+BAAD,IAAI;AAC1C,YAAO,wDAQQ;gDACS,aACf,6CACK,qDACa,QAAK;AAC1B,gBAAI,AAAyB,wBAAD,IAAI;AAC9B;;AAGuC,YADzC,AAAwB,wBAAA,CAAC,4DACrB,EAAE,EAAE,+BAA+B;gDAErB,kBAAkB,mBAIP,sCAEE,wEAAoB,cAAc;IAIzE;;AAG+B,YAA6B;IAAc;;;;EAC5E;;;;;;;;;;;;;EC7BA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA+DA;;iEA5DK;;;;EA4DL;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA4BY;;;;;;IASG;;;;;;IAGA;;;;;;IAKc;;;;;;IAMd;;;;;;;;QA1CI;QACA;QACV;QACA;QACA;IAJU;IACA;IACV;IACA;IACA;UACM,AAAU,SAAD,IAAI;UACb,AAAY,WAAD,IAAI;;EAAK;;;;;;;;;;;;;YAkExB,KACa;AAG6C,MADjE,WAAM,gCACF;IACN;mBAMwC;AAEkC,MADxE,WAAM,gCACF;IACN;;AAOsE,MADpE,WAAM,gCACF;IACN;;AAKqE,MADnE,WAAM,gCACF;IACN;;AAKwE,MADtE,WAAM,gCACF;IACN;;AAOkE,MADhE,WAAM,gCACF;IACN;;AAOqE,MADnE,WAAM,gCACF;IACN;;AAKkE,MADhE,WAAM,gCACF;IACN;;AAYsE,MADpE,WAAM,gCACF;IACN;uBAMyC;AAEqC,MAD5E,WAAM,gCACF;IACN;0BAa+C;AAEkC,MAD/E,WAAM,gCACF;IACN;6BAMkD;AAEkC,MADlF,WAAM,gCACF;IACN;;AAKoE,MADlE,WAAM,gCACF;IACN;aAK0B,GAAO;AAEmC,MADlE,WAAM,gCACF;IACN;aAK0B,GAAO;AAEmC,MADlE,WAAM,gCACF;IACN;;AAOsE,MADpE,WAAM,gCACF;IACN;;AAOsE,MADpE,WAAM,gCACF;IACN;;+DAxJ0D;;EAAQ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MA6LvD;;;;;;;AAVT,uBAAK;AAC8D,UAAjE,WAAM,wBAAW;;AAEnB,uBAAO;AACP,cAAO;MACT;;YAQwB;AACtB,yBAAU,iBAAN,KAAK,GAAgB,mBAAa,MAAO;AACzB,8CAAa,KAAK;AACtC,cAA4B,AAAa,aAAlC,AAAW,UAAD,YAAc,mBAA+B,YAAlB,AAAW,UAAD,UAAW;MACnE;;AAGoB,6BAAW,cAAQ;MAAU;;;MApCpC,eAAE;MACC,kBAAE;;IAAK;8BAKP;MACH,eAAE,KAAK;MACJ,kBAAE;;IAAI;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAmDD;;;;;;IAGV;;;;;;IAKA;;;;;;IAUc;;;;;;IAKd;;;;;;;AAIT,YAAO,AAA8M,2CAAhL,uBAAc,uCAA0B,8BAAqB,kCAAqB,yBAAgB,0CAA6B,iCAAwB,2BAAc,kBAAS;IACrN;;;QApCO;QACA;QACA;QACA;QACU;IAJV;IACA;IACA;IACA;IACU;UACL,AAAU,SAAD,IAAI;;EAAK;;;;;;;;;;;;;;;;;;;;;;;;;;IAsDjB;;;;;;IAKK;;;;;;IAaA;;;;;;IAKL;;;;;;IAGiB;;;;;;;AAI5B,YAA8I,UAArI,oBAAW,2BAAc,mBAAU,0BAAa,oBAAW,wCAA2B,+BAAsB,2BAAc,kBAAS;IAC9I;;;QA1CO;QACA;QACA;QACA;QACA;IAJA;IACA;IACA;IACA;IACA;UAEK,AAAwB,uBAAD,IAAI;;EAAK;;;;;;;;;;;;;;;;;;;;AAqF4B,MADtE,WAAM,gCACF;IACN;;;;EACF;;;;;;;;;;;;;;IChfA;;wDANK;;;;EAML;;;;;;;;;;;;;;;;;;;;IAUe;;;;;;;;IAHgB;UAAkB,AAAQ,OAAD,IAAI;;EAAK;;;;;;;;;;;IAclD;;;;;;IAGF;;;;;;;AAIT,YAAiE,UAAxD,oBAAW,oBAAO,YAAG,gCAAmB,uBAAc;IACjE;;;QAX0B;QAAU;IAAV;IAAU;;EAAgB;;;;;;;;;;;;;;;;;;;;;IAqBtD;;4DANK;;;;EAML;;;;;;;;;;;;;;;;;;;;;;;IAqCA;;iEAZK;;;;EAYL;;;;;;;;;;;;;;;;;;;;;IA2Be;;;;;;IAGkB;;;;;;;;QApBd;QACA;IADA;IACA;UACJ,AAAK,IAAD,IAAI;UACR,AAAkB,iBAAD,IAAI;mBACrB,AAAmB,4CAAS,IAAI;;EAAE;;;;;;;;;;;;;;;;;;;;;;;;;;IAiFlB;;;;;;IAWoB;;;;;;IAGpC;;;;;;IAGQ;;;;;;IA6BQ;;;;;;IAwBJ;;;;;;IAGC;;;;;;IAYC;;;;;;IAMI;;;;;;IAapB;;;;;;IAOA;;;;;;IAcE;;;;;;IAQiB;;;;;;wBA9JM;AACd,MAApB,oCAAY,QAAQ;IACtB;;AAME,UAAI,AAAU,qCAAG;AACf,gBAAQ;;;AAEwB,YAA5B,oCAAY;AACZ;;;;AAE8B,YAA9B,oCAAY;AACZ;;;;AAGgH,YADhH,WAAM,8BACF,AAA2G,mEAApD,kCAAqB;;;;AAGtF,YAAO;IACT;;AA2IuC;IAAe;;;QA7LhD;QACC;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;;IAZA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;UAEM,AAAe,cAAD,IAAI;UAClB,AAA2B,0BAAD,IAAI;AACrC,2DAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;MAEE,iCAAS;;;;;;;;;;;;UAoLN;AACxB,YAAe,AAAS,kDACb,OAAO,sCACU,mEACO,uDACb,AAAO,gDACX,0CAA0B;IAE9C;;AAImB,MAAX;AACkC,MAAxC;AAC6D,MAA7D,oCAA4B,kDAA0B;IACxD;;oBAG6B;AACK,MAA1B,sBAAgB,SAAS;AACS,MAAxC;AAIE,MAHF,AAAY,AAAO,yCAAK,QAAmB;AACC,QAA1C,AAA0B,8CAAU;AACJ,QAAhC,AAAW,UAAD,gBAAe;;IAE7B;gCAEyD;;AAC/B,uBACF,yCAAE,aAAQ,eAAe,EAAE;AACjB,MAAhC,AAAY,2BAAS,UAAU;AAC/B,UAAI,AAAO,gCAAoB;AACM,aAAnC;aAAwB,UAAU;QAAX;;IAE3B;;AAGE,UAAI,AAAO,AAAmB,kCAAG,kBAC7B,AAAO,AAAmB;AAC5B;;AAEF,YAAO,AAAgD,AAAO,qCAAlC,AAAO,4CAC/B,AAAO,AAAmB;IAChC;;;IAjDmC,oBAC/B;IAEsB;;;EA+C5B;;;;;;;;;;;;;;;;;;;+BAgFyC,SAAgB;;AACqB,WAA1E,AAAmB,iCAAC,OAAO;WAAoB,0CAAkB,OAAO;MAA1B;IAChD;;UAG2C;UAAU;AAAnB;;AACR,sBACF,+CAAO,GAAG,kBAAkB,cAAc;AACrD,8BAAkB,AAAQ,AAAmB,AAAQ,qCAAL,QACb,CAA1C,YAAM,qBAA2B,OAAO,EAAR,+BACT;AAC3B,cAAO,gBAAe;MACxB;;kBAG0B;;AACxB,UAAI,AAAQ,gCAAiB;AACD,aAA1B;aAAsB,GAAG;QAAJ;;IAEzB;mBAG2B;;AACzB,UAAI,AAAQ,iCAAkB;AACD,aAA3B;aAAuB,GAAG;QAAJ;;IAE1B;uBAGyC;;AACvC,UAAI,AAAQ,qCAAsB;AACC,aAAjC;aAA2B,KAAK;QAAN;;IAE9B;uCAE6D;AAChC,MAA3B,AAAoB;AACpB,UAAI,AAAS,QAAD,IAAI;AACd;;AAEF,eAAuB,UAAW,SAAQ;AACG,QAA3C,AAAmB,iCAAC,AAAQ,OAAD,OAAS,OAAO;;IAE/C;;4DAtD+B;IAOM,4BACN;IARA;AAC+B,IAA5D,uCAAiC,AAAQ;EAC3C;;;;;;;;;;;;;;;;;;;;;;;;YAqFS;UACa;AAFF;AAIlB,cAAO,AAAI,GAAD,IAAI;AACS,QAAvB,mCAAmB,GAAG;AACtB,cAAO,AAA2B,2CAAQ,GAAG,EAAE,OAAO;MACxD;;;AAUE,YAAO,AAA2B;IACpC;;AAOE,YAAO,AAA2B;IACpC;;AAOE,YAAO,AAA2B;IACpC;;AAME,YAAO,AAA2B;IACpC;;AAME,YAAO,AAA2B;IACpC;;AAIE,YAAO,AAA2B;IACpC;;AAYuB;AACwB,QAA7C,MAAM,AAA2B;AACjC,cAAO;MACT;;oBAEmC;AAAT;AACR,QAAhB,iBAAU,MAAM;AACqC,QAArD,MAAM,sBAAgB,uCAAuB,MAAM;AACO,QAA1D,MAAM,gCAA0B,AAAO,MAAD;MACxC;;sBAEyC;AACrB,mBACd,2CAA2B,iBAAW,WAAW;AAC9B,MAAvB,kBAAY,WAAW;AACvB,YAAO,AAA2B,kDAAe,MAAM;IACzD;gCAG2B;AADW;AAElB,8BACd,AAA0B,AAAoB,AAAK;AACrC,8BAAkB,qCAAqB,WAAW;AAClD,4BACd,AAAgB,eAAD,YAAY,eAAe;AAC5B,+BACd,AAAgB,eAAD,YAAY,eAAe;AAC9C,sBAAI,AAAiB,gBAAD;AAE6B,UAD/C,MAAM,AACD,2DAAyB,gBAAgB;;AAEhD,sBAAI,AAAc,aAAD;AACsD,UAArE,MAAM,AAA2B,wDAAsB,aAAa;;AAEC,QAAvE,AAA0B,oEAAiC,WAAW;MACxE;;uBAkByC;AACvC,UAAI,AAAU,AAAe,kCAAkB;AAC7C,cAAO,yBAAqB,4BACxB;;AAEN,UAAI,AAAiB,gBAAD,IAAI;AACtB,cAAO,yBACH,2BAAc;;AAKpB,YAAO,AAA2B,sDAAmB,gBAAgB;IACvE;;AAIE,YAAO,AAA2B;IACpC;aAK0B,GAAO;AAC/B,YAAO,AAA2B,4CAAS,CAAC,EAAE,CAAC;IACjD;aAK0B,GAAO;AAC/B,YAAO,AAA2B,4CAAS,CAAC,EAAE,CAAC;IACjD;;AAME,YAAO,AAA2B;IACpC;;AAME,YAAO,AAA2B;IACpC;;mDA3LO,SACA,4BACA;IASK;IAXL;IACA;IACA;UACI,AAA2B,0BAAD,IAAI;AACI,IAA3C,kBAAY,uCAAuB;EACrC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA6LE,WAAO;0BAAU,0CAAkB;IACrC;;AAW+B,YAAQ,AAAS;IAAc;;;;EAT7C;;;;;;;;;MAEI,uCAAS;;;;;iFAzUiB;AAC/C,UAAO,wDACO,AAAO,MAAD,0BACL,uCAAuB,MAAM,2BAClB,qCAAqB,AAAO,MAAD,iCACxC,AAAO,MAAD,qCACQ,AAAO,MAAD;EAEnC;2EAE2C;AACzC,UAAO,yDACW,AAAO,MAAD,wCACC,AAAO,AAAmB,MAApB,uBAAuB,wBAClC,AAAO,MAAD,6CACE,AAAO,MAAD,sCACrB,+BAAsB,AAAO,MAAD;EAE3C;mFAIgB,cAA0B;AACxC,UAAO,AAAa,AAAe,YAAhB,mBAAmB;AACtC,UAAO,AAAa,AAAsB,YAAvB,0BAA0B;AAC7C,UAAO,AAAa,AAAiB,YAAlB,qBAAqB;AACxC,mBAAO,AAAa,AAAU,YAAX;AACnB,UAAO,AAAS,AAAe,QAAhB,mBAAmB;AAClC,UAAO,AAAS,AAAsB,QAAvB,0BAA0B;AACzC,UAAO,AAAS,AAAiB,QAAlB,qBAAqB;AACpC,mBAAO,AAAS,AAAU,QAAX;AAEA;AACV;AACA;AACc,oBAAY;AAC/B,QAAI,AAAa,YAAD,mBAAmB,AAAS,QAAD;AACD,MAAxC,iBAAiB,AAAS,QAAD;;AAE3B,qBAAI,AAAa,YAAD,wBAA0B,AAAS,QAAD;AACM,MAAtD,wBAAwB,AAAS,QAAD;;AAElC,qBAAI,AAAa,YAAD,mBAAqB,AAAS,QAAD;AACC,MAA5C,mBAAmB,AAAS,QAAD;;AAE7B,qBAAI,AAAa,YAAD,YAAc,AAAS,QAAD;AACN,MAA9B,YAAY,AAAS,QAAD;;AAGtB,UAAO,yDACW,cAAc,yBACP,qBAAqB,oBAC1B,gBAAgB,aACvB,SAAS;EAExB;uEAEwD;AACpC,uBAAe,AAAS,QAAD,IAAI,OAGvC,0CACA,AAAS,AAAiD,QAAlD,kBAAK,QAAmB,WAAY,AAAQ,OAAD;AACzD,UAAO,aAAY;EACrB;mEAoR+B;AAC7B;AACY,gBAAU,eAAM,GAAG;AAC7B,UAAI,AAAI,AAAO,GAAR;AACsD,QAA3D,WAAM,2BAAc,AAAsC,8CAAL,GAAG;;;UAEhC;AAA1B;AACsB,QAAtB,WAAM,2BAAc,CAAC;;;;EAEzB;;MA1nBa,kCAAkB;YAAG,iBAAO","file":"../../../../../../../../packages/webview_flutter/src/webview_cupertino.dart.lib.js"}');
+  // Exports:
+  return {
+    src__webview_cupertino: webview_cupertino,
+    src__webview_method_channel: webview_method_channel,
+    src__webview_android: webview_android,
+    platform_interface: platform_interface,
+    webview_flutter: webview_flutter
+  };
+}));
+
+//# sourceMappingURL=webview_cupertino.dart.lib.js.map

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">819157436800-ti0tk2r1m6lum0c9v3a88j5586j1vaj8.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://zachnologytechreviews173012-default-rtdb.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">819157436800</string>
+    <string name="google_api_key" translatable="false">AIzaSyBA_clSPgMEnZrHa5T-3WYYzKF2misWUB0</string>
+    <string name="google_app_id" translatable="false">1:819157436800:android:6fa4d42326163f69b65965</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBA_clSPgMEnZrHa5T-3WYYzKF2misWUB0</string>
+    <string name="google_storage_bucket" translatable="false">zachnologytechreviews173012.appspot.com</string>
+    <string name="project_id" translatable="false">zachnologytechreviews173012</string>
+</resources>

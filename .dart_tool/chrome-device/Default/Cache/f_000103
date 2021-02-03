@@ -1,0 +1,478 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/animated_bottom_navigation_bar/src/bubble_selection_painter.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/animated_bottom_navigation_bar/src/tab_item.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/widgets/icon_data.dart'], (function load__packages__animated_bottom_navigation_bar__src__navigation_bar_item_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__animated_bottom_navigation_bar__src__bubble_selection_painter$46dart, packages__flutter__src__material__icon_button$46dart, packages__animated_bottom_navigation_bar__src__tab_item$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__widgets__icon_data$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const bubble_selection_painter = packages__animated_bottom_navigation_bar__src__bubble_selection_painter$46dart.src__bubble_selection_painter;
+  const ink_well = packages__flutter__src__material__icon_button$46dart.src__material__ink_well;
+  const tab_item = packages__animated_bottom_navigation_bar__src__tab_item$46dart.src__tab_item;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const icon_data = packages__flutter__src__widgets__icon_data$46dart.src__widgets__icon_data;
+  var navigation_bar_item = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(false);
+  var _LocationL = () => (_LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))();
+  const CT = Object.create(null);
+  var L0 = "package:animated_bottom_navigation_bar/src/navigation_bar_item.dart";
+  dart.defineLazy(CT, {
+    get C2() {
+      return C2 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "isActive",
+        [_Location_column]: 17,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C3 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "iconData",
+        [_Location_column]: 17,
+        [_Location_line]: 50,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C4 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "iconSize",
+        [_Location_column]: 17,
+        [_Location_line]: 51,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C5 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "activeColor",
+        [_Location_column]: 17,
+        [_Location_line]: 52,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C6 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "inactiveColor",
+        [_Location_column]: 17,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C7 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C1 = dart.constList([C2 || CT.C2, C3 || CT.C3, C4 || CT.C4, C5 || CT.C5, C6 || CT.C6, C7 || CT.C7], _LocationL());
+    },
+    get C0() {
+      return C0 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C1 || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 48,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_bottom_navigation_bar-0.2.1/lib/src/navigation_bar_item.dart"
+      });
+    },
+    get C10() {
+      return C10 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "scale",
+        [_Location_column]: 15,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C11 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 48,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C9 = dart.constList([C10 || CT.C10, C11 || CT.C11], _LocationL());
+    },
+    get C8() {
+      return C8 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C9 || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 46,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_bottom_navigation_bar-0.2.1/lib/src/navigation_bar_item.dart"
+      });
+    },
+    get C14() {
+      return C14 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 46,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C15 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "splashColor",
+        [_Location_column]: 13,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C16 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "focusColor",
+        [_Location_column]: 13,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C17 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "highlightColor",
+        [_Location_column]: 13,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C18 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "hoverColor",
+        [_Location_column]: 13,
+        [_Location_line]: 60,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C19 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 13,
+        [_Location_line]: 61,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C13 = dart.constList([C14 || CT.C14, C15 || CT.C15, C16 || CT.C16, C17 || CT.C17, C18 || CT.C18, C19 || CT.C19], _LocationL());
+    },
+    get C12() {
+      return C12 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C13 || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 45,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_bottom_navigation_bar-0.2.1/lib/src/navigation_bar_item.dart"
+      });
+    },
+    get C22() {
+      return C22 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "painter",
+        [_Location_column]: 11,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C23 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C21 = dart.constList([C22 || CT.C22, C23 || CT.C23], _LocationL());
+    },
+    get C20() {
+      return C20 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C21 || CT.C21,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_bottom_navigation_bar-0.2.1/lib/src/navigation_bar_item.dart"
+      });
+    },
+    get C26() {
+      return C26 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 9,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C27 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 9,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C28 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C25 = dart.constList([C26 || CT.C26, C27 || CT.C27, C28 || CT.C28], _LocationL());
+    },
+    get C24() {
+      return C24 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C25 || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 36,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_bottom_navigation_bar-0.2.1/lib/src/navigation_bar_item.dart"
+      });
+    },
+    get C31() {
+      return C31 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C30 = dart.constList([C31 || CT.C31], _LocationL());
+    },
+    get C29() {
+      return C29 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C30 || CT.C30,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 35,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_bottom_navigation_bar-0.2.1/lib/src/navigation_bar_item.dart"
+      });
+    }
+  }, false);
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var C2;
+  var C3;
+  var C4;
+  var C5;
+  var C6;
+  var C7;
+  var C1;
+  var C0;
+  var C10;
+  var C11;
+  var C9;
+  var C8;
+  var C14;
+  var C15;
+  var C16;
+  var C17;
+  var C18;
+  var C19;
+  var C13;
+  var C12;
+  var C22;
+  var C23;
+  var C21;
+  var C20;
+  var C26;
+  var C27;
+  var C28;
+  var C25;
+  var C24;
+  var C31;
+  var C30;
+  var C29;
+  var isActive$ = dart.privateName(navigation_bar_item, "NavigationBarItem.isActive");
+  var bubbleRadius$ = dart.privateName(navigation_bar_item, "NavigationBarItem.bubbleRadius");
+  var maxBubbleRadius$ = dart.privateName(navigation_bar_item, "NavigationBarItem.maxBubbleRadius");
+  var bubbleColor$ = dart.privateName(navigation_bar_item, "NavigationBarItem.bubbleColor");
+  var activeColor$ = dart.privateName(navigation_bar_item, "NavigationBarItem.activeColor");
+  var inactiveColor$ = dart.privateName(navigation_bar_item, "NavigationBarItem.inactiveColor");
+  var iconData$ = dart.privateName(navigation_bar_item, "NavigationBarItem.iconData");
+  var iconScale$ = dart.privateName(navigation_bar_item, "NavigationBarItem.iconScale");
+  var iconSize$ = dart.privateName(navigation_bar_item, "NavigationBarItem.iconSize");
+  var onTap$ = dart.privateName(navigation_bar_item, "NavigationBarItem.onTap");
+  var child$ = dart.privateName(navigation_bar_item, "NavigationBarItem.child");
+  navigation_bar_item.NavigationBarItem = class NavigationBarItem extends framework.StatelessWidget {
+    get isActive() {
+      return this[isActive$];
+    }
+    set isActive(value) {
+      super.isActive = value;
+    }
+    get bubbleRadius() {
+      return this[bubbleRadius$];
+    }
+    set bubbleRadius(value) {
+      super.bubbleRadius = value;
+    }
+    get maxBubbleRadius() {
+      return this[maxBubbleRadius$];
+    }
+    set maxBubbleRadius(value) {
+      super.maxBubbleRadius = value;
+    }
+    get bubbleColor() {
+      return this[bubbleColor$];
+    }
+    set bubbleColor(value) {
+      super.bubbleColor = value;
+    }
+    get activeColor() {
+      return this[activeColor$];
+    }
+    set activeColor(value) {
+      super.activeColor = value;
+    }
+    get inactiveColor() {
+      return this[inactiveColor$];
+    }
+    set inactiveColor(value) {
+      super.inactiveColor = value;
+    }
+    get iconData() {
+      return this[iconData$];
+    }
+    set iconData(value) {
+      super.iconData = value;
+    }
+    get iconScale() {
+      return this[iconScale$];
+    }
+    set iconScale(value) {
+      super.iconScale = value;
+    }
+    get iconSize() {
+      return this[iconSize$];
+    }
+    set iconSize(value) {
+      super.iconSize = value;
+    }
+    get onTap() {
+      return this[onTap$];
+    }
+    set onTap(value) {
+      super.onTap = value;
+    }
+    get child() {
+      return this[child$];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    build(context) {
+      return new basic.Expanded.new({child: new container.Container.new({height: 1 / 0, width: 1 / 0, child: new basic.CustomPaint.new({painter: new bubble_selection_painter.BubblePainter.new({bubbleRadius: dart.test(this.isActive) ? this.bubbleRadius : 0.0, bubbleColor: this.bubbleColor, maxBubbleRadius: this.maxBubbleRadius}), child: new ink_well.InkWell.new({child: new basic.Transform.scale({scale: dart.test(this.isActive) ? this.iconScale : 1.0, child: new tab_item.TabItem.new({isActive: this.isActive, iconData: this.iconData, iconSize: this.iconSize, activeColor: this.activeColor, inactiveColor: this.inactiveColor, child: this.child, $creationLocationd_0dea112b090073317d4: C0 || CT.C0}), $creationLocationd_0dea112b090073317d4: C8 || CT.C8}), splashColor: colors.Colors.transparent, focusColor: colors.Colors.transparent, highlightColor: colors.Colors.transparent, hoverColor: colors.Colors.transparent, onTap: this.onTap, $creationLocationd_0dea112b090073317d4: C12 || CT.C12}), $creationLocationd_0dea112b090073317d4: C20 || CT.C20}), $creationLocationd_0dea112b090073317d4: C24 || CT.C24}), $creationLocationd_0dea112b090073317d4: C29 || CT.C29});
+    }
+  };
+  (navigation_bar_item.NavigationBarItem.new = function(opts) {
+    let isActive = opts && 'isActive' in opts ? opts.isActive : null;
+    let bubbleRadius = opts && 'bubbleRadius' in opts ? opts.bubbleRadius : null;
+    let maxBubbleRadius = opts && 'maxBubbleRadius' in opts ? opts.maxBubbleRadius : null;
+    let bubbleColor = opts && 'bubbleColor' in opts ? opts.bubbleColor : null;
+    let activeColor = opts && 'activeColor' in opts ? opts.activeColor : null;
+    let inactiveColor = opts && 'inactiveColor' in opts ? opts.inactiveColor : null;
+    let iconData = opts && 'iconData' in opts ? opts.iconData : null;
+    let iconScale = opts && 'iconScale' in opts ? opts.iconScale : null;
+    let iconSize = opts && 'iconSize' in opts ? opts.iconSize : null;
+    let onTap = opts && 'onTap' in opts ? opts.onTap : null;
+    let child = opts && 'child' in opts ? opts.child : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[isActive$] = isActive;
+    this[bubbleRadius$] = bubbleRadius;
+    this[maxBubbleRadius$] = maxBubbleRadius;
+    this[bubbleColor$] = bubbleColor;
+    this[activeColor$] = activeColor;
+    this[inactiveColor$] = inactiveColor;
+    this[iconData$] = iconData;
+    this[iconScale$] = iconScale;
+    this[iconSize$] = iconSize;
+    this[onTap$] = onTap;
+    this[child$] = child;
+    navigation_bar_item.NavigationBarItem.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = navigation_bar_item.NavigationBarItem.prototype;
+  dart.addTypeTests(navigation_bar_item.NavigationBarItem);
+  dart.addTypeCaches(navigation_bar_item.NavigationBarItem);
+  dart.setMethodSignature(navigation_bar_item.NavigationBarItem, () => ({
+    __proto__: dart.getMethods(navigation_bar_item.NavigationBarItem.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(navigation_bar_item.NavigationBarItem, L0);
+  dart.setFieldSignature(navigation_bar_item.NavigationBarItem, () => ({
+    __proto__: dart.getFields(navigation_bar_item.NavigationBarItem.__proto__),
+    isActive: dart.finalFieldType(dart.legacy(core.bool)),
+    bubbleRadius: dart.finalFieldType(dart.legacy(core.double)),
+    maxBubbleRadius: dart.finalFieldType(dart.legacy(core.double)),
+    bubbleColor: dart.finalFieldType(dart.legacy(ui.Color)),
+    activeColor: dart.finalFieldType(dart.legacy(ui.Color)),
+    inactiveColor: dart.finalFieldType(dart.legacy(ui.Color)),
+    iconData: dart.finalFieldType(dart.legacy(icon_data.IconData)),
+    iconScale: dart.finalFieldType(dart.legacy(core.double)),
+    iconSize: dart.finalFieldType(dart.legacy(core.double)),
+    onTap: dart.finalFieldType(dart.legacy(dart.fnType(dart.void, []))),
+    child: dart.finalFieldType(dart.legacy(framework.Widget))
+  }));
+  dart.trackLibraries("packages/animated_bottom_navigation_bar/src/navigation_bar_item.dart", {
+    "package:animated_bottom_navigation_bar/src/navigation_bar_item.dart": navigation_bar_item
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["navigation_bar_item.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAMa;;;;;;IACE;;;;;;IACA;;;;;;IACD;;;;;;IACA;;;;;;IACA;;;;;;IACG;;;;;;IACF;;;;;;IACA;;;;;;IACM;;;;;;IACN;;;;;;UAiBa;AACxB,YAAO,gCACE,iEAGE,oCACI,wEACO,iBAAW,oBAAe,kBAC3B,mCACI,+BAEZ,iCACY,4CACR,iBAAW,iBAAY,YACvB,oCACK,yBACA,yBACA,4BACG,iCACE,2BACR,uIAGS,uCACD,2CACI,uCACJ,kCACZ;IAKjB;;;QA9CO;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;;IAVA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;AAXP;;EAYE","file":"../../../../../../../../packages/animated_bottom_navigation_bar/src/navigation_bar_item.dart.lib.js"}');
+  // Exports:
+  return {
+    src__navigation_bar_item: navigation_bar_item
+  };
+}));
+
+//# sourceMappingURL=navigation_bar_item.dart.lib.js.map
