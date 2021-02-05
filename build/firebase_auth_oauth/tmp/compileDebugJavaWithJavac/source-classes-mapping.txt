@@ -1,0 +1,2 @@
+me/amryousef/apple/auth/firebase_apple_auth/BuildConfig.java
+ me.amryousef.apple.auth.firebase_apple_auth.BuildConfig

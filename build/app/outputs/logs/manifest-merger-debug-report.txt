@@ -5,12 +5,14 @@ INJECTED from C:\Users\Zach\Desktop\flutter\zachnology\android\app\src\main\Andr
 INJECTED from C:\Users\Zach\Desktop\flutter\zachnology\android\app\src\main\AndroidManifest.xml:1:1-47:12
 INJECTED from C:\Users\Zach\Desktop\flutter\zachnology\android\app\src\main\AndroidManifest.xml:1:1-47:12
 MERGED from C:\Users\Zach\Desktop\flutter\zachnology\android\app\src\main\AndroidManifest.xml:1:1-47:12
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Zach\.gradle\caches\transforms-2\files-2.1\41a0c583826a3a0fde38e1f4f7cdd9f9\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [:google_sign_in] C:\Users\Zach\Desktop\flutter\zachnology\build\google_sign_in\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:firebase_messaging] C:\Users\Zach\Desktop\flutter\zachnology\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-20:12
 MERGED from [:quick_actions] C:\Users\Zach\Desktop\flutter\zachnology\build\quick_actions\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-8:12
 MERGED from [:url_launcher] C:\Users\Zach\Desktop\flutter\zachnology\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
 MERGED from [:webview_flutter] C:\Users\Zach\Desktop\flutter\zachnology\build\webview_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:integration_test] C:\Users\Zach\Desktop\flutter\zachnology\build\integration_test\intermediates\library_manifest\debug\AndroidManifest.xml:7:1-12:12
+MERGED from [:firebase_auth_oauth] C:\Users\Zach\Desktop\flutter\zachnology\build\firebase_auth_oauth\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:vibration] C:\Users\Zach\Desktop\flutter\zachnology\build\vibration\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:firebase_auth] C:\Users\Zach\Desktop\flutter\zachnology\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] C:\Users\Zach\Desktop\flutter\zachnology\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
@@ -213,6 +215,8 @@ uses-sdk
 INJECTED from C:\Users\Zach\Desktop\flutter\zachnology\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Zach\Desktop\flutter\zachnology\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Zach\Desktop\flutter\zachnology\android\app\src\main\AndroidManifest.xml
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Zach\.gradle\caches\transforms-2\files-2.1\41a0c583826a3a0fde38e1f4f7cdd9f9\multidex-2.0.0\AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Zach\.gradle\caches\transforms-2\files-2.1\41a0c583826a3a0fde38e1f4f7cdd9f9\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [:google_sign_in] C:\Users\Zach\Desktop\flutter\zachnology\build\google_sign_in\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in] C:\Users\Zach\Desktop\flutter\zachnology\build\google_sign_in\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_messaging] C:\Users\Zach\Desktop\flutter\zachnology\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
@@ -225,6 +229,8 @@ MERGED from [:webview_flutter] C:\Users\Zach\Desktop\flutter\zachnology\build\we
 MERGED from [:webview_flutter] C:\Users\Zach\Desktop\flutter\zachnology\build\webview_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:integration_test] C:\Users\Zach\Desktop\flutter\zachnology\build\integration_test\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-44
 MERGED from [:integration_test] C:\Users\Zach\Desktop\flutter\zachnology\build\integration_test\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-44
+MERGED from [:firebase_auth_oauth] C:\Users\Zach\Desktop\flutter\zachnology\build\firebase_auth_oauth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_auth_oauth] C:\Users\Zach\Desktop\flutter\zachnology\build\firebase_auth_oauth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:vibration] C:\Users\Zach\Desktop\flutter\zachnology\build\vibration\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:vibration] C:\Users\Zach\Desktop\flutter\zachnology\build\vibration\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_auth] C:\Users\Zach\Desktop\flutter\zachnology\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44

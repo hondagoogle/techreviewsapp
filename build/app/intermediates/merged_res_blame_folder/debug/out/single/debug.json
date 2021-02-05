@@ -120,11 +120,11 @@
         "source": "C:\\Users\\Zach\\Desktop\\flutter\\zachnology\\android\\app\\src\\main\\res\\drawable\\launch_background.xml"
     },
     {
-        "merged": "C:\\Users\\Zach\\Desktop\\flutter\\zachnology\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_launcher_icon.png.flat",
-        "source": "C:\\Users\\Zach\\Desktop\\flutter\\zachnology\\android\\app\\src\\main\\res\\mipmap-xhdpi\\launcher_icon.png"
-    },
-    {
         "merged": "C:\\Users\\Zach\\Desktop\\flutter\\zachnology\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Zach\\Desktop\\flutter\\zachnology\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Zach\\Desktop\\flutter\\zachnology\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\Zach\\Desktop\\flutter\\zachnology\\android\\app\\src\\main\\res\\mipmap-xhdpi\\launcher_icon.png"
     }
 ]

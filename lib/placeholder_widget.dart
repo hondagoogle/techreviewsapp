@@ -20,6 +20,9 @@ import 'package:flutter/material.dart';
 import 'sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import "package:firebase_auth_oauth/firebase_auth_oauth.dart";
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 Future<Post> fetchPost() async {
   final response = await http.get(
@@ -31,6 +34,21 @@ Future<Post> fetchPost() async {
   } else {
     // If that call was not successful, throw an error.
     throw Exception('Failed to load post');
+  }
+}
+
+Future<void> performLogin(String provider, List<String> scopes,
+    Map<String, String> parameters) async {
+  try {
+    await FirebaseAuthOAuth().openSignInFlow(provider, scopes, parameters);
+  } on PlatformException catch (error) {
+    /**
+       * The plugin has the following error codes:
+       * 1. FirebaseAuthError: FirebaseAuth related error
+       * 2. PlatformError: An platform related error
+       * 3. PluginError: An error from this plugin
+       */
+    debugPrint("${error.code}: ${error.message}");
   }
 }
 
@@ -260,41 +278,83 @@ class _HomeWidgetState extends State<HomeWidget> {
                     ),
                   ),
                   SizedBox(height: 20),
-                  FlatButton(
-                    splashColor: Colors.grey.withOpacity(0.5),
-                    onPressed: () {
-                      signInWithGoogle().then((result) {
-                        if (result != null) {
-                          _changeText();
-                        }
-                      });
-                    },
-                    color: Color(0xffDB4437),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40)),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Image(
-                              image: AssetImage("assets/white-google-logo.png"),
-                              height: 35.0),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10),
-                            child: Text(
-                              'Sign in with Google',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: "ProductSans",
-                                color: Colors.white,
-                              ),
-                            ),
-                          )
-                        ],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      FlatButton(
+                        splashColor: Colors.grey.withOpacity(0.5),
+                        onPressed: () {
+                          signInWithGoogle().then((result) {
+                            if (result != null) {
+                              _changeText();
+                            }
+                          });
+                        },
+                        color: Color(0xffDB4437),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Image(
+                                  image: AssetImage(
+                                      "assets/white-google-logo.png"),
+                                  height: 35.0),
+                            ],
+                          ),
+                        ),
                       ),
-                    ),
+                      SizedBox(width: 10),
+                      FlatButton(
+                        splashColor: Colors.grey.withOpacity(0.5),
+                        onPressed: () async {
+                          await performLogin(
+                              "twitter.com", ["email"], {"locale": "en"});
+                        },
+                        color: Color(0xff1DA1F2),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Image(
+                                  image: AssetImage(
+                                      "assets/Twitter_logo_white.png"),
+                                  height: 35.0),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      FlatButton(
+                        splashColor: Colors.grey.withOpacity(0.5),
+                        onPressed: () async {
+                          await performLogin(
+                              "yahoo.com", ["email"], {"locale": "en"});
+                        },
+                        color: Color(0xff720e9e),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Image(
+                                  image: AssetImage("assets/yahoo_logo.png"),
+                                  height: 35.0),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
                 if (_userLoggedIn == true) ...[

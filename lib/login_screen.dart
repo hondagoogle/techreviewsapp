@@ -1,7 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:zachnology_tech_reviews/placeholder_widget.dart';
 import 'sign_in.dart';
 import 'main.dart';
+import "package:firebase_auth_oauth/firebase_auth_oauth.dart";
 
 class LoginPage extends StatefulWidget {
   @override
@@ -11,93 +14,12 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.white,
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              FlutterLogo(size: 150),
-              SizedBox(height: 50),
-              OutlineButton(
-                splashColor: Colors.grey,
-                onPressed: () {
-                  signInWithGoogle().then((result) {
-                    if (result != null) {
-                      print(result);
-                      Navigator.pop(context);
-                    }
-                  });
-                },
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40)),
-                highlightElevation: 0,
-                borderSide: BorderSide(color: Colors.grey),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Image(
-                          image: AssetImage("assets/google_logo.png"),
-                          height: 35.0),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: Text(
-                          'Sign in with Google',
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+    Firebase.initializeApp();
+    return RaisedButton(
+      onPressed: () async {
+        await performLogin("github.com", ["email"], {"locale": "en"});
+      },
+      child: Text("Sign in By Apple"),
     );
   }
-}
-
-Widget _signInButton() {
-  return OutlineButton(
-    splashColor: Colors.grey,
-    onPressed: () {
-      signInWithGoogle().then((result) {
-        if (result != null) {
-          print(result);
-        }
-      });
-    },
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-    highlightElevation: 0,
-    borderSide: BorderSide(color: Colors.grey),
-    child: Padding(
-      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Image(image: AssetImage("assets/google_logo.png"), height: 35.0),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Text(
-              'Sign in with Google',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.grey,
-              ),
-            ),
-          )
-        ],
-      ),
-    ),
-  );
 }

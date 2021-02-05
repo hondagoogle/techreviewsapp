@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -50,6 +51,7 @@ class App extends StatelessWidget {
 class Home extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
+    Firebase.initializeApp();
     return _HomeState();
   }
 }
@@ -86,7 +88,7 @@ class _HomeState extends State<Home> {
     quickActions.initialize((String shortcutType) {
       switch (shortcutType) {
         case 'voicemessage':
-          return _navigate(VoiceRecorder());
+          return _navigate(LoginPage());
         default:
           return MaterialPageRoute(builder: (_) {
             return Scaffold(
@@ -144,9 +146,10 @@ class _HomeState extends State<Home> {
       floatingActionButton: FloatingActionButton(
         child: Icon(EvaIcons.micOutline, color: Colors.white),
         onPressed: () {
+          Firebase.initializeApp();
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => VoiceRecorder()),
+            MaterialPageRoute(builder: (context) => LoginPage()),
           );
         },
         splashColor: Color(0xff24527A),
